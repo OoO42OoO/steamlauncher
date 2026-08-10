@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "Sorban áll…",
+    "connecting": "Csatlakozás…",
+    "authenticating": "Bejelentkezés a Steambe…",
+    "fetching_manifest": "Fájllista lekérése…",
+    "downloading_with_label": "Letöltés: {{label}}",
+    "downloading_no_label": "Tartalom letöltése",
+    "validating_with_label": "Ellenőrzés: {{label}}",
+    "validating_no_label": "Fájlok ellenőrzése",
+    "finalizing": "Befejezés…",
+    "installing_redist_with_label": "Komponens telepítése: {{label}}",
+    "installing_redist_no_label": "Komponensek telepítése",
+    "counter": " ({{current}} / {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} perc",
+    "hours_minutes_short": "{{hours}} ó {{minutes}} p"
+  },
+  "nav": {
+    "sections": "Szakaszok",
+    "catalog": "Katalógus",
+    "library": "Könyvtár",
+    "stats": "Statisztika",
+    "downloads": "Letöltések",
+    "settings": "Beállítások",
+    "game": "Játék"
+  },
+  "titlebar": {
+    "trust": "Bizalom",
+    "trust_aria": "Bizalmi szint {{level}}",
+    "logout": "Kijelentkezés",
+    "language_aria": "Nyelv",
+    "close": "Bezárás",
+    "settings": "Beállítások",
+    "minimize": "Kis méretűvé",
+    "session_aria": "Hátralévő idő ebben a munkamenetben",
+    "session_label": "Munkamenet",
+    "session_expired": "Feladat szükséges",
+    "session_task_due": "Szükséges"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "A kód nem található. Ellenőrizze, hogy a teljes kódot illesztette-e be a webhelyről.",
+      "expired": "A kód már felhasználva vagy lejárt. Hozzon létre új kódot a webhelyen.",
+      "service_unavailable": "A szolgáltatás átmenetileg nem érhető el. Próbálja újra egy perc múlva.",
+      "network": "Nincs kapcsolat a kiszolgálóval.",
+      "unknown": "Ismeretlen bejelentkezési hiba."
+    },
+    "title": "Szerezz hozzáférést a launcherhez",
+    "description": "Szerezz hozzáférési kódot a Telegram botunkban, majd illeszd be alá a launcher feloldásához.",
+    "code_label": "Hozzáférési kód",
+    "submit": "Launcher feloldása",
+    "submitting": "Feloldás…",
+    "open_site": "Ugrás a bothoz a kulcs megszerzéséhez",
+    "step_open_bot": "Nyisd meg a Telegram botot",
+    "step_paste_code": "Másold ki és illeszd be a hozzáférési kódot",
+    "code_placeholder": "Illeszd be ide a kódot",
+    "no_account_note": "Nincs szükség launcher-fiókra vagy jelszóra."
+  },
+  "library": {
+    "loading": "Könyvtár betöltése…",
+    "error_title": "A könyvtárat nem sikerült betölteni",
+    "error_hint": "A szolgáltatás nem érhető el, vagy nincs internet.",
+    "retry": "Újrapróbálkozás",
+    "empty_title": "A könyvtár üres",
+    "empty_hint": "Az ön bizalmi szintjén még nem érhetők el fiókok. Teljesítsen feladatokat, hogy növelje a trust level értékét, és több játékot oldjon fel.",
+    "locked_hint": "Feloldódik trust level {{level}} szinten",
+    "play": "Játék",
+    "cancel_aria": "Letöltés megszakítása",
+    "install": "Telepítés",
+    "search_placeholder": "Játékok keresése",
+    "search_no_results": "Nincs találat: „{{query}}\"",
+    "installed_empty_title": "Nincsenek telepített játékok",
+    "installed_empty_hint": "A telepített játékok itt jelennek meg. Nyisd meg a katalógust egy játék kiválasztásához.",
+    "genre_all": "Összes",
+    "genre_filter_aria": "Szűrés műfaj szerint",
+    "pin": "Kedvencekhez",
+    "unpin": "Eltávolítás a kedvencekből",
+    "genre_more": "Még {{count}}",
+    "genre_search": "Kategória keresése",
+    "genre_none": "Nincs találat",
+    "genre_selected": "Kiválasztva: {{count}}",
+    "genre_reset": "Törlés",
+    "genre_done": "Kész",
+    "state_installed": "Telepítve",
+    "state_downloading": "Letöltés",
+    "state_error": "Hiba",
+    "state_not_installed": "Nincs telepítve",
+    "state_locked": "Zárolva",
+    "more_actions": "További műveletek",
+    "genre_loading": "Kategóriák: {{known}} / {{total}}",
+    "sort_aria": "Játékok rendezése",
+    "sort_name": "Név szerint",
+    "sort_installed": "Előbb a telepítettek",
+    "sort_played": "Legtöbbet játszott",
+    "open_folder": "Telepítési mappa",
+    "catalog_kicker": "Katalógus · {{count}} elérhető",
+    "catalog_heading": "Összes játék",
+    "installed_kicker": "Könyvtár · {{count}} telepítve",
+    "installed_heading": "A lemezen",
+    "genre_no_results": "Nincs játék ebben a kategóriában",
+    "starting": "Előkészítés…"
+  },
+  "tasks": {
+    "loading": "Feladatok betöltése…",
+    "error_title": "A feladatokat nem sikerült betölteni",
+    "error_hint": "A szolgáltatás átmenetileg nem érhető el.",
+    "active_section": "Aktív",
+    "active_empty": "Jelenleg nincsenek aktív feladatok. Térjen vissza később.",
+    "open": "Megnyitás",
+    "completing": "…",
+    "complete": "Kész",
+    "completed_section": "Befejezett",
+    "kicker": "Feladatok",
+    "heading": "Játékhozzáférés"
+  },
+  "stats": {
+    "loading": "Statisztika betöltése…",
+    "error_title": "A statisztikát nem sikerült betölteni",
+    "empty_title": "Még semmi sincs lejátszva",
+    "empty_hint": "Amint elindít egy játékot, itt megjelenik az egyes címek játékideje.",
+    "total_played": "Összes játékidő",
+    "kicker": "Statisztika",
+    "heading": "Játékidő"
+  },
+  "downloads": {
+    "empty_title": "Nincsenek aktív letöltések",
+    "empty_hint": "Indíts telepítést a Könyvtárban — a folyamat itt jelenik meg.",
+    "failed_label": "Letöltés sikertelen",
+    "kicker": "Letöltések · {{count}} aktív",
+    "heading": "Várólista",
+    "stop_all": "Összes leállítása"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Várakozás Steam Guard kódra e-mailben…",
+      "received": "Steam Guard kód megérkezett"
+    },
+    "error": {
+      "account_unconfigured": "A fiók nincs beállítva e-mailes Guard-tartalékhoz (nincs e-mail hitelesítés a kiszolgálón)",
+      "account_missing_license": "A fiók nem rendelkezik ezzel a játékkal",
+      "empty_download": "A letöltés fájlok nélkül fejeződött be",
+      "unsupported_platform": "A játék nem támogatja a platformodat ({{current}}). Elérhető ehhez: {{list}}",
+      "account_missing_license_other_platform": "A játékot másik platformra vásárolták. Ez a verzió elérhető ehhez: {{list}}",
+      "authorization": "Hitelesítési hiba",
+      "auth_guard": "Auth Guard hiba",
+      "disk_full": "Nincs elég szabad hely a lemezen",
+      "game_session_required": "A hozzáférés zárva — végezd el a feladatot a Telegram-botban"
+    }
+  },
+  "gameDetail": {
+    "back": "Vissza",
+    "loading": "Betöltés…",
+    "unavailable": "A játék adatai nem érhetők el",
+    "developer": "Fejlesztő",
+    "publisher": "Kiadó",
+    "released": "Megjelenés",
+    "trailers": "Előzetesek",
+    "screenshots": "Képernyőképek",
+    "about": "Leírás",
+    "system_requirements": "Rendszerkövetelmények",
+    "download": "Letöltés",
+    "cancel": "Mégse",
+    "prev_screenshot": "Előző képernyőkép",
+    "next_screenshot": "Következő képernyőkép",
+    "close_lightbox": "Bezárás",
+    "req_minimum": "Minimum",
+    "req_recommended": "Ajánlott",
+    "screenshot_n": "Képernyőkép {{n}}",
+    "news": "Újdonságok",
+    "browse_genre": "{{genre}} játékok megtekintése"
+  },
+  "settings": {
+    "title": "Beállítások",
+    "back": "Vissza",
+    "language": {
+      "title": "Nyelv",
+      "description": "Az alkalmazás megjelenítési nyelve."
+    },
+    "install_dir": {
+      "title": "Játékkönyvtár helye",
+      "description": "Ahol a letöltött játékok tárolódnak.",
+      "change": "Módosítás",
+      "default": "(alapértelmezett hely)"
+    },
+    "auto_update": {
+      "title": "Frissítések",
+      "description": "Frissítések automatikus telepítése az alkalmazás bezárásakor.",
+      "label": "Automatikus frissítések telepítése"
+    },
+    "about_section_label": "Névjegy",
+    "app_version_label": "Verzió",
+    "platform_label": "Platform",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "az operációs rendszered"
+  },
+  "tray": {
+    "show": "Megnyitás",
+    "quit": "Kilépés"
+  },
+  "updater": {
+    "checking": "Frissítések keresése",
+    "available": "Elérhető a {{version}} verzió",
+    "downloading": "{{version}} letöltése",
+    "downloaded": "A {{version}} frissítés készen áll",
+    "error": "Frissítési hiba",
+    "restart": "Telepítés és újraindítás",
+    "later": "Később",
+    "eta": "Hátralévő idő",
+    "speed": "Sebesség"
+  },
+  "game": {
+    "checking_updates": "Frissítések keresése…",
+    "downloading_update": "Frissítés letöltése",
+    "launching": "Indítás…",
+    "launch_without_check_confirm": "A frissítés ellenőrzése sikertelen. Mindenképp indítja?",
+    "uninstall": "Eltávolítás",
+    "uninstall_confirm": "Eltávolítja a játékot és törli az összes helyi fájlt?",
+    "uninstall_success": "Játék eltávolítva",
+    "uninstall_blocked_running": "Először zárja be a játékot",
+    "uninstall_failed": "Az eltávolítás nem sikerült: {{reason}}",
+    "patching_drm": "Steam DRM eltávolítása…",
+    "update_available": "Elérhető egy frissítés. Letöltöd indítás előtt?",
+    "update_install": "Letöltés és játék",
+    "update_skip": "Játék frissítés nélkül",
+    "already_running": "Ez a játék már fut"
+  },
+  "gameSession": {
+    "title": "A játékhozzáférés zárva",
+    "description": "Végezd el a feladatot a Telegram-botban — a hozzáférés rögtön utána megnyílik, a letöltés pedig ugyanonnan folytatódik.",
+    "later": "Később",
+    "open_bot": "Bot megnyitása és feladat elvégzése",
+    "done": "Feladat kész",
+    "checking": "Ellenőrzés…",
+    "still_locked": "A hozzáférés még nincs nyitva. Fejezd be a feladatot a botban, és próbáld újra."
+  },
+  "sidebar": {
+    "favorites": "Kedvencek",
+    "add": "Hozzáadás a katalógusból",
+    "empty": "Rögzíts egy játékot a katalógus csillagával",
+    "about": "A játékról",
+    "unpin": "Leválasztás",
+    "size": "Méret",
+    "played": "Játszott",
+    "status": "Állapot"
+  },
+  "drmBoot": {
+    "collapse": "Összecsukás",
+    "expand": "Kibontás",
+    "patching": "Javítások alkalmazása {{count}} játékra…",
+    "patching_other": "Javítások alkalmazása {{count}} játékra…",
+    "done": "Kész",
+    "warning_title": "A DRM-javítás nem fejeződött be",
+    "warning_detail": "A játékhoz futó Steam szükséges lehet."
+  },
+  "errors": {
+    "server_unreachable": "Nem sikerült csatlakozni a kiszolgálóhoz"
+  }
+}

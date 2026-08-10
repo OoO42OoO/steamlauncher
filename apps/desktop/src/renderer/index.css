@@ -1,0 +1,1700 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────
+   Design tokens. The launcher commits to a single dark world — cold navy
+   ground, one saturated blue carrying every primary action, and semantic
+   green/red/gold that never double as the accent.
+
+   Token NAMES are deliberately unchanged from the pre-redesign palette:
+   the whole app already references them through `var(--color-*)`, so the
+   reskin lands everywhere at once without touching call sites.
+   ───────────────────────────────────────────────────────────────────── */
+@theme {
+  /* Type: no web fonts — this is a Windows app, so the stack is what the
+     OS already ships. Display carries headings, data carries anything
+     numeric (always with tabular-nums). */
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", -apple-system, system-ui,
+    sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI Semibold", "Segoe UI",
+    system-ui, sans-serif;
+  --font-data: "Consolas", "Cascadia Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Grounds, darkest first. `void` is the window itself; `surface` is for
+     recessed things (inputs, wells); `surface-2` is the raised panel. */
+  --color-void: #070b11;
+  --color-surface: #0c141d;
+  --color-surface-2: #0f1620;
+  --color-surface-3: #16202c;
+  --color-border: #223140;
+  --color-border-soft: #1a2532;
+
+  /* Text */
+  --color-ink: #e9f0f7;
+  --color-dim: #8496a9;
+  --color-dimmer: #5d6f81;
+
+  /* Accent — deep, saturated blue. `lit`/`deep` are the gradient stops
+     every primary control is built from. */
+  --color-accent: #189bff;
+  --color-accent-lit: #3aa9ff;
+  --color-accent-deep: #0b63d6;
+  --color-accent-fg: #ffffff;
+
+  /* Semantic state. Separate from the accent on purpose: these encode what
+     a thing IS (installed / failed / earned), not what to click. */
+  --color-ok: #4ade9b;
+  --color-bad: #ff6b5e;
+  --color-gold: #f5c451;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+}
+
+/* Drag region for the custom titlebar. Every interactive control inside
+   needs to opt out, otherwise clicks are eaten by the drag handler — which
+   silently broke the language <select> until we added it here. */
+.titlebar {
+  -webkit-app-region: drag;
+}
+.titlebar button,
+.titlebar select,
+.titlebar input {
+  -webkit-app-region: no-drag;
+}
+
+/* Window-control buttons (close / future minimize+maximize) live in the
+   titlebar's right edge. Default neutral, hover lifts to a subtle white
+   wash, the close variant gets the standard Windows-red affordance. */
+.titlebar-button {
+  -webkit-app-region: no-drag;
+  width: 32px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 6px;
+  transition: background 80ms ease, color 80ms ease;
+}
+.titlebar-button:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.08);
+}
+.titlebar-close:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+/* Trust progress bar in the titlebar — replaces the old "Trust L{n}"
+   badge. Vertical layout: small label + numeric value above, slim 4px
+   filled track below. -webkit-app-region: no-drag so the cluster doesn't
+   eat clicks meant for the drag-region. */
+.trust-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 110px;
+  max-width: 140px;
+  padding: 0 4px;
+  -webkit-app-region: no-drag;
+}
+.trust-bar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-data);
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dimmer);
+}
+.trust-bar-value {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-size: 10.5px;
+  letter-spacing: 0;
+  /* Trust is an earned standing, not an action — it reads in the semantic
+     gold, leaving blue to mean "clickable". */
+  color: var(--color-gold);
+}
+.trust-bar-track {
+  position: relative;
+  height: 4px;
+  border-radius: 3px;
+  background: #1a2531;
+  overflow: hidden;
+}
+.trust-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #b5862a, var(--color-gold));
+  transition: width 240ms ease;
+}
+
+/* Session chip in the titlebar. The mockup frames the remaining time as one
+   bordered pill — value then label on a single baseline — rather than a
+   stacked cluster, so it reads as a status readout and not as a control. */
+.session-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-right: 4px;
+  padding: 5px 11px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #0d1620;
+  -webkit-app-region: no-drag;
+}
+.session-chip b {
+  font-family: var(--font-data);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+}
+.session-chip span {
+  font-family: var(--font-data);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dimmer);
+}
+
+/* Scrollbars — the accent, same as the buttons. The gradient runs across the
+   thumb rather than down it, so the lit edge reads the same way it does on a
+   button regardless of how long the thumb gets. Slightly held back at rest so
+   a full-height thumb on a short page doesn't shout, full accent on hover. */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--color-accent-lit) 82%, transparent),
+    color-mix(in oklch, var(--color-accent-deep) 82%, transparent)
+  );
+}
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-accent-lit),
+    var(--color-accent-deep)
+  );
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* Remove default focus ring only when pointer is used; keep visible ring
+   for keyboard users (a11y). */
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible) {
+  outline: none;
+}
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Form inputs (the redeem code field): no outline ring at all — the
+   border itself signals focus by switching to the accent colour (Tailwind
+   utilities on the element). We override even :focus-visible because these
+   fields are primary actions and the double ring (outline + border) reads
+   as noisy. The accent border has enough contrast against the surface
+   background to remain a clear keyboard-focus affordance on its own. */
+input.redeem-input:focus,
+input.redeem-input:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* ───────────────────────── Game detail page ─────────────────────────
+   Steam-Store-style hero + media + description layout. Lives inside an
+   .overflow-y-auto wrapper so scroll stays contained. Hero uses the game's
+   `background_raw` (huge horizontal art) and gradient-fades into the page
+   surface; everything below that block is normal column-flow. */
+.game-detail {
+  padding: 20px 28px 28px;
+  color: var(--color-ink);
+}
+/* Full-bleed: the key art runs edge to edge and dissolves into the page, the
+   way it does in the mockup. It used to be a rounded card inset by the page
+   padding, which made a 1920px banner read as a thumbnail. */
+.game-detail-hero {
+  position: relative;
+  min-height: 340px;
+  background-size: cover;
+  background-position: center top;
+  background-color: var(--color-surface);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+/* Hero art as a real <img> (not a CSS background) so onError can fall
+   through the source list. object-fit: cover fills the banner without
+   distortion; sits beneath the ::after gradient (z-index 0) which darkens
+   it, and beneath the content/back button (z-index 2). */
+.game-detail-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+}
+.game-detail-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* Two scrims: one lifts the bottom edge into the page ground so there is no
+     seam where the art ends, one darkens the left so the title keeps contrast
+     regardless of what the art is doing there. */
+  background:
+    linear-gradient(
+      to top,
+      var(--color-void) 0%,
+      rgba(7, 11, 17, 0.78) 30%,
+      rgba(7, 11, 17, 0) 100%
+    ),
+    linear-gradient(90deg, rgba(7, 11, 17, 0.6), transparent 55%);
+  pointer-events: none;
+}
+.game-detail-back {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  /* Sits on the key art, so the ground has to be its own — but the border
+     and label come from the same recipe as every other secondary button. */
+  background: rgba(6, 10, 15, 0.72);
+  color: #b3c4d4;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+.game-detail-back:hover {
+  background: rgba(6, 10, 15, 0.88);
+  border-color: #33475b;
+  color: var(--color-ink);
+}
+.game-detail-hero-content {
+  position: relative;
+  z-index: 2;
+  /* Lines up with the padded content below. */
+  padding: 0 28px 22px;
+  width: 100%;
+}
+.game-detail-hero-content h1 {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  line-height: 1.03;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+/* Genre pills under the title, as in the mockup — they replace the
+   "Developer: … Publisher: …" run-on, which the meta rows below now carry. */
+.game-detail-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.game-detail-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-family: var(--font-data);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9db2c6;
+}
+.game-detail-action {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 16px;
+}
+.game-detail-short {
+  max-width: 68ch;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #a7bacc;
+  margin: 0 0 22px;
+}
+.game-detail-media {
+  margin-bottom: 22px;
+}
+.game-detail-news {
+  margin-bottom: 22px;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+.news-card {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 9px;
+  background: var(--color-surface-2);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+.news-card:hover {
+  border-color: #2e4457;
+  transform: translateY(-2px);
+}
+.news-body {
+  padding: 11px 13px 13px;
+}
+.news-kick {
+  font-family: var(--font-data);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7fd0ff;
+}
+.news-title {
+  margin: 5px 0 4px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.news-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-dim);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.game-detail-media > h2,
+.game-detail-description > h2,
+.game-detail-reqs > h2,
+.game-detail-news > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+}
+.game-detail-media > h2::after,
+.game-detail-description > h2::after,
+.game-detail-reqs > h2::after,
+.game-detail-news > h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-soft);
+}
+.game-detail-videos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.game-detail-videos video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  background: #000;
+}
+.game-detail-screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.game-detail-screenshots img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: zoom-in;
+  transition: transform 200ms ease;
+  background: var(--color-surface);
+}
+.game-detail-screenshots img:hover {
+  transform: scale(1.03);
+}
+.game-detail-description {
+  margin-bottom: 22px;
+  line-height: 1.65;
+  font-size: 13.5px;
+  color: #a7bacc;
+}
+/* Two columns once there is room for two readable ones. Steam's long
+   descriptions run to several screens at 68ch, and column-width means the
+   layout falls back to a single column on a narrow window by itself rather
+   than by a breakpoint we'd have to guess. */
+.game-detail-description .safe-html {
+  columns: 34ch 2;
+  column-gap: 40px;
+  max-width: 1180px;
+}
+/* Nothing straddles a column break: an image or a list split down the middle
+   reads as a rendering fault. */
+.game-detail-description .safe-html img,
+.game-detail-description .safe-html ul,
+.game-detail-description .safe-html ol,
+.game-detail-description .safe-html h1,
+.game-detail-description .safe-html h2,
+.game-detail-description .safe-html h3 {
+  break-inside: avoid;
+}
+.game-detail-description .safe-html > * {
+  /* Anything can land at the top of a column, so nothing carries a top
+     margin — spacing is entirely bottom-side. */
+  margin-top: 0;
+}
+.game-detail-description .safe-html :is(h1, h2, h3, h4) {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-ink);
+  /* A heading stranded at the foot of a column with its text in the next one
+     reads as two unrelated fragments. */
+  break-after: avoid;
+}
+.game-detail-description .safe-html img {
+  /* Inline images sit on the text baseline, which leaves a descender-sized
+     gap above them at the top of a column. */
+  display: block;
+  margin: 0 0 12px;
+}
+.game-detail-description .safe-html :is(ul, ol) {
+  margin: 0 0 12px;
+  padding-left: 18px;
+}
+.game-detail-description .safe-html li {
+  margin: 0 0 4px;
+}
+
+.game-detail-description .safe-html img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.game-detail-description .safe-html p {
+  margin: 0 0 12px;
+}
+.game-detail-description .safe-html a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.tag {
+  padding: 4px 9px;
+  border: 1px solid #24384a;
+  border-radius: 5px;
+  background: rgba(16, 28, 39, 0.7);
+  color: #9db2c6;
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.game-detail-reqs {
+  margin-bottom: 22px;
+}
+.game-detail-reqs .safe-html {
+  font-size: 12.5px;
+  color: #b8c8d6;
+  line-height: 1.5;
+}
+.game-detail-reqs .safe-html ul {
+  margin: 0;
+  padding-left: 20px;
+}
+/* Structured sys-req table — parsed from Steam's HTML when each row
+   has a <strong>label</strong> prefix. Two-column grid with the label
+   in a tinted first column, monospace value alongside. */
+/* Label / value pairs on a fixed 86px measure, the way the mockup lays them
+   out — the bordered table this used to be turned six short facts into the
+   heaviest block on the page. */
+.game-detail-reqs-table {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 8px 14px;
+  width: 100%;
+  border: 0;
+  background: none;
+}
+.game-detail-reqs-table tbody,
+.game-detail-reqs-table tr {
+  display: contents;
+}
+.game-detail-reqs-table th {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: var(--font-data);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-dimmer);
+  /* The label column is a fixed measure, so a long one wraps rather than
+     stretching the value column out of alignment with the column beside it. */
+  overflow-wrap: anywhere;
+}
+.game-detail-reqs-table td {
+  margin: 0;
+  padding: 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #b8c8d6;
+}
+/* Fallback when the parser couldn't lift a structured table — drop
+   the <ul>'s default left padding so the markers don't punch a
+   margin gap into the dark surface. */
+.game-detail-reqs-fallback .safe-html ul {
+  padding-left: 0;
+  list-style: none;
+}
+.game-detail-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+.game-detail-lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  /* The image sits inside a flex container with the prev/next buttons;
+     clicking it shouldn't close the dialog (only the surrounding
+     backdrop should), so stop propagation in the JSX. cursor:zoom-out
+     was the prior affordance for "click to close" — we now use a
+     dedicated close on the backdrop click. */
+  cursor: default;
+}
+/* Prev / next arrows for the screenshot lightbox. Sit flush against
+   the viewport edges with a translucent rounded background. Larger
+   tap target than the bare glyph alone would suggest — important on
+   touch / mousepads where hitting a thin chevron is finicky. */
+.game-detail-lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+  user-select: none;
+}
+.game-detail-lightbox-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.game-detail-lightbox-arrow-left {
+  left: 24px;
+}
+.game-detail-lightbox-arrow-right {
+  right: 24px;
+}
+/* Close (✕) pinned top-right of the lightbox — matches the arrow styling
+   but smaller, so it reads as a dismiss affordance rather than navigation. */
+.game-detail-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 28px;
+  line-height: 1;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  cursor: pointer;
+  transition: color 120ms ease;
+  user-select: none;
+}
+.game-detail-lightbox-close:hover {
+  color: #fff;
+}
+/* "1 / 5" counter pinned to the bottom of the lightbox so the user
+   knows how many screenshots are in the album while paging. */
+.game-detail-lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* ───────────────── Pre-launch update prompt ─────────────────
+   Small centered modal shown when DD reports a delta is about to
+   download. Two buttons let the user either pull the update or
+   launch the already-installed (possibly stale) build. */
+.game-update-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 10, 0.88);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.game-update-modal-card {
+  background: var(--color-surface-3);
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  border-radius: 13px;
+  max-width: 430px;
+  width: calc(100% - 48px);
+  box-shadow: 0 30px 70px -26px #000;
+}
+.game-update-modal-card h2 {
+  margin: 0 0 20px 0;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.game-update-modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.game-update-modal-actions button {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  cursor: pointer;
+  transition: filter 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+/* Primary action is the accent, like every other primary in the app. It used
+   to be Steam's olive green, which both clashed with the navy ground and
+   broke the palette's rule that green means "installed", not "click me". */
+.game-update-modal-install {
+  background: linear-gradient(180deg, var(--color-accent-lit), var(--color-accent-deep));
+  color: var(--color-accent-fg);
+  border-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 6px 16px -8px rgba(24, 155, 255, 0.8);
+}
+.game-update-modal-install:hover {
+  filter: brightness(1.08);
+}
+.game-update-modal-skip {
+  background: #131d28;
+  color: #b3c4d4;
+}
+.game-update-modal-skip:hover {
+  border-color: #33475b;
+  color: var(--color-ink);
+}
+
+/* Settings screen. The mockup builds it out of the same raised panel the
+   rest of the app uses — flat surface-2 on a soft hairline, 10px radius —
+   rather than the white-alpha wash this screen carried before the redesign. */
+.settings-page {
+  max-width: 720px;
+  padding: 20px 28px 28px;
+  width: 100%;
+}
+.settings-back {
+  padding: 7px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #131d28;
+  color: #b3c4d4;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+.settings-back:hover {
+  border-color: #33475b;
+  color: var(--color-ink);
+}
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.settings-section {
+  padding: 16px 18px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 10px;
+  background: var(--color-surface-2);
+}
+.settings-section-head h2 {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.settings-section-head p {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-dim);
+}
+/* A head with no paragraph still needs the gap the paragraph would have left. */
+.settings-section-head:not(:has(p)) {
+  margin-bottom: 12px;
+}
+.settings-install-dir,
+.settings-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.settings-install-dir-path {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 11px;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: #0b1219;
+  color: #b3c4d4;
+  font-family: var(--font-data);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.settings-button {
+  padding: 7px 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--color-accent-lit), var(--color-accent-deep));
+  color: var(--color-accent-fg);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 16px -8px rgba(24, 155, 255, 0.8);
+  transition: filter 140ms ease;
+}
+.settings-button:hover {
+  filter: brightness(1.08);
+}
+.settings-toggle-label {
+  font-size: 13px;
+  color: #b3c4d4;
+}
+.settings-about-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.settings-about-row {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-dimmer);
+}
+.settings-about-row dt {
+  margin: 0;
+}
+.settings-about-row dd {
+  margin: 0;
+  font-family: var(--font-data);
+  color: #b3c4d4;
+}
+/* Settings gear icon needs the same hover affordance as other titlebar
+   buttons but the inline SVG must not eat clicks. */
+.titlebar-settings svg {
+  pointer-events: none;
+}
+
+/* ── UpdateToast ──────────────────────────────────────────────────────
+   Always-mounted toast pinned to the top-right of the window. Slides
+   down on entry, scoots out of the way of the titlebar drag region. */
+@keyframes update-toast-slide-in {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes update-toast-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.update-toast {
+  position: fixed;
+  top: 58px;
+  right: 18px;
+  z-index: 50;
+  width: 316px;
+  max-width: calc(100vw - 36px);
+  padding: 14px 15px;
+  border-radius: 10px;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  color: var(--color-ink);
+  box-shadow: 0 22px 44px -22px #000;
+  animation: update-toast-slide-in 220ms ease-out;
+  font-size: 12px;
+}
+.update-toast-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.update-toast-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.update-toast-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-dim);
+}
+.update-toast-text-error {
+  color: #fca5a5;
+}
+.update-toast-error-detail {
+  font-size: 11px;
+  color: var(--color-dimmer);
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.update-toast-percent {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: #b3c4d4;
+}
+.update-toast-bar {
+  height: 4px;
+  background: #182531;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.update-toast-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-deep), var(--color-accent));
+  transition: width 200ms ease;
+}
+.update-toast-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-data);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-dimmer);
+}
+.update-toast-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 2px;
+}
+.update-toast-button {
+  flex: 1;
+  padding: 7px 12px;
+  border-radius: 6px;
+  background: #131d28;
+  border: 1px solid var(--color-border);
+  color: #b3c4d4;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease, filter 140ms ease;
+}
+.update-toast-button:hover {
+  border-color: #33475b;
+  color: var(--color-ink);
+}
+.update-toast-button-primary {
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--color-accent-lit), var(--color-accent-deep));
+  color: var(--color-accent-fg);
+  font-weight: 600;
+  box-shadow: 0 6px 16px -8px rgba(24, 155, 255, 0.8);
+}
+.update-toast-button-primary:hover {
+  filter: brightness(1.08);
+  border-color: transparent;
+  color: var(--color-accent-fg);
+}
+.update-toast-spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #223140;
+  border-top-color: var(--color-accent);
+  animation: update-toast-spin 720ms linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── DrmPatchToast ────────────────────────────────────────────────────
+   Boot-time DRM patch sweep + post-launch warning. Stacks below the
+   electron-updater toast so both can coexist when an update lands at
+   the same boot as a previously-missed install. */
+.drm-toast-stack {
+  position: fixed;
+  top: 58px;
+  right: 18px;
+  z-index: 49;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+.drm-toast-stack > .drm-toast {
+  position: static;
+  pointer-events: auto;
+}
+.drm-toast-warning {
+  border-color: #b45309;
+}
+
+/* Toggle (small, pill-shaped) used by the auto-update setting. */
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 40px;
+  height: 22px;
+  border-radius: 20px;
+  background: #1c2733;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+.toggle-switch[data-checked='true'] {
+  background: #0d3d57;
+  border-color: #17618f;
+}
+.toggle-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-dim);
+  transition: transform 160ms ease, background 160ms ease;
+}
+.toggle-switch[data-checked='true'] .toggle-switch-knob {
+  transform: translateX(18px);
+  background: var(--color-accent);
+}
+.settings-toggle-row {
+  justify-content: space-between;
+}
+
+/* ═══════════════════════════ Redesign ═══════════════════════════ */
+
+/* Primary action. Every "do the thing" button in the app is this: the
+   saturated accent gradient with a lift, so there is never a question of
+   which control is the point of a screen. */
+.btn-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  /* Transparent rather than none: the secondary variant beside it carries a
+     real 1px border, and a borderless primary sat two pixels shorter in the
+     same row. Invisible either way — the fill is a gradient. */
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-accent-fg);
+  background: linear-gradient(180deg, var(--color-accent-lit), var(--color-accent-deep));
+  box-shadow: 0 10px 26px -10px rgba(24, 155, 255, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  text-shadow: 0 1px 2px rgba(11, 58, 107, 0.4);
+  transition: filter 140ms ease, transform 100ms ease, box-shadow 160ms ease;
+}
+/* Secondary actions that sit beside Play. Same box — padding, radius, font,
+   caps — so the row reads as one control group instead of three buttons that
+   happen to be adjacent. Only the fill differs. */
+.btn-play-secondary {
+  background: #131d28;
+  border: 1px solid var(--color-border);
+  color: #b3c4d4;
+  box-shadow: none;
+  text-shadow: none;
+}
+/* Doubled class, so this beats .btn-play:hover regardless of source order —
+   with equal specificity the primary's brightness was winning and washing
+   out the neutral fill. */
+.btn-play-secondary.btn-play-secondary:hover:not(:disabled) {
+  filter: none;
+  border-color: #33475b;
+  color: var(--color-ink);
+}
+/* Favourited keeps its gold edge while hovered. */
+.btn-play-on.btn-play-on:hover:not(:disabled) {
+  border-color: #6a5220;
+}
+/* Same doubling: the danger edge has to beat the secondary's neutral one. */
+.btn-play-danger.btn-play-danger:hover:not(:disabled) {
+  border-color: color-mix(in oklch, var(--color-bad) 60%, transparent);
+  color: var(--color-bad);
+}
+.btn-play-on {
+  border-color: #6a5220;
+  background: rgba(27, 20, 8, 0.7);
+}
+.btn-play:hover:not(:disabled) { filter: brightness(1.08); }
+.btn-play:active:not(:disabled) { transform: translateY(1px); }
+.btn-play:disabled {
+  cursor: not-allowed;
+  color: #6a7d8e;
+  background: #1c2733;
+  box-shadow: none;
+  text-shadow: none;
+}
+.btn-play:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Sidebar navigation row. The active marker is a lit edge rather than a
+   filled pill — it reads as "you are here" without competing with the Play
+   button for attention. */
+.nav-rail-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #8fa2b5;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+.nav-rail-item:hover {
+  background: #141e2a;
+  color: var(--color-ink);
+}
+.nav-rail-item-active {
+  background: #10202e;
+  color: var(--color-ink);
+}
+.nav-rail-item-active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--color-accent);
+  box-shadow: 0 0 12px var(--color-accent);
+}
+.nav-rail-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+/* Quick-switch strip in the titlebar: the pinned games, one click from
+   anywhere. Dimmed until hovered so the chrome stays quiet. */
+.game-tab {
+  -webkit-app-region: no-drag;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--color-surface);
+  opacity: 0.62;
+  cursor: pointer;
+  transition: opacity 140ms ease, border-color 140ms ease;
+}
+.game-tab:hover { opacity: 1; }
+.game-tab-active {
+  opacity: 1;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px rgba(24, 155, 255, 0.25),
+    0 0 14px -4px var(--color-accent);
+}
+.game-tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* System requirements: minimum and recommended as adjacent columns so the
+   two sets can be compared row by row, collapsing to one column when the
+   window is narrow or Steam publishes only the minimum. */
+.req-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  gap: 12px;
+}
+.req-column {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 10px;
+  padding: 15px 17px;
+}
+.req-column-recommended {
+  border-color: #1d3d52;
+}
+.req-column-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 11px;
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dimmer);
+}
+.req-column-recommended .req-column-head {
+  color: #7fd0ff;
+}
+.req-column .game-detail-reqs-table {
+  margin: 0;
+}
+
+/* Progress bars. One shape everywhere: a recessed track with an accent fill.
+   The live variant adds a highlight that is CLIPPED TO THE FILL — the sweep
+   belongs to the bytes that actually landed, not to the empty track ahead of
+   them — and travels once from the fill's left edge to its right edge. */
+.progress-track {
+  height: 4px;
+  border-radius: 3px;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+.progress-fill {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-accent-deep), var(--color-accent));
+  transition: width 240ms ease;
+}
+.progress-fill-live::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: progress-sweep 1.9s ease-in-out infinite;
+}
+@keyframes progress-sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(222%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill-live::after { animation: none; }
+}
+
+/* Patch-sweep toast can be folded away while it runs. */
+.drm-toast-collapse {
+  margin-left: 4px;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-dim);
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+.drm-toast-collapse:hover {
+  border-color: var(--color-accent);
+  color: var(--color-ink);
+}
+.drm-toast-collapse svg { transition: transform 180ms ease; }
+.drm-toast-collapsed .drm-toast-collapse svg { transform: rotate(180deg); }
+.drm-toast-collapsed { max-width: 260px; }
+.drm-toast-collapsed .update-toast-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Unlock — the single payoff control of the access screen. Inert until a
+   code is present, then it lights up so "I pasted it, now what?" answers
+   itself without reading anything. */
+.unlock-btn {
+  width: 100%;
+  margin-top: 4px;
+  padding: 13px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--color-surface-3);
+  color: #6c8093;
+  cursor: not-allowed;
+  transition: color 180ms ease, background 180ms ease, box-shadow 220ms ease,
+    border-color 180ms ease;
+}
+.unlock-btn-ready {
+  cursor: pointer;
+  color: var(--color-accent-fg);
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--color-accent-lit), var(--color-accent-deep));
+  animation: unlock-glow 2.2s ease-in-out infinite;
+}
+.unlock-btn-ready:hover { filter: brightness(1.06); }
+@keyframes unlock-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(24, 155, 255, 0.35),
+      0 10px 30px -10px rgba(24, 155, 255, 0.8),
+      0 0 18px -6px rgba(24, 155, 255, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(24, 155, 255, 0.55),
+      0 12px 34px -8px rgba(24, 155, 255, 1),
+      0 0 30px -2px rgba(24, 155, 255, 0.75);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .unlock-btn-ready { animation: none; }
+}
+
+/* The titlebar language picker is a drag-region exception like every other
+   control up there, and its menu has to escape the 44px-tall bar. */
+.titlebar-language,
+.titlebar-language button {
+  -webkit-app-region: no-drag;
+}
+
+/* Language flags: the wrapper owns the size and the clip, the SVG fills it.
+   Left to itself an inline <svg> with no width/height renders at its own
+   intrinsic size and spills past the rounded corners. */
+.lang-flag > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Dropdown menus get a slimmer version of the accent scrollbar — a 10 px bar
+   inside a 190 px popover reads as a second column rather than a control. */
+.dd-scroll::-webkit-scrollbar { width: 7px; }
+.dd-scroll::-webkit-scrollbar-thumb {
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+/* ═════════════════ Mockup parity: shared components ═════════════════
+   An element-by-element audit against design/launcher-redesign-battlenet.html
+   turned up ~215 differences, most of them the same handful of recipes
+   re-typed slightly differently at each call site. These classes ARE those
+   recipes, with the mockup's own values, so a screen picks up the design by
+   using them rather than by restating it. */
+
+/* Page header band — kicker, title, and whatever the screen puts on the right. */
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 28px 14px;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+.page-head h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+}
+.kicker {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #7fd0ff;
+}
+.page-head .kicker { margin-bottom: 5px; }
+
+/* Search field, with room for the leading magnifier. */
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  /* Shrinks instead of wrapping: a fixed 288px field pushed the sort control
+     onto a second row as soon as the window narrowed. */
+  flex: 0 1 288px;
+  min-width: 0;
+  padding: 7px 11px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-dimmer);
+}
+.search-field:focus-within { border-color: var(--color-accent); }
+.search-field input {
+  width: 100%;
+  /* An <input>'s intrinsic min-width is ~180px; without this the field
+     refuses to shrink and the head wraps onto a second row. */
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+/* Filter chip. */
+.chip {
+  flex: none;
+  white-space: nowrap;
+  padding: 5px 11px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-surface);
+  color: #8fa2b5;
+  font-size: 11.5px;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+.chip:hover { border-color: #2e4457; color: var(--color-ink); }
+.chip[aria-pressed='true'] {
+  background: #0d2c3f;
+  border-color: var(--color-accent);
+  color: #7fd0ff;
+}
+.chip-on {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0d2c3f;
+  border-color: var(--color-accent);
+  color: #7fd0ff;
+}
+.chip-more { border-style: dashed; color: #7fd0ff; border-color: #2b4a5f; }
+.chip-more[aria-expanded='true'] {
+  border-style: solid;
+  border-color: var(--color-accent);
+  background: #0d2c3f;
+}
+.chip .count {
+  margin-left: 4px;
+  font-family: var(--font-data);
+  font-size: 10px;
+  opacity: 0.55;
+}
+
+/* Compact button pair used inside cards and rows. One height, one radius. */
+.btn-m {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #131d28;
+  color: #b3c4d4;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease, filter 140ms ease;
+}
+.btn-m:hover:not(:disabled) { border-color: #33475b; color: var(--color-ink); }
+.btn-m:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-m:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn-m-primary {
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--color-accent-lit), var(--color-accent-deep));
+  color: var(--color-accent-fg);
+  font-weight: 600;
+  box-shadow: 0 6px 16px -8px rgba(24, 155, 255, 0.8);
+}
+.btn-m-primary:hover:not(:disabled) { filter: brightness(1.08); color: var(--color-accent-fg); }
+.btn-m-danger:hover:not(:disabled) {
+  border-color: color-mix(in oklch, var(--color-bad) 60%, transparent);
+  color: var(--color-bad);
+}
+
+/* Section heading with the trailing hairline that carries it to the edge. */
+.sec-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+}
+.sec-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-soft);
+}
+
+/* Raised panel: settings groups, stat blocks, list rows. */
+.panel {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.list-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 9px;
+  background: var(--color-surface-2);
+}
+.row-name { font-family: var(--font-display); font-size: 13.5px; font-weight: 600; }
+.row-sub { font-family: var(--font-data); font-size: 10.5px; color: var(--color-dimmer); }
+.row-num {
+  min-width: 78px;
+  text-align: right;
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: #b3c4d4;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  padding: 54px 20px;
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--color-dimmer);
+}
+
+/* Genre / meta pill on the game page. */
+.tag-pill {
+  padding: 4px 9px;
+  border: 1px solid #24384a;
+  border-radius: 5px;
+  background: rgba(16, 28, 39, 0.7);
+  color: #9db2c6;
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Stats. */
+.stat-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 10px;
+  background: var(--color-surface-2);
+}
+.stat-hero b {
+  font-family: var(--font-data);
+  font-size: 34px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+.stat-hero span {
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dimmer);
+}
+.stat-bar { height: 8px; border-radius: 4px; background: #182531; overflow: hidden; }
+.stat-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-deep), var(--color-accent));
+}
+
+/* Settings path field + toggle. */
+.path-field {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 11px;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: #0b1219;
+  color: #b3c4d4;
+  font-family: var(--font-data);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Screen body under a .page-head. */
+.page-content { padding: 20px 28px 28px; }
+.rows { display: grid; gap: 8px; }
+
+/* Locked catalog card: the gate is stated over the art rather than in the
+   actions row, so a card you can't act on doesn't grow a button-shaped
+   sentence where every other card has a button. */
+.lock-veil {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 6px;
+  padding: 8px;
+  background: rgba(5, 10, 15, 0.8);
+  color: #93a5b8;
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* Genre pill that navigates. Same pill, plus the affordances a control needs:
+   it lifts on hover and takes a focus ring, so it reads as clickable without
+   becoming a second kind of chip. */
+.tag-link {
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+}
+.tag-link:hover {
+  border-color: var(--color-accent);
+  background: #0d2c3f;
+  color: #7fd0ff;
+}
+.tag-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* The hero's primary action is auto-width, so swapping "Play" for the longer
+   busy label shoved Uninstall and the favourite toggle sideways. One measure
+   for every state it can be in keeps the row still. */
+.game-detail-action .btn-play:not(.btn-play-secondary) {
+  min-width: 150px;
+}
+
+/* Spinner for a button that has been pressed and is waiting on the network.
+   Sized to the label it sits next to and drawn in the button's own colour,
+   so it works on the accent fill and the neutral one alike. */
+.btn-spinner {
+  width: 13px;
+  height: 13px;
+  flex: none;
+  border-radius: 50%;
+  border: 2px solid color-mix(in oklch, currentColor 25%, transparent);
+  border-top-color: currentColor;
+  animation: btn-spin 720ms linear infinite;
+}
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+/* A button waiting on the network is not "unavailable" — it is working. Keep
+   it legible rather than fading it to the disabled grey. */
+.btn-play:disabled[aria-busy='true'],
+.btn-m:disabled[aria-busy='true'] {
+  opacity: 1;
+  cursor: progress;
+}
+.btn-play:disabled[aria-busy='true'] {
+  color: var(--color-accent-fg);
+  background: linear-gradient(180deg, var(--color-accent-lit), var(--color-accent-deep));
+  filter: saturate(0.75) brightness(0.92);
+}

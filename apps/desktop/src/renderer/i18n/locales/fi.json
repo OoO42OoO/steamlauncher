@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "Jonossa…",
+    "connecting": "Yhdistetään…",
+    "authenticating": "Kirjaudutaan Steamiin…",
+    "fetching_manifest": "Haetaan tiedostoluetteloa…",
+    "downloading_with_label": "Ladataan: {{label}}",
+    "downloading_no_label": "Ladataan sisältöä",
+    "validating_with_label": "Tarkistetaan: {{label}}",
+    "validating_no_label": "Tarkistetaan tiedostoja",
+    "finalizing": "Viimeistellään…",
+    "installing_redist_with_label": "Asennetaan komponenttia: {{label}}",
+    "installing_redist_no_label": "Asennetaan komponentteja",
+    "counter": " ({{current}} / {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} t {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Osat",
+    "catalog": "Katalogi",
+    "library": "Kirjasto",
+    "stats": "Tilastot",
+    "downloads": "Lataukset",
+    "settings": "Asetukset",
+    "game": "Peli"
+  },
+  "titlebar": {
+    "trust": "Luottamus",
+    "trust_aria": "Luottamustaso {{level}}",
+    "logout": "Kirjaudu ulos",
+    "language_aria": "Kieli",
+    "close": "Sulje",
+    "settings": "Asetukset",
+    "minimize": "Pienennä",
+    "session_aria": "Istunnossa jäljellä oleva aika",
+    "session_label": "Istunto",
+    "session_expired": "Tehtävä vaaditaan",
+    "session_task_due": "Vaaditaan"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Koodia ei löytynyt. Tarkista, että liitit täyden koodin sivustolta.",
+      "expired": "Koodi on jo käytetty tai vanhentunut. Luo uusi sivustolla.",
+      "service_unavailable": "Palvelu on tilapäisesti pois käytöstä. Yritä uudelleen minuutin kuluttua.",
+      "network": "Ei yhteyttä palvelimeen.",
+      "unknown": "Tuntematon kirjautumisvirhe."
+    },
+    "title": "Hanki pääsy käynnistimeen",
+    "description": "Hanki pääsykoodi Telegram-botistamme ja liitä se alle avataksesi käynnistimen.",
+    "code_label": "Pääsykoodi",
+    "submit": "Avaa käynnistin",
+    "submitting": "Avataan…",
+    "open_site": "Siirry bottiin saadaksesi avaimen",
+    "step_open_bot": "Avaa Telegram-botti",
+    "step_paste_code": "Kopioi ja liitä pääsykoodisi",
+    "code_placeholder": "Liitä koodisi tähän",
+    "no_account_note": "Käynnistintiliä tai salasanaa ei tarvita."
+  },
+  "library": {
+    "loading": "Ladataan kirjastoa…",
+    "error_title": "Kirjaston lataus epäonnistui",
+    "error_hint": "Palvelu ei ole käytettävissä tai internetyhteyttä ei ole.",
+    "retry": "Yritä uudelleen",
+    "empty_title": "Kirjasto on tyhjä",
+    "empty_hint": "Luottamustasollasi ei ole vielä tilejä saatavilla. Suorita tehtäviä nostaaksesi trust leveliä ja avataksesi lisää pelejä.",
+    "locked_hint": "Avautuu tasolla trust level {{level}}",
+    "play": "Pelaa",
+    "cancel_aria": "Peruuta lataus",
+    "install": "Asenna",
+    "search_placeholder": "Etsi pelejä",
+    "search_no_results": "Ei pelejä haulle \"{{query}}\"",
+    "installed_empty_title": "Ei asennettuja pelejä",
+    "installed_empty_hint": "Asennetut pelit näkyvät täällä. Valitse peli katalogista.",
+    "genre_all": "Kaikki",
+    "genre_filter_aria": "Suodata lajityypin mukaan",
+    "pin": "Lisää suosikkeihin",
+    "unpin": "Poista suosikeista",
+    "genre_more": "{{count}} lisää",
+    "genre_search": "Etsi luokkaa",
+    "genre_none": "Ei tuloksia",
+    "genre_selected": "Valittu: {{count}}",
+    "genre_reset": "Tyhjennä",
+    "genre_done": "Valmis",
+    "state_installed": "Asennettu",
+    "state_downloading": "Ladataan",
+    "state_error": "Virhe",
+    "state_not_installed": "Ei asennettu",
+    "state_locked": "Lukittu",
+    "more_actions": "Lisää toimintoja",
+    "genre_loading": "Luokat: {{known}} / {{total}}",
+    "sort_aria": "Lajittele pelit",
+    "sort_name": "Nimen mukaan",
+    "sort_installed": "Asennetut ensin",
+    "sort_played": "Eniten pelatut",
+    "open_folder": "Asennuskansio",
+    "catalog_kicker": "Luettelo · {{count}} saatavilla",
+    "catalog_heading": "Kaikki pelit",
+    "installed_kicker": "Kirjasto · {{count}} asennettu",
+    "installed_heading": "Levyllä",
+    "genre_no_results": "Tässä luokassa ei ole pelejä",
+    "starting": "Valmistellaan…"
+  },
+  "tasks": {
+    "loading": "Ladataan tehtäviä…",
+    "error_title": "Tehtävien lataus epäonnistui",
+    "error_hint": "Palvelu on tilapäisesti pois käytöstä.",
+    "active_section": "Aktiiviset",
+    "active_empty": "Ei aktiivisia tehtäviä juuri nyt. Palaa myöhemmin.",
+    "open": "Avaa",
+    "completing": "…",
+    "complete": "Valmis",
+    "completed_section": "Valmiit",
+    "kicker": "Tehtävät",
+    "heading": "Pelien käyttöoikeus"
+  },
+  "stats": {
+    "loading": "Ladataan tilastoja…",
+    "error_title": "Tilastojen lataus epäonnistui",
+    "empty_title": "Mitään ei ole vielä pelattu",
+    "empty_hint": "Kun käynnistät pelin, jokaisen pelin peliaika näkyy täällä.",
+    "total_played": "Pelattu yhteensä",
+    "kicker": "Tilastot",
+    "heading": "Peliaika"
+  },
+  "downloads": {
+    "empty_title": "Ei aktiivisia latauksia",
+    "empty_hint": "Aloita asennus Kirjastosta — eteneminen näkyy täällä.",
+    "failed_label": "Lataus epäonnistui",
+    "kicker": "Lataukset · {{count}} aktiivista",
+    "heading": "Jono",
+    "stop_all": "Pysäytä kaikki"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Odotetaan Steam Guard -koodia sähköpostista…",
+      "received": "Steam Guard -koodi vastaanotettu"
+    },
+    "error": {
+      "account_unconfigured": "Tiliä ei ole määritetty sähköpostin Guard-varajärjestelyä varten (palvelimella ei ole sähköpostitunnuksia)",
+      "account_missing_license": "Tilillä ei ole tätä peliä",
+      "empty_download": "Lataus päättyi ilman tiedostoja",
+      "unsupported_platform": "Peli ei tue alustaasi ({{current}}). Saatavilla: {{list}}",
+      "account_missing_license_other_platform": "Peli ostettiin toiselle alustalle. Tämä versio on saatavilla: {{list}}",
+      "authorization": "Valtuutusvirhe",
+      "auth_guard": "Auth Guard -virhe",
+      "disk_full": "Ei riittävästi vapaata levytilaa",
+      "game_session_required": "Käyttöoikeus suljettu — suorita tehtävä Telegram-botissa"
+    }
+  },
+  "gameDetail": {
+    "back": "Takaisin",
+    "loading": "Ladataan…",
+    "unavailable": "Pelin tietoja ei ole saatavilla",
+    "developer": "Kehittäjä",
+    "publisher": "Julkaisija",
+    "released": "Julkaistu",
+    "trailers": "Trailerit",
+    "screenshots": "Kuvakaappaukset",
+    "about": "Kuvaus",
+    "system_requirements": "Järjestelmävaatimukset",
+    "download": "Lataa",
+    "cancel": "Peruuta",
+    "prev_screenshot": "Edellinen kuvakaappaus",
+    "next_screenshot": "Seuraava kuvakaappaus",
+    "close_lightbox": "Sulje",
+    "req_minimum": "Vähimmäis",
+    "req_recommended": "Suositellut",
+    "screenshot_n": "Kuvakaappaus {{n}}",
+    "news": "Uutta",
+    "browse_genre": "Näytä {{genre}}-pelit"
+  },
+  "settings": {
+    "title": "Asetukset",
+    "back": "Takaisin",
+    "language": {
+      "title": "Kieli",
+      "description": "Sovelluksen käyttöliittymän kieli."
+    },
+    "install_dir": {
+      "title": "Pelikirjaston sijainti",
+      "description": "Mihin ladatut pelit tallennetaan.",
+      "change": "Vaihda",
+      "default": "(oletussijainti)"
+    },
+    "auto_update": {
+      "title": "Päivitykset",
+      "description": "Asenna päivitykset automaattisesti, kun sovellus suljetaan.",
+      "label": "Asenna päivitykset automaattisesti"
+    },
+    "about_section_label": "Tietoja",
+    "app_version_label": "Versio",
+    "platform_label": "Alusta",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "käyttöjärjestelmäsi"
+  },
+  "tray": {
+    "show": "Avaa",
+    "quit": "Lopeta"
+  },
+  "updater": {
+    "checking": "Tarkistetaan päivityksiä",
+    "available": "Versio {{version}} saatavilla",
+    "downloading": "Ladataan {{version}}",
+    "downloaded": "Päivitys {{version}} valmis",
+    "error": "Päivitysvirhe",
+    "restart": "Asenna ja käynnistä uudelleen",
+    "later": "Myöhemmin",
+    "eta": "Aikaa jäljellä",
+    "speed": "Nopeus"
+  },
+  "game": {
+    "checking_updates": "Tarkistetaan päivityksiä…",
+    "downloading_update": "Ladataan päivitystä",
+    "launching": "Käynnistetään…",
+    "launch_without_check_confirm": "Päivityksen tarkistus epäonnistui. Käynnistetäänkö silti?",
+    "uninstall": "Poista asennus",
+    "uninstall_confirm": "Poistetaanko peli ja kaikki paikalliset tiedostot?",
+    "uninstall_success": "Peli poistettu",
+    "uninstall_blocked_running": "Sulje peli ensin",
+    "uninstall_failed": "Poisto epäonnistui: {{reason}}",
+    "patching_drm": "Poistetaan Steam DRM…",
+    "update_available": "Päivitys on saatavilla. Ladataanko ennen käynnistystä?",
+    "update_install": "Lataa ja pelaa",
+    "update_skip": "Pelaa päivittämättä",
+    "already_running": "Peli on jo käynnissä"
+  },
+  "gameSession": {
+    "title": "Pelien käyttöoikeus on suljettu",
+    "description": "Suorita tehtävä Telegram-botissa — käyttöoikeus aukeaa heti sen jälkeen ja lataus jatkuu samasta kohdasta.",
+    "later": "Myöhemmin",
+    "open_bot": "Avaa botti ja tee tehtävä",
+    "done": "Tehtävä suoritettu",
+    "checking": "Tarkistetaan…",
+    "still_locked": "Käyttöoikeus ei ole vielä auki. Viimeistele tehtävä botissa ja yritä uudelleen."
+  },
+  "sidebar": {
+    "favorites": "Suosikit",
+    "add": "Lisää luettelosta",
+    "empty": "Kiinnitä peli luettelon tähdellä",
+    "about": "Tietoja",
+    "unpin": "Irrota",
+    "size": "Koko",
+    "played": "Pelattu",
+    "status": "Tila"
+  },
+  "drmBoot": {
+    "collapse": "Tiivistä",
+    "expand": "Laajenna",
+    "patching": "Asennetaan korjauksia {{count}} peliin…",
+    "patching_other": "Asennetaan korjauksia {{count}} peliin…",
+    "done": "Valmis",
+    "warning_title": "DRM-korjaus kesken",
+    "warning_detail": "Peli saattaa vaatia Steamin käynnissäoloa."
+  },
+  "errors": {
+    "server_unreachable": "Palvelimeen ei saatu yhteyttä"
+  }
+}

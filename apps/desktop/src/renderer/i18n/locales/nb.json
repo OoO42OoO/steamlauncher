@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "I kø…",
+    "connecting": "Kobler til…",
+    "authenticating": "Logger inn på Steam…",
+    "fetching_manifest": "Henter filliste…",
+    "downloading_with_label": "Laster ned: {{label}}",
+    "downloading_no_label": "Laster ned innhold",
+    "validating_with_label": "Verifiserer: {{label}}",
+    "validating_no_label": "Verifiserer filer",
+    "finalizing": "Fullfører…",
+    "installing_redist_with_label": "Installerer komponent: {{label}}",
+    "installing_redist_no_label": "Installerer komponenter",
+    "counter": " ({{current}} av {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} t {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Seksjoner",
+    "catalog": "Katalog",
+    "library": "Bibliotek",
+    "stats": "Statistikk",
+    "downloads": "Nedlastinger",
+    "settings": "Innstillinger",
+    "game": "Spill"
+  },
+  "titlebar": {
+    "trust": "Tillit",
+    "trust_aria": "Tillitsnivå {{level}}",
+    "logout": "Logg ut",
+    "language_aria": "Språk",
+    "close": "Lukk",
+    "settings": "Innstillinger",
+    "minimize": "Minimer",
+    "session_aria": "Gjenstående tid i økten",
+    "session_label": "Økt",
+    "session_expired": "Oppgave kreves",
+    "session_task_due": "Kreves"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Koden ble ikke funnet. Sjekk at du har limt inn hele koden fra nettsiden.",
+      "expired": "Koden er allerede brukt eller har utløpt. Generer en ny på nettsiden.",
+      "service_unavailable": "Tjenesten er midlertidig utilgjengelig. Prøv igjen om et minutt.",
+      "network": "Ingen tilkobling til serveren.",
+      "unknown": "Ukjent innloggingsfeil."
+    },
+    "title": "Få tilgang til launcheren",
+    "description": "Få en tilgangskode i Telegram-boten vår, og lim den inn nedenfor for å låse opp launcheren.",
+    "code_label": "Tilgangskode",
+    "submit": "Lås opp launcheren",
+    "submitting": "Låser opp…",
+    "open_site": "Gå til boten for å få en nøkkel",
+    "step_open_bot": "Åpne Telegram-boten",
+    "step_paste_code": "Kopier og lim inn tilgangskoden",
+    "code_placeholder": "Lim inn koden her",
+    "no_account_note": "Ingen launcher-konto eller passord kreves."
+  },
+  "library": {
+    "loading": "Laster bibliotek…",
+    "error_title": "Kunne ikke laste biblioteket",
+    "error_hint": "Tjenesten er utilgjengelig eller det er ingen internettforbindelse.",
+    "retry": "Prøv igjen",
+    "empty_title": "Biblioteket er tomt",
+    "empty_hint": "Det er ingen kontoer tilgjengelig på ditt tillitsnivå ennå. Fullfør oppgaver for å øke trust level og låse opp flere spill.",
+    "locked_hint": "Låses opp på trust level {{level}}",
+    "play": "Spill",
+    "cancel_aria": "Avbryt nedlasting",
+    "install": "Installer",
+    "search_placeholder": "Søk spill",
+    "search_no_results": "Ingen spill samsvarer med \"{{query}}\"",
+    "installed_empty_title": "Ingen installerte spill",
+    "installed_empty_hint": "Installerte spill vises her. Åpne katalogen for å velge et spill.",
+    "genre_all": "Alle",
+    "genre_filter_aria": "Filtrer etter sjanger",
+    "pin": "Legg til i favoritter",
+    "unpin": "Fjern fra favoritter",
+    "genre_more": "{{count}} til",
+    "genre_search": "Finn en kategori",
+    "genre_none": "Ingenting funnet",
+    "genre_selected": "Valgt: {{count}}",
+    "genre_reset": "Nullstill",
+    "genre_done": "Ferdig",
+    "state_installed": "Installert",
+    "state_downloading": "Laster ned",
+    "state_error": "Feil",
+    "state_not_installed": "Ikke installert",
+    "state_locked": "Låst",
+    "more_actions": "Flere handlinger",
+    "genre_loading": "Kategorier: {{known}} av {{total}}",
+    "sort_aria": "Sorter spill",
+    "sort_name": "Etter navn",
+    "sort_installed": "Installerte først",
+    "sort_played": "Mest spilt",
+    "open_folder": "Installasjonsmappe",
+    "catalog_kicker": "Katalog · {{count}} tilgjengelige",
+    "catalog_heading": "Alle spill",
+    "installed_kicker": "Bibliotek · {{count}} installert",
+    "installed_heading": "På disken",
+    "genre_no_results": "Ingen spill i denne kategorien",
+    "starting": "Forbereder…"
+  },
+  "tasks": {
+    "loading": "Laster oppgaver…",
+    "error_title": "Kunne ikke laste oppgaver",
+    "error_hint": "Tjenesten er midlertidig utilgjengelig.",
+    "active_section": "Aktive",
+    "active_empty": "Ingen aktive oppgaver akkurat nå. Kom tilbake senere.",
+    "open": "Åpne",
+    "completing": "…",
+    "complete": "Fullført",
+    "completed_section": "Fullførte",
+    "kicker": "Oppgaver",
+    "heading": "Spilltilgang"
+  },
+  "stats": {
+    "loading": "Laster statistikk…",
+    "error_title": "Kunne ikke laste statistikk",
+    "empty_title": "Ingenting spilt ennå",
+    "empty_hint": "Når du starter et spill, vises speletiden for hver tittel her.",
+    "total_played": "Totalt spilt",
+    "kicker": "Statistikk",
+    "heading": "Spilletid"
+  },
+  "downloads": {
+    "empty_title": "Ingen aktive nedlastinger",
+    "empty_hint": "Start en installasjon i Biblioteket — fremdriften vises her.",
+    "failed_label": "Nedlasting mislyktes",
+    "kicker": "Nedlastinger · {{count}} aktive",
+    "heading": "Kø",
+    "stop_all": "Stopp alle"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Venter på Steam Guard-kode via e-post…",
+      "received": "Steam Guard-kode mottatt"
+    },
+    "error": {
+      "account_unconfigured": "Kontoen er ikke konfigurert for Guard-reserve via e-post (ingen e-postlegitimasjon på serveren)",
+      "account_missing_license": "Kontoen eier ikke dette spillet",
+      "empty_download": "Nedlasting fullført uten filer",
+      "unsupported_platform": "Spillet støtter ikke plattformen din ({{current}}). Tilgjengelig for: {{list}}",
+      "account_missing_license_other_platform": "Spillet ble kjøpt for en annen plattform. Denne versjonen er tilgjengelig for: {{list}}",
+      "authorization": "Autoriseringsfeil",
+      "auth_guard": "Auth Guard-feil",
+      "disk_full": "Ikke nok ledig diskplass",
+      "game_session_required": "Tilgang stengt — fullfør oppgaven i Telegram-boten"
+    }
+  },
+  "gameDetail": {
+    "back": "Tilbake",
+    "loading": "Laster…",
+    "unavailable": "Spillinformasjon er ikke tilgjengelig",
+    "developer": "Utvikler",
+    "publisher": "Utgiver",
+    "released": "Utgitt",
+    "trailers": "Trailere",
+    "screenshots": "Skjermbilder",
+    "about": "Beskrivelse",
+    "system_requirements": "Systemkrav",
+    "download": "Last ned",
+    "cancel": "Avbryt",
+    "prev_screenshot": "Forrige skjermbilde",
+    "next_screenshot": "Neste skjermbilde",
+    "close_lightbox": "Lukk",
+    "req_minimum": "Minimum",
+    "req_recommended": "Anbefalt",
+    "screenshot_n": "Skjermbilde {{n}}",
+    "news": "Nyheter",
+    "browse_genre": "Vis {{genre}}-spill"
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "back": "Tilbake",
+    "language": {
+      "title": "Språk",
+      "description": "Visningsspråk for appen."
+    },
+    "install_dir": {
+      "title": "Plassering av spillbibliotek",
+      "description": "Hvor nedlastede spill lagres.",
+      "change": "Endre",
+      "default": "(standardplassering)"
+    },
+    "auto_update": {
+      "title": "Oppdateringer",
+      "description": "Installer oppdateringer automatisk når appen avsluttes.",
+      "label": "Installer oppdateringer automatisk"
+    },
+    "about_section_label": "Om",
+    "app_version_label": "Versjon",
+    "platform_label": "Plattform",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "OS-et ditt"
+  },
+  "tray": {
+    "show": "Åpne",
+    "quit": "Avslutt"
+  },
+  "updater": {
+    "checking": "Ser etter oppdateringer",
+    "available": "Versjon {{version}} er tilgjengelig",
+    "downloading": "Laster ned {{version}}",
+    "downloaded": "Oppdatering {{version}} er klar",
+    "error": "Oppdateringsfeil",
+    "restart": "Installer og start på nytt",
+    "later": "Senere",
+    "eta": "Gjenstår",
+    "speed": "Hastighet"
+  },
+  "game": {
+    "checking_updates": "Søker etter oppdateringer…",
+    "downloading_update": "Laster ned oppdatering",
+    "launching": "Starter…",
+    "launch_without_check_confirm": "Oppdateringskontrollen mislyktes. Start likevel?",
+    "uninstall": "Avinstaller",
+    "uninstall_confirm": "Avinstaller spillet og slett alle lokale filer?",
+    "uninstall_success": "Spillet er avinstallert",
+    "uninstall_blocked_running": "Lukk spillet først",
+    "uninstall_failed": "Avinstallering mislyktes: {{reason}}",
+    "patching_drm": "Fjerner Steam-DRM…",
+    "update_available": "En oppdatering er tilgjengelig. Laste den ned før start?",
+    "update_install": "Last ned og spill",
+    "update_skip": "Spill uten oppdatering",
+    "already_running": "Det spillet kjører allerede"
+  },
+  "gameSession": {
+    "title": "Spilltilgang er stengt",
+    "description": "Fullfør oppgaven i Telegram-boten — tilgangen åpnes rett etterpå, og nedlastingen fortsetter der den stoppet.",
+    "later": "Senere",
+    "open_bot": "Åpne boten og gjør oppgaven",
+    "done": "Oppgave fullført",
+    "checking": "Sjekker…",
+    "still_locked": "Tilgangen er ikke åpen ennå. Fullfør oppgaven i boten og prøv igjen."
+  },
+  "sidebar": {
+    "favorites": "Favoritter",
+    "add": "Legg til fra katalogen",
+    "empty": "Fest et spill med stjernen i katalogen",
+    "about": "Om spillet",
+    "unpin": "Løsne",
+    "size": "Størrelse",
+    "played": "Spilt",
+    "status": "Status"
+  },
+  "drmBoot": {
+    "collapse": "Skjul",
+    "expand": "Utvid",
+    "patching": "Bruker oppdateringer på {{count}} spill…",
+    "patching_other": "Bruker oppdateringer på {{count}} spill…",
+    "done": "Ferdig",
+    "warning_title": "DRM-oppdatering ufullstendig",
+    "warning_detail": "Spillet kan kreve at Steam kjører."
+  },
+  "errors": {
+    "server_unreachable": "Kunne ikke koble til serveren"
+  }
+}

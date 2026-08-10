@@ -1,0 +1,200 @@
+# electron-builder configuration for the steam-client desktop app.
+#
+# This file is consumed by `electron-builder` (no extra arg → reads
+# `electron-builder.yml` next to package.json). Targets and bundled
+# resources are defined here so package.json stays clean.
+#
+# Cross-build notes:
+#   - We invoke from Linux. Windows targets work via prebuilt better-sqlite3
+#     (electron-builder asks @electron/rebuild to fetch the win32 binary).
+#   - macOS is intentionally not configured — the user does not ship Mac.
+#   - Code signing is left disabled. Windows users will see a SmartScreen
+#     warning until an OV/EV cert is added.
+
+appId: com.steamlauncher.client
+productName: Steam Client
+copyright: ${author}
+
+# Auto-update feed (electron-updater, generic provider). `generic` = a plain
+# directory served over HTTPS that hosts the latest.yml + installer files
+# electron-builder emits. This only makes the build GENERATE latest.yml and
+# the .blockmap in dist/ — nothing is uploaded automatically (we never pass
+# --publish).
+#
+# The URL is not written down here: it is deployment configuration, taken
+# from STEAM_CLIENT_UPDATES_URL in the build environment. src/main/updater.ts
+# reads the same variable, so the two cannot drift.
+publish:
+  provider: generic
+  url: ${env.STEAM_CLIENT_UPDATES_URL}
+
+# Stamp icon + DPI manifest + version info into Steam Client.exe after the
+# app directory is laid out but BEFORE it is packed into the NSIS installer
+# and the portable zip — that way every artifact ships the branded exe.
+# (A post-build rcedit pass is too late: the installer/zip already contain
+# the stock Electron exe, and rcedit on the NSIS installer itself strips
+# its appended payload, corrupting the installer.)
+afterPack: ../../scripts/afterpack-icon.cjs
+
+# Where electron-builder picks up the JS bundles produced by
+# `electron-vite build`.
+directories:
+  output: dist
+  buildResources: build
+
+# Files included in the asar archive. Built JS lives in `out/`. The repo
+# root and node_modules already get the standard treatment from electron-builder
+# (it filters dev-only deps).
+files:
+  - out/**/*
+  - package.json
+
+# Native extras unpacked from the asar: better-sqlite3's prebuilt .node and
+# anything that needs to be on disk for spawn(). Without `asarUnpack` the
+# .node binary won't load from inside the asar.
+asarUnpack:
+  - "**/node_modules/better-sqlite3/**"
+
+# DepotDownloader (per-platform). Lives outside the asar — DD spawns from
+# the filesystem and we don't want to extract a 78 MB blob on every launch.
+# The renderer talks to it through `resolveDepotDownloaderPath()` which
+# matches `<resources>/vendor/<platform>-<arch>/DepotDownloader[.exe]`.
+#
+# We bundle ONLY the binary the target platform needs, so the Linux
+# AppImage doesn't carry the .exe and vice-versa.
+#
+# Native messaging host (host.js) ships alongside DD so Chrome can spawn
+# it from a stable on-disk path. The launcher (host.sh / host.bat) is
+# generated at runtime by `installNativeMessagingManifests`.
+extraResources:
+  - from: ../../vendor/linux-x64
+    to: vendor/linux-x64
+    filter:
+      - "**/*"
+    # Conditional: only include in linux builds. electron-builder doesn't
+    # support per-target inline filters, so we use platform overrides below.
+  - from: native-messaging-host
+    to: native-messaging-host
+    filter:
+      - "**/*"
+
+# ── Linux ─────────────────────────────────────────────────────────────
+linux:
+  category: Game
+  synopsis: Steam Launcher
+  description: |
+    Steam Launcher — a launcher for playing games from a shared Steam account
+    pool. Includes DepotDownloader integration.
+  target:
+    - target: AppImage
+      arch: x64
+    - target: deb
+      arch: x64
+  # Shorter package name so /usr/bin/steam-client is the resulting symlink
+  # in the .deb instead of "@steam-client-desktop".
+  executableName: steam-client
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  desktop:
+    entry:
+      Name: Steam Launcher
+      Comment: Steam Launcher
+      Categories: Game;Network
+      MimeType: x-scheme-handler/steam-client;
+  extraResources:
+    - from: ../../vendor/linux-x64
+      to: vendor/linux-x64
+      filter:
+        - "**/*"
+    - from: native-messaging-host
+      to: native-messaging-host
+      filter:
+        - "**/*"
+    # Tray icon — main/tray.ts loads via process.resourcesPath/tray-icon.png
+    # on Linux. The 1000×1000 icon.png is the wrong size for AppIndicator;
+    # we ship a 32×32 PNG dedicated to the tray.
+    - from: build/icon-32.png
+      to: tray-icon.png
+
+deb:
+  packageName: steam-client
+  artifactName: steam-client_${version}_${arch}.${ext}
+  depends:
+    - libgtk-3-0
+    - libnotify4
+    - libnss3
+    - libxss1
+    - libxtst6
+    - xdg-utils
+
+# ── Windows ───────────────────────────────────────────────────────────
+# Target choice rationale:
+#   `nsis` ships a real installer (Steam Client Setup x.y.z-x64.exe) that
+#   drops Start Menu / Desktop shortcuts, registers the `steam-client://`
+#   deeplink, and offers an uninstaller. Built natively on Windows hosts
+#   (electron-builder downloads the NSIS toolchain at build time — no
+#   `makensis.exe` on PATH, no wine). Works on Linux/macOS too via the
+#   bundled NSIS.
+#   `zip` is kept for users who want a portable folder (no install,
+#   no Start Menu hooks, run Steam Client.exe from anywhere).
+#
+# signAndEditExecutable stays OFF: electron-builder drives the
+# executable resource edit through winCodeSign (a 5 MB bundle of
+# cross-platform signtool + rcedit). Its 7z archive is full of POSIX
+# symlinks; on a vanilla Windows dev account (no SeCreateSymbolicLink
+# / Dev Mode) the unpack fails every time. We do the icon + manifest
+# update ourselves in the afterPack hook (scripts/afterpack-icon.cjs)
+# using the rcedit binary downloaded to tools/. That keeps the build
+# fully under our control and works on locked-down dev boxes.
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch: x64
+    - target: zip
+      arch: x64
+  signAndEditExecutable: false
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  extraResources:
+    - from: ../../vendor/win-x64
+      to: vendor/win-x64
+      filter:
+        - "**/*"
+    - from: native-messaging-host
+      to: native-messaging-host
+      filter:
+        - "**/*"
+    # Tray icon — main/tray.ts loads via process.resourcesPath/icon.ico on
+    # Windows. The .ico has 32×32 + 48×48 frames so Windows can scale to
+    # the 16×16 tray slot without blurring a 1000×1000 PNG.
+    - from: build/icon.ico
+      to: icon.ico
+
+nsis:
+  # Pinned so the rename of appId cannot orphan the installs already out
+  # there. electron-builder derives the uninstall registry key from a UUIDv5
+  # of appId, so changing the id would have produced a second Add/Remove
+  # entry and let an update land beside the old copy instead of over it.
+  # This is that derivation for the id the shipped builds carried; keeping it
+  # fixed makes the rename invisible to the installer. Do not regenerate it.
+  guid: 2262396e-90f9-50dc-9fa6-690cb2ad30a0
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Steam Client
+  artifactName: ${productName}-Setup-${version}-${arch}.${ext}
+  deleteAppDataOnUninstall: false
+  # differentialPackage defaults to true, which builds a delta
+  # updater (~400 KB) instead of a full installer — the delta only
+  # contains the changed parts and needs the previous version
+  # already installed. That's a fine auto-update target but
+  # useless as a first-time installer. Force a full install image.
+  differentialPackage: false
+
+# ── Protocol handler ─────────────────────────────────────────────────
+# Registers `steam-client://` deeplinks at install time on both OSes.
+protocols:
+  - name: Steam Client deeplink
+    schemes:
+      - steam-client

@@ -1,0 +1,268 @@
+{
+  "stage": {
+    "queued": "В очереди…",
+    "connecting": "Подключение…",
+    "authenticating": "Авторизация в Steam…",
+    "fetching_manifest": "Получение списка файлов…",
+    "downloading_with_label": "Загрузка: {{label}}",
+    "downloading_no_label": "Загрузка контента",
+    "validating_with_label": "Проверка: {{label}}",
+    "validating_no_label": "Проверка файлов",
+    "finalizing": "Завершение…",
+    "installing_redist_with_label": "Установка компонента: {{label}}",
+    "installing_redist_no_label": "Установка компонентов",
+    "counter": " ({{current}} из {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} мин",
+    "hours_minutes_short": "{{hours}} ч {{minutes}} мин"
+  },
+  "nav": {
+    "sections": "Разделы",
+    "catalog": "Каталог",
+    "library": "Библиотека",
+    "stats": "Статистика",
+    "downloads": "Загрузки",
+    "settings": "Настройки",
+    "game": "Игра"
+  },
+  "titlebar": {
+    "trust": "Доверие",
+    "trust_aria": "Уровень доверия {{level}}",
+    "logout": "Выйти",
+    "language_aria": "Язык",
+    "settings": "Настройки",
+    "minimize": "Свернуть",
+    "close": "Закрыть",
+    "session_aria": "Сколько осталось до следующего задания",
+    "session_label": "Сессия",
+    "session_expired": "Нужно задание",
+    "session_task_due": "Требуется"
+  },
+  "settings": {
+    "title": "Настройки",
+    "back": "Назад",
+    "language": {
+      "title": "Язык",
+      "description": "Язык интерфейса приложения."
+    },
+    "install_dir": {
+      "title": "Расположение библиотеки игр",
+      "description": "Где будут храниться скачанные игры.",
+      "change": "Изменить",
+      "default": "(по умолчанию)"
+    },
+    "auto_update": {
+      "title": "Обновления",
+      "description": "Автоматически устанавливать обновления при выходе из приложения.",
+      "label": "Автоматически устанавливать обновления"
+    },
+    "about_section_label": "О приложении",
+    "app_version_label": "Версия",
+    "platform_label": "Платформа",
+    "electron_version_label": "Electron"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Код не найден. Проверьте, что вы вставили полный код с сайта.",
+      "expired": "Код уже использован или истёк. Сгенерируйте новый на сайте.",
+      "service_unavailable": "Сервис временно недоступен. Попробуйте через минуту.",
+      "network": "Нет соединения с сервером.",
+      "unknown": "Неизвестная ошибка входа."
+    },
+    "title": "Получите доступ к лаунчеру",
+    "description": "Получите код доступа в нашем Telegram-боте, затем вставьте его ниже, чтобы разблокировать лаунчер.",
+    "code_label": "Код доступа",
+    "submit": "Разблокировать лаунчер",
+    "submitting": "Разблокируем…",
+    "open_site": "Перейти в бота для получения ключа",
+    "step_open_bot": "Откройте Telegram-бота",
+    "step_paste_code": "Скопируйте и вставьте код доступа",
+    "code_placeholder": "Вставьте код сюда",
+    "no_account_note": "Аккаунт и пароль для лаунчера не нужны."
+  },
+  "library": {
+    "loading": "Загружаем библиотеку…",
+    "error_title": "Не удалось загрузить библиотеку",
+    "error_hint": "Сервис временно недоступен или нет интернета.",
+    "retry": "Повторить",
+    "empty_title": "Библиотека пуста",
+    "empty_hint": "На вашем уровне доверия пока нет доступных аккаунтов. Выполняйте задания, чтобы повысить trust level и открыть больше игр.",
+    "locked_hint": "Открывается с trust level {{level}}",
+    "play": "Играть",
+    "cancel_aria": "Отменить скачивание",
+    "install": "Установить",
+    "search_placeholder": "Поиск игр",
+    "search_no_results": "Нет игр по запросу «{{query}}»",
+    "installed_empty_title": "Нет установленных игр",
+    "installed_empty_hint": "Установленные игры появятся здесь. Откройте «Каталог», чтобы выбрать игру.",
+    "genre_all": "Все",
+    "genre_filter_aria": "Фильтр по жанру",
+    "pin": "В избранное",
+    "unpin": "Убрать из избранного",
+    "genre_more": "Ещё {{count}}",
+    "genre_search": "Найти категорию",
+    "genre_none": "Ничего не найдено",
+    "genre_selected": "Выбрано: {{count}}",
+    "genre_reset": "Сбросить",
+    "genre_done": "Готово",
+    "state_installed": "Установлена",
+    "state_downloading": "Качается",
+    "state_error": "Ошибка",
+    "state_not_installed": "Не установлена",
+    "state_locked": "Заблокирована",
+    "more_actions": "Ещё действия",
+    "genre_loading": "Категории: {{known}} из {{total}}",
+    "sort_aria": "Сортировка игр",
+    "sort_name": "По названию",
+    "sort_installed": "Сначала установленные",
+    "sort_played": "Больше всего наиграно",
+    "open_folder": "Папка установки",
+    "catalog_kicker": "Каталог · доступно: {{count}}",
+    "catalog_heading": "Все игры",
+    "installed_kicker": "Библиотека · установлено: {{count}}",
+    "installed_heading": "На диске",
+    "genre_no_results": "В этой категории игр нет",
+    "starting": "Подготовка…"
+  },
+  "tasks": {
+    "loading": "Загружаем задания…",
+    "error_title": "Не удалось загрузить задания",
+    "error_hint": "Сервис временно недоступен.",
+    "active_section": "Активные",
+    "active_empty": "Сейчас нет активных заданий. Загляните позже.",
+    "open": "Открыть",
+    "completing": "…",
+    "complete": "Выполнено",
+    "completed_section": "Выполнено",
+    "kicker": "Задания",
+    "heading": "Доступ к играм"
+  },
+  "stats": {
+    "loading": "Загружаем статистику…",
+    "error_title": "Не удалось загрузить статистику",
+    "empty_title": "Ещё ничего не сыграно",
+    "empty_hint": "Как только вы запустите игру, здесь появится время по каждому тайтлу.",
+    "total_played": "Всего сыграно",
+    "kicker": "Статистика",
+    "heading": "Наигранное время"
+  },
+  "downloads": {
+    "empty_title": "Нет активных загрузок",
+    "empty_hint": "Запусти установку на странице «Библиотека» — её прогресс появится здесь.",
+    "failed_label": "Не удалось скачать",
+    "kicker": "Загрузки · активных: {{count}}",
+    "heading": "Очередь",
+    "stop_all": "Остановить все"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Ожидание Steam Guard кода в email…",
+      "received": "Получен Steam Guard код"
+    },
+    "error": {
+      "account_unconfigured": "Аккаунт не настроен для email Guard fallback (нет email-creds на бэкенде)",
+      "account_missing_license": "У аккаунта нет лицензии на эту игру",
+      "account_missing_license_other_platform": "Игра куплена для другой платформы. Эта версия игры доступна для: {{list}}",
+      "unsupported_platform": "Игра не поддерживает вашу платформу ({{current}}). Доступно для: {{list}}",
+      "empty_download": "Скачивание завершилось без файлов",
+      "authorization": "Ошибка авторизации",
+      "auth_guard": "Ошибка Auth Guard",
+      "disk_full": "Недостаточно свободного места на диске",
+      "game_session_required": "Доступ закрыт — выполните задание в Telegram-боте"
+    }
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "вашу ОС"
+  },
+  "gameDetail": {
+    "back": "Назад",
+    "loading": "Загрузка…",
+    "unavailable": "Информация об игре недоступна",
+    "developer": "Разработчик",
+    "publisher": "Издатель",
+    "released": "Дата выхода",
+    "trailers": "Трейлеры",
+    "screenshots": "Скриншоты",
+    "about": "Описание",
+    "system_requirements": "Системные требования",
+    "download": "Скачать",
+    "cancel": "Отменить",
+    "prev_screenshot": "Предыдущий скриншот",
+    "next_screenshot": "Следующий скриншот",
+    "close_lightbox": "Закрыть",
+    "req_minimum": "Минимальные",
+    "req_recommended": "Рекомендуемые",
+    "screenshot_n": "Скриншот {{n}}",
+    "news": "Что нового",
+    "browse_genre": "Показать игры в категории «{{genre}}»"
+  },
+  "tray": {
+    "show": "Открыть",
+    "quit": "Выйти"
+  },
+  "updater": {
+    "checking": "Проверяем обновления",
+    "available": "Доступно обновление {{version}}",
+    "downloading": "Загрузка {{version}}",
+    "downloaded": "Обновление {{version}} готово",
+    "error": "Ошибка обновления",
+    "restart": "Установить и перезапустить",
+    "later": "Позже",
+    "eta": "Осталось",
+    "speed": "Скорость"
+  },
+  "game": {
+    "checking_updates": "Проверка обновлений…",
+    "downloading_update": "Скачивание обновления",
+    "patching_drm": "Снятие Steam DRM…",
+    "launching": "Запуск…",
+    "launch_without_check_confirm": "Не удалось проверить обновление. Запустить без проверки?",
+    "update_available": "Доступно обновление. Скачать перед запуском?",
+    "update_install": "Скачать и играть",
+    "update_skip": "Играть без обновления",
+    "uninstall": "Удалить",
+    "uninstall_confirm": "Удалить игру и все локальные файлы?",
+    "uninstall_success": "Игра удалена",
+    "uninstall_blocked_running": "Сначала закройте игру",
+    "uninstall_failed": "Не удалось удалить: {{reason}}",
+    "already_running": "Эта игра уже запущена"
+  },
+  "drmBoot": {
+    "patching_one": "Применяем патчи к {{count}} игре…",
+    "patching_few": "Применяем патчи к {{count}} играм…",
+    "patching_many": "Применяем патчи к {{count}} играм…",
+    "patching_other": "Применяем патчи к {{count}} играм…",
+    "patching": "Применяем патчи к {{count}} играм…",
+    "done": "Готово",
+    "warning_title": "Патч DRM не завершён",
+    "warning_detail": "Игра может потребовать запущенный Steam.",
+    "collapse": "Свернуть",
+    "expand": "Развернуть"
+  },
+  "gameSession": {
+    "title": "Доступ к играм закрыт",
+    "description": "Выполните задание в Telegram-боте — после этого доступ откроется, и загрузка продолжится с того же места.",
+    "later": "Позже",
+    "open_bot": "Открыть бота и выполнить задание",
+    "done": "Задание выполнено",
+    "checking": "Проверяем…",
+    "still_locked": "Доступ пока не открыт. Завершите задание в боте и нажмите ещё раз."
+  },
+  "sidebar": {
+    "favorites": "Избранное",
+    "add": "Добавить из каталога",
+    "empty": "Закрепите игру звёздочкой в каталоге",
+    "about": "Об игре",
+    "unpin": "Открепить",
+    "size": "Размер",
+    "played": "Сыграно",
+    "status": "Статус"
+  },
+  "errors": {
+    "server_unreachable": "Не удалось подключиться к серверу"
+  }
+}

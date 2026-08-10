@@ -1,0 +1,59 @@
+{
+  "name": "@steam-client/desktop",
+  "productName": "steam-client",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Steam Launcher",
+  "homepage": "https://t.me/launcherfreebot",
+  "author": {
+    "name": "Steam Launcher"
+  },
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "postinstall": "electron-rebuild -f -w better-sqlite3",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "test": "vitest run",
+    "package:linux": "electron-vite build && node ../../scripts/with-env.cjs electron-builder --linux --x64",
+    "package:win": "electron-vite build && node ../../scripts/with-env.cjs electron-builder --win --x64",
+    "package:all": "electron-vite build && electron-builder --linux --win --x64"
+  },
+  "dependencies": {
+    "@steam-client/shared": "workspace:*",
+    "better-sqlite3": "12.8.0",
+    "electron-log": "5.4.3",
+    "electron-updater": "^6.8.3",
+    "express": "5.2.1",
+    "i18next": "^26.0.8",
+    "ps-list": "9.0.0",
+    "react-i18next": "^17.0.6",
+    "steam-totp": "2.1.2",
+    "steam-user": "5.3.0",
+    "ws": "8.20.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "4.0.3",
+    "@tailwindcss/postcss": "4.2.2",
+    "@types/better-sqlite3": "7.6.13",
+    "@types/express": "5.0.6",
+    "@types/node": "22.19.17",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@types/ws": "8.18.1",
+    "@vitejs/plugin-react": "5.2.0",
+    "autoprefixer": "10.4.27",
+    "electron": "41.2.0",
+    "electron-builder": "^26.8.1",
+    "electron-vite": "5.0.0",
+    "postcss": "8.5.9",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "tailwindcss": "4.2.2",
+    "typescript": "5.9.3",
+    "vite": "7.3.2",
+    "vitest": "3.2.4"
+  }
+}

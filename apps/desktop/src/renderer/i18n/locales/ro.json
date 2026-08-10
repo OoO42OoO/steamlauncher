@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "În așteptare…",
+    "connecting": "Se conectează…",
+    "authenticating": "Conectare la Steam…",
+    "fetching_manifest": "Se obține lista de fișiere…",
+    "downloading_with_label": "Se descarcă: {{label}}",
+    "downloading_no_label": "Se descarcă conținutul",
+    "validating_with_label": "Verificare: {{label}}",
+    "validating_no_label": "Verificare fișiere",
+    "finalizing": "Finalizare…",
+    "installing_redist_with_label": "Se instalează componenta: {{label}}",
+    "installing_redist_no_label": "Se instalează componentele",
+    "counter": " ({{current}} din {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} h {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Secțiuni",
+    "catalog": "Catalog",
+    "library": "Bibliotecă",
+    "stats": "Statistici",
+    "downloads": "Descărcări",
+    "settings": "Setări",
+    "game": "Joc"
+  },
+  "titlebar": {
+    "trust": "Încredere",
+    "trust_aria": "Nivel de încredere {{level}}",
+    "logout": "Deconectare",
+    "language_aria": "Limbă",
+    "close": "Închide",
+    "settings": "Setări",
+    "minimize": "Minimizează",
+    "session_aria": "Timp rămas în sesiune",
+    "session_label": "Sesiune",
+    "session_expired": "Sarcină necesară",
+    "session_task_due": "Necesar"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Cod negăsit. Verifică să fi introdus codul complet de pe site.",
+      "expired": "Codul a fost deja folosit sau a expirat. Generează unul nou pe site.",
+      "service_unavailable": "Serviciu temporar indisponibil. Încearcă din nou într-un minut.",
+      "network": "Fără conexiune la server.",
+      "unknown": "Eroare de autentificare necunoscută."
+    },
+    "title": "Obține acces la launcher",
+    "description": "Obține un cod de acces în botul nostru de Telegram, apoi lipește-l mai jos pentru a debloca launcherul.",
+    "code_label": "Cod de acces",
+    "submit": "Deblochează launcherul",
+    "submitting": "Se deblochează…",
+    "open_site": "Mergi la bot pentru a obține o cheie",
+    "step_open_bot": "Deschide botul de Telegram",
+    "step_paste_code": "Copiază și lipește codul de acces",
+    "code_placeholder": "Lipește codul aici",
+    "no_account_note": "Nu este necesar un cont sau o parolă pentru launcher."
+  },
+  "library": {
+    "loading": "Se încarcă biblioteca…",
+    "error_title": "Biblioteca nu a putut fi încărcată",
+    "error_hint": "Serviciu indisponibil sau nu există conexiune la internet.",
+    "retry": "Reîncearcă",
+    "empty_title": "Biblioteca este goală",
+    "empty_hint": "Nu există încă conturi disponibile pentru nivelul tău de încredere. Îndeplinește sarcini pentru a crește trust level și a debloca mai multe jocuri.",
+    "locked_hint": "Se deblochează la trust level {{level}}",
+    "play": "Joacă",
+    "cancel_aria": "Anulează descărcarea",
+    "install": "Instalează",
+    "search_placeholder": "Caută jocuri",
+    "search_no_results": "Niciun joc pentru „{{query}}\"",
+    "installed_empty_title": "Niciun joc instalat",
+    "installed_empty_hint": "Jocurile instalate vor apărea aici. Deschide catalogul pentru a alege unul.",
+    "genre_all": "Toate",
+    "genre_filter_aria": "Filtrează după gen",
+    "pin": "Adaugă la favorite",
+    "unpin": "Elimină din favorite",
+    "genre_more": "Încă {{count}}",
+    "genre_search": "Găsește o categorie",
+    "genre_none": "Nu s-a găsit nimic",
+    "genre_selected": "Selectate: {{count}}",
+    "genre_reset": "Resetează",
+    "genre_done": "Gata",
+    "state_installed": "Instalat",
+    "state_downloading": "Se descarcă",
+    "state_error": "Eroare",
+    "state_not_installed": "Neinstalat",
+    "state_locked": "Blocat",
+    "more_actions": "Mai multe acțiuni",
+    "genre_loading": "Categorii: {{known}} din {{total}}",
+    "sort_aria": "Sortează jocurile",
+    "sort_name": "După nume",
+    "sort_installed": "Întâi cele instalate",
+    "sort_played": "Cele mai jucate",
+    "open_folder": "Folder de instalare",
+    "catalog_kicker": "Catalog · {{count}} disponibile",
+    "catalog_heading": "Toate jocurile",
+    "installed_kicker": "Bibliotecă · {{count}} instalate",
+    "installed_heading": "Pe disc",
+    "genre_no_results": "Niciun joc în această categorie",
+    "starting": "Se pregătește…"
+  },
+  "tasks": {
+    "loading": "Se încarcă sarcinile…",
+    "error_title": "Sarcinile nu au putut fi încărcate",
+    "error_hint": "Serviciu temporar indisponibil.",
+    "active_section": "Active",
+    "active_empty": "Nu există sarcini active acum. Revino mai târziu.",
+    "open": "Deschide",
+    "completing": "…",
+    "complete": "Finalizat",
+    "completed_section": "Finalizate",
+    "kicker": "Sarcini",
+    "heading": "Acces la jocuri"
+  },
+  "stats": {
+    "loading": "Se încarcă statisticile…",
+    "error_title": "Statisticile nu au putut fi încărcate",
+    "empty_title": "Încă nimic jucat",
+    "empty_hint": "După ce lansezi un joc, aici va apărea timpul de joc pentru fiecare titlu.",
+    "total_played": "Total jucat",
+    "kicker": "Statistici",
+    "heading": "Timp jucat"
+  },
+  "downloads": {
+    "empty_title": "Nu există descărcări active",
+    "empty_hint": "Pornește o instalare din Bibliotecă — progresul va apărea aici.",
+    "failed_label": "Descărcare eșuată",
+    "kicker": "Descărcări · {{count}} active",
+    "heading": "Coadă",
+    "stop_all": "Oprește tot"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Se așteaptă codul Steam Guard prin e-mail…",
+      "received": "Cod Steam Guard primit"
+    },
+    "error": {
+      "account_unconfigured": "Cont neconfigurat pentru rezerva Guard prin e-mail (lipsesc credențialele e-mail pe server)",
+      "account_missing_license": "Contul nu deține acest joc",
+      "empty_download": "Descărcare finalizată fără fișiere",
+      "unsupported_platform": "Jocul nu acceptă platforma ta ({{current}}). Disponibil pentru: {{list}}",
+      "account_missing_license_other_platform": "Jocul a fost cumpărat pentru altă platformă. Această versiune este disponibilă pentru: {{list}}",
+      "authorization": "Eroare de autorizare",
+      "auth_guard": "Eroare Auth Guard",
+      "disk_full": "Spațiu liber insuficient pe disc",
+      "game_session_required": "Acces închis — îndeplinește sarcina în botul de Telegram"
+    }
+  },
+  "gameDetail": {
+    "back": "Înapoi",
+    "loading": "Se încarcă…",
+    "unavailable": "Informațiile despre joc nu sunt disponibile",
+    "developer": "Dezvoltator",
+    "publisher": "Editor",
+    "released": "Data lansării",
+    "trailers": "Trailere",
+    "screenshots": "Capturi de ecran",
+    "about": "Descriere",
+    "system_requirements": "Cerințe de sistem",
+    "download": "Descarcă",
+    "cancel": "Anulează",
+    "prev_screenshot": "Captură anterioară",
+    "next_screenshot": "Captură următoare",
+    "close_lightbox": "Închide",
+    "req_minimum": "Minime",
+    "req_recommended": "Recomandate",
+    "screenshot_n": "Captură {{n}}",
+    "news": "Noutăți",
+    "browse_genre": "Vezi jocurile {{genre}}"
+  },
+  "settings": {
+    "title": "Setări",
+    "back": "Înapoi",
+    "language": {
+      "title": "Limbă",
+      "description": "Limba interfeței aplicației."
+    },
+    "install_dir": {
+      "title": "Locația bibliotecii de jocuri",
+      "description": "Unde vor fi stocate jocurile descărcate.",
+      "change": "Schimbă",
+      "default": "(locație implicită)"
+    },
+    "auto_update": {
+      "title": "Actualizări",
+      "description": "Instalează automat actualizările la închiderea aplicației.",
+      "label": "Instalează actualizările automat"
+    },
+    "about_section_label": "Despre",
+    "app_version_label": "Versiune",
+    "platform_label": "Platformă",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "sistemul tău"
+  },
+  "tray": {
+    "show": "Deschide",
+    "quit": "Ieșire"
+  },
+  "updater": {
+    "checking": "Se caută actualizări",
+    "available": "Versiunea {{version}} este disponibilă",
+    "downloading": "Se descarcă {{version}}",
+    "downloaded": "Actualizarea {{version}} este gata",
+    "error": "Eroare la actualizare",
+    "restart": "Instalează și repornește",
+    "later": "Mai târziu",
+    "eta": "Rămas",
+    "speed": "Viteză"
+  },
+  "game": {
+    "checking_updates": "Verificarea actualizărilor…",
+    "downloading_update": "Se descarcă actualizarea",
+    "launching": "Se lansează…",
+    "launch_without_check_confirm": "Verificarea actualizărilor a eșuat. Lansezi oricum?",
+    "uninstall": "Dezinstalează",
+    "uninstall_confirm": "Dezinstalați jocul și ștergeți toate fișierele locale?",
+    "uninstall_success": "Joc dezinstalat",
+    "uninstall_blocked_running": "Închideți mai întâi jocul",
+    "uninstall_failed": "Dezinstalarea a eșuat: {{reason}}",
+    "patching_drm": "Se elimină DRM-ul Steam…",
+    "update_available": "Este disponibilă o actualizare. O descarci înainte de lansare?",
+    "update_install": "Descarcă și joacă",
+    "update_skip": "Joacă fără actualizare",
+    "already_running": "Acest joc rulează deja"
+  },
+  "gameSession": {
+    "title": "Accesul la jocuri este închis",
+    "description": "Îndeplinește sarcina în botul de Telegram — accesul se deschide imediat după, iar descărcarea continuă din același loc.",
+    "later": "Mai târziu",
+    "open_bot": "Deschide botul și fă sarcina",
+    "done": "Sarcină îndeplinită",
+    "checking": "Se verifică…",
+    "still_locked": "Accesul nu este încă deschis. Finalizează sarcina în bot și încearcă din nou."
+  },
+  "sidebar": {
+    "favorites": "Favorite",
+    "add": "Adaugă din catalog",
+    "empty": "Fixează un joc cu steluța din catalog",
+    "about": "Despre joc",
+    "unpin": "Desprinde",
+    "size": "Dimensiune",
+    "played": "Jucat",
+    "status": "Stare"
+  },
+  "drmBoot": {
+    "collapse": "Restrânge",
+    "expand": "Extinde",
+    "patching": "Se aplică patch-uri la {{count}} jocuri…",
+    "patching_other": "Se aplică patch-uri la {{count}} jocuri…",
+    "done": "Gata",
+    "warning_title": "Patch DRM incomplet",
+    "warning_detail": "Jocul poate necesita ca Steam să ruleze."
+  },
+  "errors": {
+    "server_unreachable": "Nu s-a putut conecta la server"
+  }
+}

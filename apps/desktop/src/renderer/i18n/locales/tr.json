@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "Sırada…",
+    "connecting": "Bağlanıyor…",
+    "authenticating": "Steam'e giriş yapılıyor…",
+    "fetching_manifest": "Dosya listesi alınıyor…",
+    "downloading_with_label": "İndiriliyor: {{label}}",
+    "downloading_no_label": "İçerik indiriliyor",
+    "validating_with_label": "Doğrulanıyor: {{label}}",
+    "validating_no_label": "Dosyalar doğrulanıyor",
+    "finalizing": "Tamamlanıyor…",
+    "installing_redist_with_label": "Bileşen yükleniyor: {{label}}",
+    "installing_redist_no_label": "Bileşenler yükleniyor",
+    "counter": " ({{current}} / {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} dk",
+    "hours_minutes_short": "{{hours}} sa {{minutes}} dk"
+  },
+  "nav": {
+    "sections": "Bölümler",
+    "catalog": "Katalog",
+    "library": "Kütüphane",
+    "stats": "İstatistikler",
+    "downloads": "İndirmeler",
+    "settings": "Ayarlar",
+    "game": "Oyun"
+  },
+  "titlebar": {
+    "trust": "Güven",
+    "trust_aria": "Güven seviyesi {{level}}",
+    "logout": "Çıkış yap",
+    "language_aria": "Dil",
+    "close": "Kapat",
+    "settings": "Ayarlar",
+    "minimize": "Küçült",
+    "session_aria": "Bu oturumda kalan süre",
+    "session_label": "Oturum",
+    "session_expired": "Görev gerekli",
+    "session_task_due": "Gerekli"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Kod bulunamadı. Siteden tam kodu yapıştırdığınızdan emin olun.",
+      "expired": "Kod zaten kullanılmış veya süresi dolmuş. Sitede yeni bir tane oluşturun.",
+      "service_unavailable": "Hizmet geçici olarak kullanılamıyor. Bir dakika içinde tekrar deneyin.",
+      "network": "Sunucuya bağlantı yok.",
+      "unknown": "Bilinmeyen oturum açma hatası."
+    },
+    "title": "Başlatıcıya erişim alın",
+    "description": "Telegram botumuzdan bir erişim kodu alın, ardından başlatıcının kilidini açmak için aşağıya yapıştırın.",
+    "code_label": "Erişim kodu",
+    "submit": "Başlatıcıyı aç",
+    "submitting": "Kilit açılıyor…",
+    "open_site": "Anahtar almak için bota git",
+    "step_open_bot": "Telegram botunu açın",
+    "step_paste_code": "Erişim kodunuzu kopyalayıp yapıştırın",
+    "code_placeholder": "Kodunuzu buraya yapıştırın",
+    "no_account_note": "Başlatıcı hesabı veya şifre gerekmez."
+  },
+  "library": {
+    "loading": "Kütüphane yükleniyor…",
+    "error_title": "Kütüphane yüklenemedi",
+    "error_hint": "Hizmet kullanılamıyor veya internet bağlantısı yok.",
+    "retry": "Tekrar dene",
+    "empty_title": "Kütüphane boş",
+    "empty_hint": "Güven seviyenizde henüz kullanılabilir hesap yok. Trust seviyenizi yükseltmek ve daha fazla oyunun kilidini açmak için görevleri tamamlayın.",
+    "locked_hint": "Trust level {{level}} ile açılır",
+    "play": "Oyna",
+    "cancel_aria": "İndirmeyi iptal et",
+    "install": "Yükle",
+    "search_placeholder": "Oyun ara",
+    "search_no_results": "\"{{query}}\" için oyun yok",
+    "installed_empty_title": "Yüklü oyun yok",
+    "installed_empty_hint": "Yüklenen oyunlar burada görünecek. Bir oyun seçmek için kataloğu açın.",
+    "genre_all": "Tümü",
+    "genre_filter_aria": "Türe göre filtrele",
+    "pin": "Favorilere ekle",
+    "unpin": "Favorilerden çıkar",
+    "genre_more": "{{count}} tane daha",
+    "genre_search": "Kategori bul",
+    "genre_none": "Hiçbir şey bulunamadı",
+    "genre_selected": "Seçili: {{count}}",
+    "genre_reset": "Sıfırla",
+    "genre_done": "Tamam",
+    "state_installed": "Yüklü",
+    "state_downloading": "İndiriliyor",
+    "state_error": "Hata",
+    "state_not_installed": "Yüklü değil",
+    "state_locked": "Kilitli",
+    "more_actions": "Daha fazla",
+    "genre_loading": "Kategoriler: {{known}} / {{total}}",
+    "sort_aria": "Oyunları sırala",
+    "sort_name": "Ada göre",
+    "sort_installed": "Önce yüklü olanlar",
+    "sort_played": "En çok oynananlar",
+    "open_folder": "Kurulum klasörü",
+    "catalog_kicker": "Katalog · {{count}} mevcut",
+    "catalog_heading": "Tüm oyunlar",
+    "installed_kicker": "Kitaplık · {{count}} yüklü",
+    "installed_heading": "Diskte",
+    "genre_no_results": "Bu kategoride oyun yok",
+    "starting": "Hazırlanıyor…"
+  },
+  "tasks": {
+    "loading": "Görevler yükleniyor…",
+    "error_title": "Görevler yüklenemedi",
+    "error_hint": "Hizmet geçici olarak kullanılamıyor.",
+    "active_section": "Etkin",
+    "active_empty": "Şu anda etkin görev yok. Daha sonra tekrar bakın.",
+    "open": "Aç",
+    "completing": "…",
+    "complete": "Tamamlandı",
+    "completed_section": "Tamamlananlar",
+    "kicker": "Görevler",
+    "heading": "Oyun erişimi"
+  },
+  "stats": {
+    "loading": "İstatistikler yükleniyor…",
+    "error_title": "İstatistikler yüklenemedi",
+    "empty_title": "Henüz oynanmış oyun yok",
+    "empty_hint": "Bir oyun başlattığınızda, her başlığın oynanma süresi burada görünür.",
+    "total_played": "Toplam oynanan",
+    "kicker": "İstatistikler",
+    "heading": "Oynanan süre"
+  },
+  "downloads": {
+    "empty_title": "Etkin indirme yok",
+    "empty_hint": "Kitaplık sayfasından bir kurulum başlat — ilerlemesi burada görünür.",
+    "failed_label": "İndirme başarısız",
+    "kicker": "İndirmeler · {{count}} etkin",
+    "heading": "Kuyruk",
+    "stop_all": "Tümünü durdur"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "E-postadan Steam Guard kodu bekleniyor…",
+      "received": "Steam Guard kodu alındı"
+    },
+    "error": {
+      "account_unconfigured": "Hesap, e-posta Guard yedeği için yapılandırılmamış (sunucuda e-posta kimlik bilgileri yok)",
+      "account_missing_license": "Hesap bu oyuna sahip değil",
+      "empty_download": "İndirme dosyasız tamamlandı",
+      "unsupported_platform": "Oyun platformunuzu desteklemiyor ({{current}}). Şunlar için kullanılabilir: {{list}}",
+      "account_missing_license_other_platform": "Oyun başka bir platform için satın alındı. Bu sürüm şunlar için kullanılabilir: {{list}}",
+      "authorization": "Yetkilendirme hatası",
+      "auth_guard": "Auth Guard hatası",
+      "disk_full": "Yeterli boş disk alanı yok",
+      "game_session_required": "Erişim kapalı — Telegram botundaki görevi tamamlayın"
+    }
+  },
+  "gameDetail": {
+    "back": "Geri",
+    "loading": "Yükleniyor…",
+    "unavailable": "Oyun bilgisi mevcut değil",
+    "developer": "Geliştirici",
+    "publisher": "Yayıncı",
+    "released": "Çıkış tarihi",
+    "trailers": "Fragmanlar",
+    "screenshots": "Ekran görüntüleri",
+    "about": "Açıklama",
+    "system_requirements": "Sistem gereksinimleri",
+    "download": "İndir",
+    "cancel": "İptal",
+    "prev_screenshot": "Önceki ekran görüntüsü",
+    "next_screenshot": "Sonraki ekran görüntüsü",
+    "close_lightbox": "Kapat",
+    "req_minimum": "Minimum",
+    "req_recommended": "Önerilen",
+    "screenshot_n": "Ekran görüntüsü {{n}}",
+    "news": "Yenilikler",
+    "browse_genre": "{{genre}} oyunlarını göster"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "back": "Geri",
+    "language": {
+      "title": "Dil",
+      "description": "Uygulama arayüzü dili."
+    },
+    "install_dir": {
+      "title": "Oyun kitaplığı konumu",
+      "description": "İndirilen oyunların saklanacağı yer.",
+      "change": "Değiştir",
+      "default": "(varsayılan konum)"
+    },
+    "auto_update": {
+      "title": "Güncellemeler",
+      "description": "Uygulama kapanırken güncellemeleri otomatik olarak yükle.",
+      "label": "Güncellemeleri otomatik olarak yükle"
+    },
+    "about_section_label": "Hakkında",
+    "app_version_label": "Sürüm",
+    "platform_label": "Platform",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "işletim sisteminiz"
+  },
+  "tray": {
+    "show": "Aç",
+    "quit": "Çıkış"
+  },
+  "updater": {
+    "checking": "Güncellemeler kontrol ediliyor",
+    "available": "{{version}} sürümü mevcut",
+    "downloading": "{{version}} indiriliyor",
+    "downloaded": "{{version}} güncellemesi hazır",
+    "error": "Güncelleme hatası",
+    "restart": "Yükle ve yeniden başlat",
+    "later": "Daha sonra",
+    "eta": "Kalan süre",
+    "speed": "Hız"
+  },
+  "game": {
+    "checking_updates": "Güncellemeler kontrol ediliyor…",
+    "downloading_update": "Güncelleme indiriliyor",
+    "launching": "Başlatılıyor…",
+    "launch_without_check_confirm": "Güncelleme denetimi başarısız. Yine de başlatılsın mı?",
+    "uninstall": "Kaldır",
+    "uninstall_confirm": "Oyunu ve tüm yerel dosyaları kaldırmak istiyor musunuz?",
+    "uninstall_success": "Oyun kaldırıldı",
+    "uninstall_blocked_running": "Önce oyunu kapatın",
+    "uninstall_failed": "Kaldırma başarısız: {{reason}}",
+    "patching_drm": "Steam DRM kaldırılıyor…",
+    "update_available": "Bir güncelleme mevcut. Başlatmadan önce indirilsin mi?",
+    "update_install": "İndir ve oyna",
+    "update_skip": "Güncellemeden oyna",
+    "already_running": "Bu oyun zaten çalışıyor"
+  },
+  "gameSession": {
+    "title": "Oyun erişimi kapalı",
+    "description": "Telegram botundaki görevi tamamlayın — erişim hemen ardından açılır ve indirme kaldığı yerden devam eder.",
+    "later": "Daha sonra",
+    "open_bot": "Botu aç ve görevi yap",
+    "done": "Görev tamamlandı",
+    "checking": "Kontrol ediliyor…",
+    "still_locked": "Erişim henüz açık değil. Görevi botta tamamlayıp tekrar deneyin."
+  },
+  "sidebar": {
+    "favorites": "Favoriler",
+    "add": "Katalogdan ekle",
+    "empty": "Katalogdaki yıldızla bir oyunu sabitleyin",
+    "about": "Oyun hakkında",
+    "unpin": "Sabitlemeyi kaldır",
+    "size": "Boyut",
+    "played": "Oynanan",
+    "status": "Durum"
+  },
+  "drmBoot": {
+    "collapse": "Daralt",
+    "expand": "Genişlet",
+    "patching": "{{count}} oyuna yamalar uygulanıyor…",
+    "patching_other": "{{count}} oyuna yamalar uygulanıyor…",
+    "done": "Bitti",
+    "warning_title": "DRM yaması tamamlanmadı",
+    "warning_detail": "Oyun, Steam'in çalışmasını gerektirebilir."
+  },
+  "errors": {
+    "server_unreachable": "Sunucuya bağlanılamadı"
+  }
+}

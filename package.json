@@ -1,0 +1,28 @@
+{
+  "name": "steam-client",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Steam-like client with browser extension time ledger",
+  "scripts": {
+    "dev": "pnpm --parallel --filter=./apps/* dev",
+    "dev:desktop": "pnpm --filter=@steam-client/desktop dev",
+    "dev:extension": "pnpm --filter=@steam-client/extension dev",
+    "register-deeplink": "bash scripts/register-deeplink.sh",
+    "typecheck": "pnpm -r typecheck",
+    "package": "bash scripts/package.sh",
+    "package:linux": "bash scripts/package.sh linux",
+    "package:win": "bash scripts/package-win.sh"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "electron",
+      "esbuild",
+      "@wxt-dev/webextension-polyfill"
+    ]
+  }
+}

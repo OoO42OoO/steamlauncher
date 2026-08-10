@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      Content Security Policy (development fallback).
+      `unsafe-inline` on style-src is needed for Tailwind v4 runtime JIT and
+      Vite HMR styles. `unsafe-inline` on script-src is needed for Vite HMR
+      injection during `electron-vite dev`. Packaged builds REPLACE this
+      header at runtime in main/security.ts via
+      `session.defaultSession.webRequest.onHeadersReceived`, gated on
+      `app.isPackaged`, dropping `'unsafe-inline'` from script-src.
+      connect-src scoped to 127.0.0.1 — no generic localhost. The API is
+      reached by main over IPC, so its origin is not listed here; packaged
+      builds get the authoritative header from main/security.ts.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.steamstatic.com https://shared.akamai.steamstatic.com https://*.akamaihd.net https://*.steampowered.com; media-src 'self' https://*.steamstatic.com https://video.akamai.steamstatic.com https://video.cloudflare.steamstatic.com; font-src 'self' data:; connect-src 'self' http://127.0.0.1:* ws://127.0.0.1:* https://store.steampowered.com; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steam Client</title>
+  </head>
+  <body class="bg-[var(--color-void)] text-[var(--color-ink)] antialiased select-none">
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

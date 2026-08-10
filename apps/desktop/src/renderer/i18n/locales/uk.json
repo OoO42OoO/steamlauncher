@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "У черзі…",
+    "connecting": "Підключення…",
+    "authenticating": "Авторизація в Steam…",
+    "fetching_manifest": "Отримання списку файлів…",
+    "downloading_with_label": "Завантаження: {{label}}",
+    "downloading_no_label": "Завантаження вмісту",
+    "validating_with_label": "Перевірка: {{label}}",
+    "validating_no_label": "Перевірка файлів",
+    "finalizing": "Завершення…",
+    "installing_redist_with_label": "Встановлення компонента: {{label}}",
+    "installing_redist_no_label": "Встановлення компонентів",
+    "counter": " ({{current}} з {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} хв",
+    "hours_minutes_short": "{{hours}} год {{minutes}} хв"
+  },
+  "nav": {
+    "sections": "Розділи",
+    "catalog": "Каталог",
+    "library": "Бібліотека",
+    "stats": "Статистика",
+    "downloads": "Завантаження",
+    "settings": "Налаштування",
+    "game": "Гра"
+  },
+  "titlebar": {
+    "trust": "Довіра",
+    "trust_aria": "Рівень довіри {{level}}",
+    "logout": "Вийти",
+    "language_aria": "Мова",
+    "close": "Закрити",
+    "settings": "Налаштування",
+    "minimize": "Згорнути",
+    "session_aria": "Скільки лишилось до наступного завдання",
+    "session_label": "Сесія",
+    "session_expired": "Потрібне завдання",
+    "session_task_due": "Потрібно"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Код не знайдено. Перевірте, чи ви вставили повний код із сайту.",
+      "expired": "Код уже використано або термін дії вичерпано. Згенеруйте новий на сайті.",
+      "service_unavailable": "Сервіс тимчасово недоступний. Спробуйте ще раз за хвилину.",
+      "network": "Немає з'єднання з сервером.",
+      "unknown": "Невідома помилка входу."
+    },
+    "title": "Отримайте доступ до лаунчера",
+    "description": "Отримайте код доступу в нашому Telegram-боті, потім вставте його нижче, щоб розблокувати лаунчер.",
+    "code_label": "Код доступу",
+    "submit": "Розблокувати лаунчер",
+    "submitting": "Розблоковуємо…",
+    "open_site": "Перейти до бота для отримання ключа",
+    "step_open_bot": "Відкрийте Telegram-бота",
+    "step_paste_code": "Скопіюйте та вставте код доступу",
+    "code_placeholder": "Вставте код сюди",
+    "no_account_note": "Обліковий запис і пароль для лаунчера не потрібні."
+  },
+  "library": {
+    "loading": "Завантажуємо бібліотеку…",
+    "error_title": "Не вдалося завантажити бібліотеку",
+    "error_hint": "Сервіс тимчасово недоступний або немає інтернету.",
+    "retry": "Повторити",
+    "empty_title": "Бібліотека порожня",
+    "empty_hint": "На вашому рівні довіри поки немає доступних акаунтів. Виконуйте завдання, щоб підвищити trust level і відкрити більше ігор.",
+    "locked_hint": "Відкривається з trust level {{level}}",
+    "play": "Грати",
+    "cancel_aria": "Скасувати завантаження",
+    "install": "Встановити",
+    "search_placeholder": "Пошук ігор",
+    "search_no_results": "Немає ігор за запитом «{{query}}»",
+    "installed_empty_title": "Немає встановлених ігор",
+    "installed_empty_hint": "Встановлені ігри з'являться тут. Відкрийте «Каталог», щоб вибрати гру.",
+    "genre_all": "Усі",
+    "genre_filter_aria": "Фільтр за жанром",
+    "pin": "До обраного",
+    "unpin": "Прибрати з обраного",
+    "genre_more": "Ще {{count}}",
+    "genre_search": "Знайти категорію",
+    "genre_none": "Нічого не знайдено",
+    "genre_selected": "Вибрано: {{count}}",
+    "genre_reset": "Скинути",
+    "genre_done": "Готово",
+    "state_installed": "Встановлена",
+    "state_downloading": "Завантажується",
+    "state_error": "Помилка",
+    "state_not_installed": "Не встановлена",
+    "state_locked": "Заблокована",
+    "more_actions": "Ще дії",
+    "genre_loading": "Категорії: {{known}} з {{total}}",
+    "sort_aria": "Сортування ігор",
+    "sort_name": "За назвою",
+    "sort_installed": "Спочатку встановлені",
+    "sort_played": "Найбільше зіграно",
+    "open_folder": "Папка встановлення",
+    "catalog_kicker": "Каталог · доступно: {{count}}",
+    "catalog_heading": "Усі ігри",
+    "installed_kicker": "Бібліотека · встановлено: {{count}}",
+    "installed_heading": "На диску",
+    "genre_no_results": "У цій категорії ігор немає",
+    "starting": "Підготовка…"
+  },
+  "tasks": {
+    "loading": "Завантажуємо завдання…",
+    "error_title": "Не вдалося завантажити завдання",
+    "error_hint": "Сервіс тимчасово недоступний.",
+    "active_section": "Активні",
+    "active_empty": "Зараз немає активних завдань. Зайдіть пізніше.",
+    "open": "Відкрити",
+    "completing": "…",
+    "complete": "Виконано",
+    "completed_section": "Виконані",
+    "kicker": "Завдання",
+    "heading": "Доступ до ігор"
+  },
+  "stats": {
+    "loading": "Завантажуємо статистику…",
+    "error_title": "Не вдалося завантажити статистику",
+    "empty_title": "Ще нічого не зіграно",
+    "empty_hint": "Щойно ви запустите гру, тут з'явиться час за кожною грою.",
+    "total_played": "Усього зіграно",
+    "kicker": "Статистика",
+    "heading": "Зіграний час"
+  },
+  "downloads": {
+    "empty_title": "Немає активних завантажень",
+    "empty_hint": "Запусти встановлення в розділі «Бібліотека» — прогрес зʼявиться тут.",
+    "failed_label": "Не вдалося завантажити",
+    "kicker": "Завантаження · активних: {{count}}",
+    "heading": "Черга",
+    "stop_all": "Зупинити все"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Очікування коду Steam Guard з email…",
+      "received": "Отримано код Steam Guard"
+    },
+    "error": {
+      "account_unconfigured": "Акаунт не налаштовано для резервного Guard через email (на бекенді немає email-облікових даних)",
+      "account_missing_license": "Акаунт не має ліцензії на цю гру",
+      "empty_download": "Завантаження завершилося без файлів",
+      "unsupported_platform": "Гра не підтримує вашу платформу ({{current}}). Доступно для: {{list}}",
+      "account_missing_license_other_platform": "Гру придбано для іншої платформи. Ця версія доступна для: {{list}}",
+      "authorization": "Помилка авторизації",
+      "auth_guard": "Помилка Auth Guard",
+      "disk_full": "Недостатньо вільного місця на диску",
+      "game_session_required": "Доступ закрито — виконайте завдання в Telegram-боті"
+    }
+  },
+  "gameDetail": {
+    "back": "Назад",
+    "loading": "Завантаження…",
+    "unavailable": "Інформація про гру недоступна",
+    "developer": "Розробник",
+    "publisher": "Видавець",
+    "released": "Дата виходу",
+    "trailers": "Трейлери",
+    "screenshots": "Скріншоти",
+    "about": "Опис",
+    "system_requirements": "Системні вимоги",
+    "download": "Завантажити",
+    "cancel": "Скасувати",
+    "prev_screenshot": "Попередній знімок",
+    "next_screenshot": "Наступний знімок",
+    "close_lightbox": "Закрити",
+    "req_minimum": "Мінімальні",
+    "req_recommended": "Рекомендовані",
+    "screenshot_n": "Знімок {{n}}",
+    "news": "Що нового",
+    "browse_genre": "Показати ігри в категорії «{{genre}}»"
+  },
+  "settings": {
+    "title": "Налаштування",
+    "back": "Назад",
+    "language": {
+      "title": "Мова",
+      "description": "Мова інтерфейсу застосунку."
+    },
+    "install_dir": {
+      "title": "Розташування бібліотеки ігор",
+      "description": "Де зберігатимуться завантажені ігри.",
+      "change": "Змінити",
+      "default": "(розташування за замовчуванням)"
+    },
+    "auto_update": {
+      "title": "Оновлення",
+      "description": "Автоматично встановлювати оновлення під час закриття застосунку.",
+      "label": "Автоматично встановлювати оновлення"
+    },
+    "about_section_label": "Про програму",
+    "app_version_label": "Версія",
+    "platform_label": "Платформа",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "вашу ОС"
+  },
+  "tray": {
+    "show": "Відкрити",
+    "quit": "Вийти"
+  },
+  "updater": {
+    "checking": "Перевіряємо оновлення",
+    "available": "Доступне оновлення {{version}}",
+    "downloading": "Завантаження {{version}}",
+    "downloaded": "Оновлення {{version}} готове",
+    "error": "Помилка оновлення",
+    "restart": "Встановити й перезапустити",
+    "later": "Пізніше",
+    "eta": "Залишилось",
+    "speed": "Швидкість"
+  },
+  "game": {
+    "checking_updates": "Перевірка оновлень…",
+    "downloading_update": "Завантаження оновлення",
+    "launching": "Запуск…",
+    "launch_without_check_confirm": "Не вдалося перевірити оновлення. Запустити без перевірки?",
+    "uninstall": "Видалити",
+    "uninstall_confirm": "Видалити гру та всі локальні файли?",
+    "uninstall_success": "Гру видалено",
+    "uninstall_blocked_running": "Спочатку закрийте гру",
+    "uninstall_failed": "Не вдалося видалити: {{reason}}",
+    "patching_drm": "Видалення Steam DRM…",
+    "update_available": "Доступне оновлення. Завантажити перед запуском?",
+    "update_install": "Завантажити і грати",
+    "update_skip": "Грати без оновлення",
+    "already_running": "Ця гра вже запущена"
+  },
+  "gameSession": {
+    "title": "Доступ до ігор закрито",
+    "description": "Виконайте завдання в Telegram-боті — після цього доступ відкриється, і завантаження продовжиться з того самого місця.",
+    "later": "Пізніше",
+    "open_bot": "Відкрити бота й виконати завдання",
+    "done": "Завдання виконано",
+    "checking": "Перевіряємо…",
+    "still_locked": "Доступ ще не відкрито. Завершіть завдання в боті й натисніть ще раз."
+  },
+  "sidebar": {
+    "favorites": "Обране",
+    "add": "Додати з каталогу",
+    "empty": "Закріпіть гру зірочкою в каталозі",
+    "about": "Про гру",
+    "unpin": "Відкріпити",
+    "size": "Розмір",
+    "played": "Зіграно",
+    "status": "Статус"
+  },
+  "drmBoot": {
+    "collapse": "Згорнути",
+    "expand": "Розгорнути",
+    "patching": "Застосування патчів до {{count}} ігор…",
+    "patching_other": "Застосування патчів до {{count}} ігор…",
+    "done": "Готово",
+    "warning_title": "Патч DRM не завершено",
+    "warning_detail": "Гра може вимагати запущений Steam."
+  },
+  "errors": {
+    "server_unreachable": "Не вдалося підключитися до сервера"
+  }
+}

@@ -1,0 +1,7 @@
+# rcedit-x64.exe — Windows resource editor used by the afterPack
+# icon hook (scripts/afterpack-icon.cjs). Downloaded via
+# scripts/fetch-rcedit.ps1; the binary itself doesn't belong in
+# version control (it's a prebuilt artifact), but the directory is
+# committed via this file so the checkout has a stable place for tools.
+*
+!.gitignore

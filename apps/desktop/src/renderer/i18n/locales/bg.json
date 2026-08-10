@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "На опашка…",
+    "connecting": "Свързване…",
+    "authenticating": "Вход в Steam…",
+    "fetching_manifest": "Извличане на списъка с файлове…",
+    "downloading_with_label": "Изтегляне: {{label}}",
+    "downloading_no_label": "Изтегляне на съдържание",
+    "validating_with_label": "Проверка: {{label}}",
+    "validating_no_label": "Проверка на файлове",
+    "finalizing": "Финализиране…",
+    "installing_redist_with_label": "Инсталиране на компонент: {{label}}",
+    "installing_redist_no_label": "Инсталиране на компоненти",
+    "counter": " ({{current}} от {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} мин",
+    "hours_minutes_short": "{{hours}} ч {{minutes}} мин"
+  },
+  "nav": {
+    "sections": "Секции",
+    "catalog": "Каталог",
+    "library": "Библиотека",
+    "stats": "Статистика",
+    "downloads": "Изтегляния",
+    "settings": "Настройки",
+    "game": "Игра"
+  },
+  "titlebar": {
+    "trust": "Доверие",
+    "trust_aria": "Ниво на доверие {{level}}",
+    "logout": "Изход",
+    "language_aria": "Език",
+    "close": "Затвори",
+    "settings": "Настройки",
+    "minimize": "Минимизиране",
+    "session_aria": "Оставащо време в тази сесия",
+    "session_label": "Сесия",
+    "session_expired": "Нужна е задача",
+    "session_task_due": "Изисква се"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Кодът не е намерен. Проверете дали сте поставили пълния код от сайта.",
+      "expired": "Кодът вече е използван или е изтекъл. Генерирайте нов на сайта.",
+      "service_unavailable": "Услугата е временно недостъпна. Опитайте отново след минута.",
+      "network": "Няма връзка със сървъра.",
+      "unknown": "Неизвестна грешка при вход."
+    },
+    "title": "Получете достъп до лаунчъра",
+    "description": "Получете код за достъп в нашия Telegram бот, след което го поставете по-долу, за да отключите лаунчъра.",
+    "code_label": "Код за достъп",
+    "submit": "Отключване на лаунчъра",
+    "submitting": "Отключване…",
+    "open_site": "Отидете в бота, за да получите ключ",
+    "step_open_bot": "Отворете Telegram бота",
+    "step_paste_code": "Копирайте и поставете кода за достъп",
+    "code_placeholder": "Поставете кода тук",
+    "no_account_note": "Не са необходими акаунт или парола за лаунчъра."
+  },
+  "library": {
+    "loading": "Зарежда се библиотеката…",
+    "error_title": "Библиотеката не може да бъде заредена",
+    "error_hint": "Услугата е недостъпна или няма интернет.",
+    "retry": "Опитайте отново",
+    "empty_title": "Библиотеката е празна",
+    "empty_hint": "На вашето ниво на доверие все още няма налични акаунти. Изпълнявайте задачи, за да повишите trust level и да отключите повече игри.",
+    "locked_hint": "Отключва се при trust level {{level}}",
+    "play": "Играй",
+    "cancel_aria": "Отмени изтеглянето",
+    "install": "Инсталиране",
+    "search_placeholder": "Търсене на игри",
+    "search_no_results": "Няма игри за „{{query}}\"",
+    "installed_empty_title": "Няма инсталирани игри",
+    "installed_empty_hint": "Инсталираните игри ще се появят тук. Отворете „Каталог“, за да изберете игра.",
+    "genre_all": "Всички",
+    "genre_filter_aria": "Филтър по жанр",
+    "pin": "Към любими",
+    "unpin": "Премахни от любими",
+    "genre_more": "Още {{count}}",
+    "genre_search": "Намери категория",
+    "genre_none": "Нищо не е намерено",
+    "genre_selected": "Избрани: {{count}}",
+    "genre_reset": "Изчисти",
+    "genre_done": "Готово",
+    "state_installed": "Инсталирана",
+    "state_downloading": "Изтегля се",
+    "state_error": "Грешка",
+    "state_not_installed": "Не е инсталирана",
+    "state_locked": "Заключена",
+    "more_actions": "Още действия",
+    "genre_loading": "Категории: {{known}} от {{total}}",
+    "sort_aria": "Сортиране на игри",
+    "sort_name": "По име",
+    "sort_installed": "Първо инсталираните",
+    "sort_played": "Най-много изиграно",
+    "open_folder": "Папка на инсталацията",
+    "catalog_kicker": "Каталог · налични: {{count}}",
+    "catalog_heading": "Всички игри",
+    "installed_kicker": "Библиотека · инсталирани: {{count}}",
+    "installed_heading": "На диска",
+    "genre_no_results": "Няма игри в тази категория",
+    "starting": "Подготовка…"
+  },
+  "tasks": {
+    "loading": "Зареждане на задачи…",
+    "error_title": "Задачите не могат да бъдат заредени",
+    "error_hint": "Услугата е временно недостъпна.",
+    "active_section": "Активни",
+    "active_empty": "В момента няма активни задачи. Върнете се по-късно.",
+    "open": "Отвори",
+    "completing": "…",
+    "complete": "Готово",
+    "completed_section": "Завършени",
+    "kicker": "Задачи",
+    "heading": "Достъп до игрите"
+  },
+  "stats": {
+    "loading": "Зареждане на статистиката…",
+    "error_title": "Статистиката не може да бъде заредена",
+    "empty_title": "Все още нищо не е играно",
+    "empty_hint": "Веднага щом стартирате игра, тук ще се появи времето за всяка игра.",
+    "total_played": "Общо играно",
+    "kicker": "Статистика",
+    "heading": "Изиграно време"
+  },
+  "downloads": {
+    "empty_title": "Няма активни изтегляния",
+    "empty_hint": "Стартирай инсталация от Библиотеката — прогресът ще се появи тук.",
+    "failed_label": "Изтеглянето е неуспешно",
+    "kicker": "Изтегляния · активни: {{count}}",
+    "heading": "Опашка",
+    "stop_all": "Спри всички"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Изчакване на код Steam Guard от имейл…",
+      "received": "Код Steam Guard е получен"
+    },
+    "error": {
+      "account_unconfigured": "Акаунтът не е настроен за резервен Guard по имейл (липсват имейл данни на сървъра)",
+      "account_missing_license": "Акаунтът не притежава тази игра",
+      "empty_download": "Изтеглянето завърши без файлове",
+      "unsupported_platform": "Играта не поддържа вашата платформа ({{current}}). Достъпно за: {{list}}",
+      "account_missing_license_other_platform": "Играта е закупена за друга платформа. Тази версия е достъпна за: {{list}}",
+      "authorization": "Грешка при оторизация",
+      "auth_guard": "Грешка Auth Guard",
+      "disk_full": "Недостатъчно свободно място на диска",
+      "game_session_required": "Достъпът е затворен — изпълнете задачата в Telegram бота"
+    }
+  },
+  "gameDetail": {
+    "back": "Назад",
+    "loading": "Зареждане…",
+    "unavailable": "Информацията за играта е недостъпна",
+    "developer": "Разработчик",
+    "publisher": "Издател",
+    "released": "Дата на издаване",
+    "trailers": "Трейлъри",
+    "screenshots": "Екранни снимки",
+    "about": "Описание",
+    "system_requirements": "Системни изисквания",
+    "download": "Изтегли",
+    "cancel": "Отмяна",
+    "prev_screenshot": "Предишна снимка",
+    "next_screenshot": "Следваща снимка",
+    "close_lightbox": "Затвори",
+    "req_minimum": "Минимални",
+    "req_recommended": "Препоръчителни",
+    "screenshot_n": "Екранна снимка {{n}}",
+    "news": "Какво ново",
+    "browse_genre": "Покажи игри в категория „{{genre}}“"
+  },
+  "settings": {
+    "title": "Настройки",
+    "back": "Назад",
+    "language": {
+      "title": "Език",
+      "description": "Език на интерфейса на приложението."
+    },
+    "install_dir": {
+      "title": "Местоположение на библиотеката с игри",
+      "description": "Където ще се съхраняват изтеглените игри.",
+      "change": "Промени",
+      "default": "(местоположение по подразбиране)"
+    },
+    "auto_update": {
+      "title": "Обновления",
+      "description": "Автоматично инсталиране на обновления при изход от приложението.",
+      "label": "Автоматично инсталиране на обновления"
+    },
+    "about_section_label": "За приложението",
+    "app_version_label": "Версия",
+    "platform_label": "Платформа",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "вашата ОС"
+  },
+  "tray": {
+    "show": "Отвори",
+    "quit": "Изход"
+  },
+  "updater": {
+    "checking": "Проверка за обновления",
+    "available": "Налична е версия {{version}}",
+    "downloading": "Изтегляне на {{version}}",
+    "downloaded": "Обновлението {{version}} е готово",
+    "error": "Грешка при обновяване",
+    "restart": "Инсталиране и рестарт",
+    "later": "По-късно",
+    "eta": "Остават",
+    "speed": "Скорост"
+  },
+  "game": {
+    "checking_updates": "Проверка за актуализации…",
+    "downloading_update": "Изтегляне на актуализация",
+    "launching": "Стартиране…",
+    "launch_without_check_confirm": "Проверката за актуализации е неуспешна. Да се стартира ли въпреки това?",
+    "uninstall": "Деинсталирай",
+    "uninstall_confirm": "Да се деинсталира ли играта и всички локални файлове?",
+    "uninstall_success": "Играта е деинсталирана",
+    "uninstall_blocked_running": "Първо затворете играта",
+    "uninstall_failed": "Деинсталирането се провали: {{reason}}",
+    "patching_drm": "Премахване на Steam DRM…",
+    "update_available": "Налична е актуализация. Да се изтегли ли преди стартиране?",
+    "update_install": "Изтегли и играй",
+    "update_skip": "Играй без актуализация",
+    "already_running": "Тази игра вече е стартирана"
+  },
+  "gameSession": {
+    "title": "Достъпът до игрите е затворен",
+    "description": "Изпълнете задачата в Telegram бота — веднага след това достъпът се отваря и изтеглянето продължава оттам, докъдето е стигнало.",
+    "later": "По-късно",
+    "open_bot": "Отвори бота и изпълни задачата",
+    "done": "Задачата е изпълнена",
+    "checking": "Проверяваме…",
+    "still_locked": "Достъпът още не е отворен. Завършете задачата в бота и опитайте отново."
+  },
+  "sidebar": {
+    "favorites": "Любими",
+    "add": "Добави от каталога",
+    "empty": "Закачете игра със звездичка в каталога",
+    "about": "За играта",
+    "unpin": "Откачи",
+    "size": "Размер",
+    "played": "Изиграно",
+    "status": "Статус"
+  },
+  "drmBoot": {
+    "collapse": "Свий",
+    "expand": "Разгъни",
+    "patching": "Прилагане на кръпки към {{count}} игри…",
+    "patching_other": "Прилагане на кръпки към {{count}} игри…",
+    "done": "Готово",
+    "warning_title": "Кръпката DRM не е завършена",
+    "warning_detail": "Играта може да изисква Steam да работи."
+  },
+  "errors": {
+    "server_unreachable": "Неуспешно свързване със сървъра"
+  }
+}

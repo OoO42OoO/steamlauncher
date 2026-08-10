@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "Na fila…",
+    "connecting": "Conectando…",
+    "authenticating": "Entrando no Steam…",
+    "fetching_manifest": "Obtendo lista de arquivos…",
+    "downloading_with_label": "Baixando: {{label}}",
+    "downloading_no_label": "Baixando conteúdo",
+    "validating_with_label": "Verificando: {{label}}",
+    "validating_no_label": "Verificando arquivos",
+    "finalizing": "Finalizando…",
+    "installing_redist_with_label": "Instalando componente: {{label}}",
+    "installing_redist_no_label": "Instalando componentes",
+    "counter": " ({{current}} de {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} h {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Seções",
+    "catalog": "Catálogo",
+    "library": "Biblioteca",
+    "stats": "Estatísticas",
+    "downloads": "Downloads",
+    "settings": "Definições",
+    "game": "Jogo"
+  },
+  "titlebar": {
+    "trust": "Confiança",
+    "trust_aria": "Nível de confiança {{level}}",
+    "logout": "Sair",
+    "language_aria": "Idioma",
+    "close": "Fechar",
+    "settings": "Definições",
+    "minimize": "Minimizar",
+    "session_aria": "Tempo restante da sessão",
+    "session_label": "Sessão",
+    "session_expired": "Tarefa pendente",
+    "session_task_due": "Necessário"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Código não encontrado. Verifique se você colou o código completo do site.",
+      "expired": "Código já usado ou expirado. Gere um novo no site.",
+      "service_unavailable": "Serviço temporariamente indisponível. Tente novamente em um minuto.",
+      "network": "Sem conexão com o servidor.",
+      "unknown": "Erro de login desconhecido."
+    },
+    "title": "Obtenha acesso ao launcher",
+    "description": "Obtenha um código de acesso no nosso bot do Telegram e cole-o abaixo para desbloquear o launcher.",
+    "code_label": "Código de acesso",
+    "submit": "Desbloquear launcher",
+    "submitting": "A desbloquear…",
+    "open_site": "Ir para o bot para obter uma chave",
+    "step_open_bot": "Abra o bot do Telegram",
+    "step_paste_code": "Copie e cole o seu código de acesso",
+    "code_placeholder": "Cole o seu código aqui",
+    "no_account_note": "Não é necessária conta nem palavra-passe do launcher."
+  },
+  "library": {
+    "loading": "Carregando biblioteca…",
+    "error_title": "Não foi possível carregar a biblioteca",
+    "error_hint": "Serviço indisponível ou sem conexão com a Internet.",
+    "retry": "Tentar novamente",
+    "empty_title": "Biblioteca vazia",
+    "empty_hint": "Ainda não há contas disponíveis no seu nível de confiança. Conclua tarefas para aumentar seu trust level e desbloquear mais jogos.",
+    "locked_hint": "Desbloqueia no trust level {{level}}",
+    "play": "Jogar",
+    "cancel_aria": "Cancelar download",
+    "install": "Instalar",
+    "search_placeholder": "Pesquisar jogos",
+    "search_no_results": "Nenhum jogo para «{{query}}»",
+    "installed_empty_title": "Nenhum jogo instalado",
+    "installed_empty_hint": "Os jogos instalados aparecerão aqui. Abra o catálogo para escolher um.",
+    "genre_all": "Todos",
+    "genre_filter_aria": "Filtrar por género",
+    "pin": "Adicionar aos favoritos",
+    "unpin": "Remover dos favoritos",
+    "genre_more": "Mais {{count}}",
+    "genre_search": "Encontrar categoria",
+    "genre_none": "Nada encontrado",
+    "genre_selected": "Selecionados: {{count}}",
+    "genre_reset": "Repor",
+    "genre_done": "Concluído",
+    "state_installed": "Instalado",
+    "state_downloading": "A transferir",
+    "state_error": "Erro",
+    "state_not_installed": "Não instalado",
+    "state_locked": "Bloqueado",
+    "more_actions": "Mais ações",
+    "genre_loading": "Categorias: {{known}} de {{total}}",
+    "sort_aria": "Ordenar jogos",
+    "sort_name": "Por nome",
+    "sort_installed": "Instalados primeiro",
+    "sort_played": "Mais jogados",
+    "open_folder": "Pasta de instalação",
+    "catalog_kicker": "Catálogo · {{count}} disponíveis",
+    "catalog_heading": "Todos os jogos",
+    "installed_kicker": "Biblioteca · {{count}} instalados",
+    "installed_heading": "No disco",
+    "genre_no_results": "Não há jogos nesta categoria",
+    "starting": "A preparar…"
+  },
+  "tasks": {
+    "loading": "Carregando tarefas…",
+    "error_title": "Não foi possível carregar as tarefas",
+    "error_hint": "Serviço temporariamente indisponível.",
+    "active_section": "Ativas",
+    "active_empty": "Nenhuma tarefa ativa no momento. Volte mais tarde.",
+    "open": "Abrir",
+    "completing": "…",
+    "complete": "Concluído",
+    "completed_section": "Concluídas",
+    "kicker": "Tarefas",
+    "heading": "Acesso aos jogos"
+  },
+  "stats": {
+    "loading": "Carregando estatísticas…",
+    "error_title": "Não foi possível carregar as estatísticas",
+    "empty_title": "Nada jogado ainda",
+    "empty_hint": "Assim que você iniciar um jogo, o tempo de jogo de cada título aparecerá aqui.",
+    "total_played": "Tempo total jogado",
+    "kicker": "Estatísticas",
+    "heading": "Tempo jogado"
+  },
+  "downloads": {
+    "empty_title": "Sem downloads ativos",
+    "empty_hint": "Inicia uma instalação na Biblioteca — o progresso aparecerá aqui.",
+    "failed_label": "Falha no download",
+    "kicker": "Transferências · {{count}} ativas",
+    "heading": "Fila",
+    "stop_all": "Parar tudo"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "À espera do código Steam Guard por e-mail…",
+      "received": "Código Steam Guard recebido"
+    },
+    "error": {
+      "account_unconfigured": "Conta não configurada para o fallback Guard por e-mail (sem credenciais de e-mail no servidor)",
+      "account_missing_license": "A conta não possui este jogo",
+      "empty_download": "Download concluído sem arquivos",
+      "unsupported_platform": "O jogo não suporta a sua plataforma ({{current}}). Disponível para: {{list}}",
+      "account_missing_license_other_platform": "O jogo foi adquirido para outra plataforma. Esta versão está disponível para: {{list}}",
+      "authorization": "Erro de autorização",
+      "auth_guard": "Erro de Auth Guard",
+      "disk_full": "Espaço livre em disco insuficiente",
+      "game_session_required": "Acesso fechado — conclua a tarefa no bot do Telegram"
+    }
+  },
+  "gameDetail": {
+    "back": "Voltar",
+    "loading": "A carregar…",
+    "unavailable": "Informação do jogo indisponível",
+    "developer": "Programador",
+    "publisher": "Editora",
+    "released": "Data de lançamento",
+    "trailers": "Trailers",
+    "screenshots": "Capturas de ecrã",
+    "about": "Sobre",
+    "system_requirements": "Requisitos do sistema",
+    "download": "Transferir",
+    "cancel": "Cancelar",
+    "prev_screenshot": "Captura de ecrã anterior",
+    "next_screenshot": "Captura de ecrã seguinte",
+    "close_lightbox": "Fechar",
+    "req_minimum": "Mínimos",
+    "req_recommended": "Recomendados",
+    "screenshot_n": "Captura {{n}}",
+    "news": "Novidades",
+    "browse_genre": "Ver jogos de {{genre}}"
+  },
+  "settings": {
+    "title": "Definições",
+    "back": "Voltar",
+    "language": {
+      "title": "Idioma",
+      "description": "Idioma de exibição da interface."
+    },
+    "install_dir": {
+      "title": "Localização da biblioteca de jogos",
+      "description": "Onde os jogos transferidos serão guardados.",
+      "change": "Alterar",
+      "default": "(localização predefinida)"
+    },
+    "auto_update": {
+      "title": "Atualizações",
+      "description": "Instalar atualizações automaticamente ao fechar o aplicativo.",
+      "label": "Instalar atualizações automaticamente"
+    },
+    "about_section_label": "Sobre",
+    "app_version_label": "Versão",
+    "platform_label": "Plataforma",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "o seu SO"
+  },
+  "tray": {
+    "show": "Abrir",
+    "quit": "Sair"
+  },
+  "updater": {
+    "checking": "Verificando atualizações",
+    "available": "Versão {{version}} disponível",
+    "downloading": "Baixando {{version}}",
+    "downloaded": "Atualização {{version}} pronta",
+    "error": "Erro na atualização",
+    "restart": "Instalar e reiniciar",
+    "later": "Mais tarde",
+    "eta": "Tempo restante",
+    "speed": "Velocidade"
+  },
+  "game": {
+    "checking_updates": "A procurar atualizações…",
+    "downloading_update": "A transferir atualização",
+    "launching": "A iniciar…",
+    "launch_without_check_confirm": "Falha ao verificar atualizações. Iniciar mesmo assim?",
+    "uninstall": "Desinstalar",
+    "uninstall_confirm": "Desinstalar o jogo e excluir todos os arquivos locais?",
+    "uninstall_success": "Jogo desinstalado",
+    "uninstall_blocked_running": "Feche o jogo primeiro",
+    "uninstall_failed": "Falha ao desinstalar: {{reason}}",
+    "patching_drm": "A remover o DRM da Steam…",
+    "update_available": "Está disponível uma atualização. Transferir antes de jogar?",
+    "update_install": "Transferir e jogar",
+    "update_skip": "Jogar sem atualizar",
+    "already_running": "Esse jogo já está em execução"
+  },
+  "gameSession": {
+    "title": "Acesso aos jogos fechado",
+    "description": "Conclua a tarefa no bot do Telegram — o acesso abre logo a seguir e a transferência continua de onde parou.",
+    "later": "Mais tarde",
+    "open_bot": "Abrir o bot e fazer a tarefa",
+    "done": "Tarefa concluída",
+    "checking": "A verificar…",
+    "still_locked": "O acesso ainda não está aberto. Conclua a tarefa no bot e tente novamente."
+  },
+  "sidebar": {
+    "favorites": "Favoritos",
+    "add": "Adicionar do catálogo",
+    "empty": "Fixe um jogo com a estrela no catálogo",
+    "about": "Sobre o jogo",
+    "unpin": "Desafixar",
+    "size": "Tamanho",
+    "played": "Jogado",
+    "status": "Estado"
+  },
+  "drmBoot": {
+    "collapse": "Recolher",
+    "expand": "Expandir",
+    "patching": "A aplicar correções a {{count}} jogos…",
+    "patching_other": "A aplicar correções a {{count}} jogos…",
+    "done": "Concluído",
+    "warning_title": "Correção DRM incompleta",
+    "warning_detail": "O jogo pode exigir o Steam em execução."
+  },
+  "errors": {
+    "server_unreachable": "Não foi possível ligar ao servidor"
+  }
+}

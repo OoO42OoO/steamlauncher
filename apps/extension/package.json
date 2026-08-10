@@ -1,0 +1,26 @@
+{
+  "name": "@steam-client/extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "postinstall": "wxt prepare",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@steam-client/shared": "workspace:*",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.287",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@wxt-dev/module-react": "1.2.2",
+    "typescript": "5.9.3",
+    "wxt": "0.20.20"
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "stage": {
+    "queued": "Queued…",
+    "connecting": "Connecting…",
+    "authenticating": "Signing in to Steam…",
+    "fetching_manifest": "Fetching file list…",
+    "downloading_with_label": "Downloading: {{label}}",
+    "downloading_no_label": "Downloading content",
+    "validating_with_label": "Validating: {{label}}",
+    "validating_no_label": "Validating files",
+    "finalizing": "Finalizing…",
+    "installing_redist_with_label": "Installing component: {{label}}",
+    "installing_redist_no_label": "Installing components",
+    "counter": " ({{current}} of {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} h {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Sections",
+    "catalog": "Catalog",
+    "library": "Library",
+    "stats": "Statistics",
+    "downloads": "Downloads",
+    "settings": "Settings",
+    "game": "Game"
+  },
+  "titlebar": {
+    "trust": "Trust",
+    "trust_aria": "Trust level {{level}}",
+    "logout": "Log out",
+    "language_aria": "Language",
+    "settings": "Settings",
+    "minimize": "Minimize",
+    "close": "Close",
+    "session_aria": "Time left in this play session",
+    "session_label": "Session",
+    "session_expired": "Task due",
+    "session_task_due": "Required"
+  },
+  "settings": {
+    "title": "Settings",
+    "back": "Back",
+    "language": {
+      "title": "Language",
+      "description": "Display language for the app interface."
+    },
+    "install_dir": {
+      "title": "Game library location",
+      "description": "Where downloaded games will be stored.",
+      "change": "Change",
+      "default": "(default location)"
+    },
+    "auto_update": {
+      "title": "Updates",
+      "description": "Automatically install updates when the app quits.",
+      "label": "Install updates automatically"
+    },
+    "about_section_label": "About",
+    "app_version_label": "Version",
+    "platform_label": "Platform",
+    "electron_version_label": "Electron"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Code not found. Make sure you pasted the full code from the website.",
+      "expired": "Code has been used or expired. Generate a new one on the website.",
+      "service_unavailable": "Service temporarily unavailable. Try again in a minute.",
+      "network": "No connection to the server.",
+      "unknown": "Unknown sign-in error."
+    },
+    "title": "Get access to the launcher",
+    "description": "Get an access code in our Telegram bot, then paste it below to unlock the launcher.",
+    "code_label": "Access code",
+    "submit": "Unlock launcher",
+    "submitting": "Unlocking…",
+    "open_site": "Open the bot to get a key",
+    "step_open_bot": "Open the Telegram bot",
+    "step_paste_code": "Copy and paste your access code",
+    "code_placeholder": "Paste your code here",
+    "no_account_note": "No launcher account or password is required."
+  },
+  "library": {
+    "loading": "Loading library…",
+    "error_title": "Failed to load library",
+    "error_hint": "Service is unavailable or there is no internet connection.",
+    "retry": "Retry",
+    "empty_title": "Library is empty",
+    "empty_hint": "No accounts available at your trust level yet. Complete tasks to raise your trust level and unlock more games.",
+    "locked_hint": "Unlocks at trust level {{level}}",
+    "play": "Play",
+    "cancel_aria": "Cancel download",
+    "install": "Install",
+    "search_placeholder": "Search games",
+    "search_no_results": "No games match \"{{query}}\"",
+    "installed_empty_title": "No installed games",
+    "installed_empty_hint": "Games you install will show up here. Open the Catalog to pick one.",
+    "genre_all": "All",
+    "genre_filter_aria": "Filter by genre",
+    "pin": "Add to favourites",
+    "unpin": "Remove from favourites",
+    "genre_more": "{{count}} more",
+    "genre_search": "Find a category",
+    "genre_none": "Nothing found",
+    "genre_selected": "Selected: {{count}}",
+    "genre_reset": "Reset",
+    "genre_done": "Done",
+    "state_installed": "Installed",
+    "state_downloading": "Downloading",
+    "state_error": "Failed",
+    "state_not_installed": "Not installed",
+    "state_locked": "Locked",
+    "more_actions": "More actions",
+    "genre_loading": "Categories: {{known}} of {{total}}",
+    "sort_aria": "Sort games",
+    "sort_name": "By name",
+    "sort_installed": "Installed first",
+    "sort_played": "Most played",
+    "open_folder": "Install folder",
+    "catalog_kicker": "Catalog · {{count}} available",
+    "catalog_heading": "All games",
+    "installed_kicker": "Library · {{count}} installed",
+    "installed_heading": "On disk",
+    "genre_no_results": "No games in this category",
+    "starting": "Starting…"
+  },
+  "tasks": {
+    "loading": "Loading tasks…",
+    "error_title": "Failed to load tasks",
+    "error_hint": "Service is temporarily unavailable.",
+    "active_section": "Active",
+    "active_empty": "No active tasks right now. Check back later.",
+    "open": "Open",
+    "completing": "…",
+    "complete": "Mark done",
+    "completed_section": "Completed",
+    "kicker": "Tasks",
+    "heading": "Game access"
+  },
+  "stats": {
+    "loading": "Loading statistics…",
+    "error_title": "Failed to load statistics",
+    "empty_title": "Nothing played yet",
+    "empty_hint": "Once you launch a game it will appear here with its playtime.",
+    "total_played": "Total played",
+    "kicker": "Statistics",
+    "heading": "Time played"
+  },
+  "downloads": {
+    "empty_title": "No active downloads",
+    "empty_hint": "Start an install on the Library page — its progress will appear here.",
+    "failed_label": "Download failed",
+    "kicker": "Downloads · {{count}} active",
+    "heading": "Queue",
+    "stop_all": "Stop all"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Waiting for Steam Guard email code…",
+      "received": "Steam Guard code received"
+    },
+    "error": {
+      "account_unconfigured": "Account not configured for email Guard fallback (no email credentials on backend)",
+      "account_missing_license": "Account doesn't own this game",
+      "account_missing_license_other_platform": "Game was purchased for another platform. This release is available for: {{list}}",
+      "unsupported_platform": "Game does not support your platform ({{current}}). Available for: {{list}}",
+      "empty_download": "Download finished without files",
+      "authorization": "Authorization error",
+      "auth_guard": "Auth Guard error",
+      "disk_full": "Not enough free disk space",
+      "game_session_required": "Access is closed — complete the task in our Telegram bot"
+    }
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "your OS"
+  },
+  "gameDetail": {
+    "back": "Back",
+    "loading": "Loading…",
+    "unavailable": "Game info unavailable",
+    "developer": "Developer",
+    "publisher": "Publisher",
+    "released": "Released",
+    "trailers": "Trailers",
+    "screenshots": "Screenshots",
+    "about": "About",
+    "system_requirements": "System requirements",
+    "download": "Download",
+    "cancel": "Cancel",
+    "prev_screenshot": "Previous screenshot",
+    "next_screenshot": "Next screenshot",
+    "close_lightbox": "Close",
+    "req_minimum": "Minimum",
+    "req_recommended": "Recommended",
+    "screenshot_n": "Screenshot {{n}}",
+    "news": "What's new",
+    "browse_genre": "Browse {{genre}} games"
+  },
+  "tray": {
+    "show": "Open",
+    "quit": "Quit"
+  },
+  "updater": {
+    "checking": "Checking for updates",
+    "available": "Update {{version}} available",
+    "downloading": "Downloading {{version}}",
+    "downloaded": "Update {{version}} ready",
+    "error": "Update error",
+    "restart": "Install & restart",
+    "later": "Later",
+    "eta": "ETA",
+    "speed": "Speed"
+  },
+  "game": {
+    "checking_updates": "Checking for updates…",
+    "downloading_update": "Downloading update",
+    "patching_drm": "Removing Steam DRM…",
+    "launching": "Launching…",
+    "launch_without_check_confirm": "Update check failed. Launch anyway?",
+    "update_available": "An update is available. Download it before launching?",
+    "update_install": "Download and play",
+    "update_skip": "Play without updating",
+    "uninstall": "Uninstall",
+    "uninstall_confirm": "Uninstall the game and delete all local files?",
+    "uninstall_success": "Game uninstalled",
+    "uninstall_blocked_running": "Close the game first",
+    "uninstall_failed": "Failed to uninstall: {{reason}}",
+    "already_running": "That game is already running"
+  },
+  "drmBoot": {
+    "patching_one": "Applying patches to {{count}} game…",
+    "patching_other": "Applying patches to {{count}} games…",
+    "patching": "Applying patches to {{count}} games…",
+    "done": "Done",
+    "warning_title": "DRM patch incomplete",
+    "warning_detail": "The game may require Steam to be running.",
+    "collapse": "Collapse",
+    "expand": "Expand"
+  },
+  "gameSession": {
+    "title": "Game access is closed",
+    "description": "Complete the task in our Telegram bot — access opens straight after, and your download resumes where it stopped.",
+    "later": "Later",
+    "open_bot": "Open the bot and do the task",
+    "done": "Task completed",
+    "checking": "Checking…",
+    "still_locked": "Access isn't open yet. Finish the task in the bot and try again."
+  },
+  "sidebar": {
+    "favorites": "Favourites",
+    "add": "Add from catalog",
+    "empty": "Pin a game with the star in the catalog",
+    "about": "About",
+    "unpin": "Unpin",
+    "size": "Size",
+    "played": "Played",
+    "status": "Status"
+  },
+  "errors": {
+    "server_unreachable": "Could not connect to the server"
+  }
+}

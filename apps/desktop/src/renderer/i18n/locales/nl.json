@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "In wachtrij…",
+    "connecting": "Verbinden…",
+    "authenticating": "Aanmelden bij Steam…",
+    "fetching_manifest": "Bestandslijst ophalen…",
+    "downloading_with_label": "Downloaden: {{label}}",
+    "downloading_no_label": "Inhoud downloaden",
+    "validating_with_label": "Verifiëren: {{label}}",
+    "validating_no_label": "Bestanden verifiëren",
+    "finalizing": "Afronden…",
+    "installing_redist_with_label": "Component installeren: {{label}}",
+    "installing_redist_no_label": "Componenten installeren",
+    "counter": " ({{current}} van {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} u {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Secties",
+    "catalog": "Catalogus",
+    "library": "Bibliotheek",
+    "stats": "Statistieken",
+    "downloads": "Downloads",
+    "settings": "Instellingen",
+    "game": "Game"
+  },
+  "titlebar": {
+    "trust": "Vertrouwen",
+    "trust_aria": "Vertrouwensniveau {{level}}",
+    "logout": "Afmelden",
+    "language_aria": "Taal",
+    "close": "Sluiten",
+    "settings": "Instellingen",
+    "minimize": "Minimaliseren",
+    "session_aria": "Resterende tijd in deze sessie",
+    "session_label": "Sessie",
+    "session_expired": "Taak vereist",
+    "session_task_due": "Vereist"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Code niet gevonden. Controleer of u de volledige code van de site hebt geplakt.",
+      "expired": "Code is al gebruikt of verlopen. Genereer een nieuwe op de site.",
+      "service_unavailable": "Dienst tijdelijk niet beschikbaar. Probeer het over een minuut opnieuw.",
+      "network": "Geen verbinding met de server.",
+      "unknown": "Onbekende aanmeldfout."
+    },
+    "title": "Krijg toegang tot de launcher",
+    "description": "Haal een toegangscode op in onze Telegram-bot en plak deze hieronder om de launcher te ontgrendelen.",
+    "code_label": "Toegangscode",
+    "submit": "Launcher ontgrendelen",
+    "submitting": "Ontgrendelen…",
+    "open_site": "Ga naar de bot om een sleutel te krijgen",
+    "step_open_bot": "Open de Telegram-bot",
+    "step_paste_code": "Kopieer en plak je toegangscode",
+    "code_placeholder": "Plak je code hier",
+    "no_account_note": "Geen launcher-account of wachtwoord nodig."
+  },
+  "library": {
+    "loading": "Bibliotheek laden…",
+    "error_title": "Bibliotheek kon niet worden geladen",
+    "error_hint": "Dienst niet beschikbaar of geen internetverbinding.",
+    "retry": "Opnieuw proberen",
+    "empty_title": "Bibliotheek is leeg",
+    "empty_hint": "Er zijn nog geen accounts beschikbaar op uw vertrouwensniveau. Voer taken uit om uw trust level te verhogen en meer games te ontgrendelen.",
+    "locked_hint": "Ontgrendelt bij trust level {{level}}",
+    "play": "Spelen",
+    "cancel_aria": "Download annuleren",
+    "install": "Installeren",
+    "search_placeholder": "Spellen zoeken",
+    "search_no_results": "Geen spellen voor \"{{query}}\"",
+    "installed_empty_title": "Geen geïnstalleerde games",
+    "installed_empty_hint": "Geïnstalleerde games verschijnen hier. Open de catalogus om een game te kiezen.",
+    "genre_all": "Alle",
+    "genre_filter_aria": "Filteren op genre",
+    "pin": "Aan favorieten toevoegen",
+    "unpin": "Uit favorieten verwijderen",
+    "genre_more": "Nog {{count}}",
+    "genre_search": "Categorie zoeken",
+    "genre_none": "Niets gevonden",
+    "genre_selected": "Geselecteerd: {{count}}",
+    "genre_reset": "Wissen",
+    "genre_done": "Klaar",
+    "state_installed": "Geïnstalleerd",
+    "state_downloading": "Downloaden",
+    "state_error": "Fout",
+    "state_not_installed": "Niet geïnstalleerd",
+    "state_locked": "Vergrendeld",
+    "more_actions": "Meer acties",
+    "genre_loading": "Categorieën: {{known}} van {{total}}",
+    "sort_aria": "Games sorteren",
+    "sort_name": "Op naam",
+    "sort_installed": "Geïnstalleerde eerst",
+    "sort_played": "Meest gespeeld",
+    "open_folder": "Installatiemap",
+    "catalog_kicker": "Catalogus · {{count}} beschikbaar",
+    "catalog_heading": "Alle games",
+    "installed_kicker": "Bibliotheek · {{count}} geïnstalleerd",
+    "installed_heading": "Op schijf",
+    "genre_no_results": "Geen games in deze categorie",
+    "starting": "Voorbereiden…"
+  },
+  "tasks": {
+    "loading": "Taken laden…",
+    "error_title": "Taken konden niet worden geladen",
+    "error_hint": "Dienst tijdelijk niet beschikbaar.",
+    "active_section": "Actief",
+    "active_empty": "Geen actieve taken op dit moment. Kom later terug.",
+    "open": "Openen",
+    "completing": "…",
+    "complete": "Voltooid",
+    "completed_section": "Voltooid",
+    "kicker": "Taken",
+    "heading": "Gametoegang"
+  },
+  "stats": {
+    "loading": "Statistieken laden…",
+    "error_title": "Statistieken konden niet worden geladen",
+    "empty_title": "Nog niets gespeeld",
+    "empty_hint": "Zodra u een game start, verschijnt hier de speeltijd per titel.",
+    "total_played": "Totaal gespeeld",
+    "kicker": "Statistieken",
+    "heading": "Speeltijd"
+  },
+  "downloads": {
+    "empty_title": "Geen actieve downloads",
+    "empty_hint": "Start een installatie via Bibliotheek — de voortgang verschijnt hier.",
+    "failed_label": "Download mislukt",
+    "kicker": "Downloads · {{count}} actief",
+    "heading": "Wachtrij",
+    "stop_all": "Alles stoppen"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Wachten op Steam Guard-code per e-mail…",
+      "received": "Steam Guard-code ontvangen"
+    },
+    "error": {
+      "account_unconfigured": "Account niet geconfigureerd voor Guard-terugval per e-mail (geen e-mailgegevens op de server)",
+      "account_missing_license": "Account bezit deze game niet",
+      "empty_download": "Download voltooid zonder bestanden",
+      "unsupported_platform": "Het spel ondersteunt jouw platform niet ({{current}}). Beschikbaar voor: {{list}}",
+      "account_missing_license_other_platform": "Het spel is voor een ander platform gekocht. Deze versie is beschikbaar voor: {{list}}",
+      "authorization": "Autorisatiefout",
+      "auth_guard": "Auth Guard-fout",
+      "disk_full": "Onvoldoende vrije schijfruimte",
+      "game_session_required": "Toegang gesloten — voltooi de taak in de Telegram-bot"
+    }
+  },
+  "gameDetail": {
+    "back": "Terug",
+    "loading": "Laden…",
+    "unavailable": "Spelinformatie niet beschikbaar",
+    "developer": "Ontwikkelaar",
+    "publisher": "Uitgever",
+    "released": "Uitgegeven",
+    "trailers": "Trailers",
+    "screenshots": "Schermafbeeldingen",
+    "about": "Beschrijving",
+    "system_requirements": "Systeemvereisten",
+    "download": "Downloaden",
+    "cancel": "Annuleren",
+    "prev_screenshot": "Vorige screenshot",
+    "next_screenshot": "Volgende screenshot",
+    "close_lightbox": "Sluiten",
+    "req_minimum": "Minimaal",
+    "req_recommended": "Aanbevolen",
+    "screenshot_n": "Schermafbeelding {{n}}",
+    "news": "Wat is er nieuw",
+    "browse_genre": "{{genre}}-games bekijken"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "back": "Terug",
+    "language": {
+      "title": "Taal",
+      "description": "Weergavetaal van de app."
+    },
+    "install_dir": {
+      "title": "Locatie van spellenbibliotheek",
+      "description": "Waar gedownloade spellen worden opgeslagen.",
+      "change": "Wijzigen",
+      "default": "(standaardlocatie)"
+    },
+    "auto_update": {
+      "title": "Updates",
+      "description": "Updates automatisch installeren bij het sluiten van de app.",
+      "label": "Updates automatisch installeren"
+    },
+    "about_section_label": "Over",
+    "app_version_label": "Versie",
+    "platform_label": "Platform",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "je OS"
+  },
+  "tray": {
+    "show": "Openen",
+    "quit": "Afsluiten"
+  },
+  "updater": {
+    "checking": "Zoeken naar updates",
+    "available": "Versie {{version}} beschikbaar",
+    "downloading": "{{version}} wordt gedownload",
+    "downloaded": "Update {{version}} klaar",
+    "error": "Updatefout",
+    "restart": "Installeren en herstarten",
+    "later": "Later",
+    "eta": "Resterend",
+    "speed": "Snelheid"
+  },
+  "game": {
+    "checking_updates": "Updates zoeken…",
+    "downloading_update": "Update downloaden",
+    "launching": "Starten…",
+    "launch_without_check_confirm": "Update-controle mislukt. Toch starten?",
+    "uninstall": "Verwijderen",
+    "uninstall_confirm": "Game en alle lokale bestanden verwijderen?",
+    "uninstall_success": "Game verwijderd",
+    "uninstall_blocked_running": "Sluit eerst het spel",
+    "uninstall_failed": "Verwijderen mislukt: {{reason}}",
+    "patching_drm": "Steam-DRM verwijderen…",
+    "update_available": "Er is een update beschikbaar. Downloaden voor het starten?",
+    "update_install": "Downloaden en spelen",
+    "update_skip": "Spelen zonder update",
+    "already_running": "Die game draait al"
+  },
+  "gameSession": {
+    "title": "Gametoegang is gesloten",
+    "description": "Voltooi de taak in de Telegram-bot — daarna gaat de toegang open en hervat de download op hetzelfde punt.",
+    "later": "Later",
+    "open_bot": "Bot openen en taak doen",
+    "done": "Taak voltooid",
+    "checking": "Controleren…",
+    "still_locked": "De toegang is nog niet open. Rond de taak af in de bot en probeer het opnieuw."
+  },
+  "sidebar": {
+    "favorites": "Favorieten",
+    "add": "Toevoegen uit catalogus",
+    "empty": "Zet een game vast met de ster in de catalogus",
+    "about": "Over de game",
+    "unpin": "Losmaken",
+    "size": "Grootte",
+    "played": "Gespeeld",
+    "status": "Status"
+  },
+  "drmBoot": {
+    "collapse": "Inklappen",
+    "expand": "Uitklappen",
+    "patching": "Patches toepassen op {{count}} games…",
+    "patching_other": "Patches toepassen op {{count}} games…",
+    "done": "Klaar",
+    "warning_title": "DRM-patch onvolledig",
+    "warning_detail": "De game vereist mogelijk dat Steam draait."
+  },
+  "errors": {
+    "server_unreachable": "Kan geen verbinding maken met de server"
+  }
+}

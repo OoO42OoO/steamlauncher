@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "Σε αναμονή…",
+    "connecting": "Σύνδεση…",
+    "authenticating": "Σύνδεση στο Steam…",
+    "fetching_manifest": "Λήψη λίστας αρχείων…",
+    "downloading_with_label": "Λήψη: {{label}}",
+    "downloading_no_label": "Λήψη περιεχομένου",
+    "validating_with_label": "Επαλήθευση: {{label}}",
+    "validating_no_label": "Επαλήθευση αρχείων",
+    "finalizing": "Ολοκλήρωση…",
+    "installing_redist_with_label": "Εγκατάσταση στοιχείου: {{label}}",
+    "installing_redist_no_label": "Εγκατάσταση στοιχείων",
+    "counter": " ({{current}} από {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} λεπ",
+    "hours_minutes_short": "{{hours}} ώ {{minutes}} λεπ"
+  },
+  "nav": {
+    "sections": "Ενότητες",
+    "catalog": "Κατάλογος",
+    "library": "Βιβλιοθήκη",
+    "stats": "Στατιστικά",
+    "downloads": "Λήψεις",
+    "settings": "Ρυθμίσεις",
+    "game": "Παιχνίδι"
+  },
+  "titlebar": {
+    "trust": "Εμπιστοσύνη",
+    "trust_aria": "Επίπεδο εμπιστοσύνης {{level}}",
+    "logout": "Αποσύνδεση",
+    "language_aria": "Γλώσσα",
+    "close": "Κλείσιμο",
+    "settings": "Ρυθμίσεις",
+    "minimize": "Ελαχιστοποίηση",
+    "session_aria": "Χρόνος που απομένει στη συνεδρία",
+    "session_label": "Συνεδρία",
+    "session_expired": "Απαιτείται εργασία",
+    "session_task_due": "Απαιτείται"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Ο κωδικός δεν βρέθηκε. Βεβαιωθείτε ότι επικολλήσατε ολόκληρο τον κωδικό από τον ιστότοπο.",
+      "expired": "Ο κωδικός έχει ήδη χρησιμοποιηθεί ή έχει λήξει. Δημιουργήστε έναν νέο στον ιστότοπο.",
+      "service_unavailable": "Η υπηρεσία είναι προσωρινά μη διαθέσιμη. Δοκιμάστε ξανά σε ένα λεπτό.",
+      "network": "Δεν υπάρχει σύνδεση με τον διακομιστή.",
+      "unknown": "Άγνωστο σφάλμα σύνδεσης."
+    },
+    "title": "Αποκτήστε πρόσβαση στο launcher",
+    "description": "Αποκτήστε κωδικό πρόσβασης στο Telegram bot μας και επικολλήστε τον παρακάτω για να ξεκλειδώσετε το launcher.",
+    "code_label": "Κωδικός πρόσβασης",
+    "submit": "Ξεκλείδωμα launcher",
+    "submitting": "Ξεκλείδωμα…",
+    "open_site": "Μετάβαση στο bot για λήψη κλειδιού",
+    "step_open_bot": "Ανοίξτε το Telegram bot",
+    "step_paste_code": "Αντιγράψτε και επικολλήστε τον κωδικό πρόσβασης",
+    "code_placeholder": "Επικολλήστε τον κωδικό εδώ",
+    "no_account_note": "Δεν απαιτείται λογαριασμός ή κωδικός για το launcher."
+  },
+  "library": {
+    "loading": "Φόρτωση βιβλιοθήκης…",
+    "error_title": "Αποτυχία φόρτωσης βιβλιοθήκης",
+    "error_hint": "Η υπηρεσία δεν είναι διαθέσιμη ή δεν υπάρχει σύνδεση στο διαδίκτυο.",
+    "retry": "Δοκιμή ξανά",
+    "empty_title": "Η βιβλιοθήκη είναι κενή",
+    "empty_hint": "Δεν υπάρχουν ακόμη διαθέσιμοι λογαριασμοί στο επίπεδο εμπιστοσύνης σας. Ολοκληρώστε εργασίες για να αυξήσετε το trust level και να ξεκλειδώσετε περισσότερα παιχνίδια.",
+    "locked_hint": "Ξεκλειδώνει στο trust level {{level}}",
+    "play": "Παίξε",
+    "cancel_aria": "Ακύρωση λήψης",
+    "install": "Εγκατάσταση",
+    "search_placeholder": "Αναζήτηση παιχνιδιών",
+    "search_no_results": "Δεν βρέθηκαν παιχνίδια για \"{{query}}\"",
+    "installed_empty_title": "Δεν υπάρχουν εγκατεστημένα παιχνίδια",
+    "installed_empty_hint": "Τα εγκατεστημένα παιχνίδια θα εμφανίζονται εδώ. Ανοίξτε τον κατάλογο για να επιλέξετε ένα.",
+    "genre_all": "Όλα",
+    "genre_filter_aria": "Φιλτράρισμα ανά είδος",
+    "pin": "Στα αγαπημένα",
+    "unpin": "Αφαίρεση από αγαπημένα",
+    "genre_more": "Άλλα {{count}}",
+    "genre_search": "Εύρεση κατηγορίας",
+    "genre_none": "Δεν βρέθηκε τίποτα",
+    "genre_selected": "Επιλεγμένα: {{count}}",
+    "genre_reset": "Επαναφορά",
+    "genre_done": "Έτοιμο",
+    "state_installed": "Εγκατεστημένο",
+    "state_downloading": "Λήψη",
+    "state_error": "Σφάλμα",
+    "state_not_installed": "Μη εγκατεστημένο",
+    "state_locked": "Κλειδωμένο",
+    "more_actions": "Περισσότερα",
+    "genre_loading": "Κατηγορίες: {{known}} από {{total}}",
+    "sort_aria": "Ταξινόμηση παιχνιδιών",
+    "sort_name": "Κατά όνομα",
+    "sort_installed": "Πρώτα τα εγκατεστημένα",
+    "sort_played": "Περισσότερο παιγμένα",
+    "open_folder": "Φάκελος εγκατάστασης",
+    "catalog_kicker": "Κατάλογος · διαθέσιμα: {{count}}",
+    "catalog_heading": "Όλα τα παιχνίδια",
+    "installed_kicker": "Βιβλιοθήκη · εγκατεστημένα: {{count}}",
+    "installed_heading": "Στον δίσκο",
+    "genre_no_results": "Δεν υπάρχουν παιχνίδια σε αυτήν την κατηγορία",
+    "starting": "Προετοιμασία…"
+  },
+  "tasks": {
+    "loading": "Φόρτωση εργασιών…",
+    "error_title": "Αποτυχία φόρτωσης εργασιών",
+    "error_hint": "Η υπηρεσία είναι προσωρινά μη διαθέσιμη.",
+    "active_section": "Ενεργές",
+    "active_empty": "Δεν υπάρχουν ενεργές εργασίες αυτή τη στιγμή. Επιστρέψτε αργότερα.",
+    "open": "Άνοιγμα",
+    "completing": "…",
+    "complete": "Ολοκληρώθηκε",
+    "completed_section": "Ολοκληρωμένες",
+    "kicker": "Εργασίες",
+    "heading": "Πρόσβαση στα παιχνίδια"
+  },
+  "stats": {
+    "loading": "Φόρτωση στατιστικών…",
+    "error_title": "Αποτυχία φόρτωσης στατιστικών",
+    "empty_title": "Δεν έχει παιχτεί τίποτα ακόμα",
+    "empty_hint": "Μόλις ξεκινήσετε ένα παιχνίδι, εδώ θα εμφανιστεί ο χρόνος ανά τίτλο.",
+    "total_played": "Συνολικός χρόνος παιχνιδιού",
+    "kicker": "Στατιστικά",
+    "heading": "Χρόνος παιχνιδιού"
+  },
+  "downloads": {
+    "empty_title": "Καμία ενεργή λήψη",
+    "empty_hint": "Ξεκίνα μια εγκατάσταση από τη Βιβλιοθήκη — η πρόοδος θα εμφανιστεί εδώ.",
+    "failed_label": "Αποτυχία λήψης",
+    "kicker": "Λήψεις · ενεργές: {{count}}",
+    "heading": "Ουρά",
+    "stop_all": "Διακοπή όλων"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Αναμονή κωδικού Steam Guard από e-mail…",
+      "received": "Ελήφθη κωδικός Steam Guard"
+    },
+    "error": {
+      "account_unconfigured": "Ο λογαριασμός δεν είναι ρυθμισμένος για εφεδρικό Guard μέσω e-mail (δεν υπάρχουν διαπιστευτήρια e-mail στον διακομιστή)",
+      "account_missing_license": "Ο λογαριασμός δεν έχει αυτό το παιχνίδι",
+      "empty_download": "Η λήψη ολοκληρώθηκε χωρίς αρχεία",
+      "unsupported_platform": "Το παιχνίδι δεν υποστηρίζει την πλατφόρμα σας ({{current}}). Διαθέσιμο για: {{list}}",
+      "account_missing_license_other_platform": "Το παιχνίδι αγοράστηκε για άλλη πλατφόρμα. Αυτή η έκδοση είναι διαθέσιμη για: {{list}}",
+      "authorization": "Σφάλμα εξουσιοδότησης",
+      "auth_guard": "Σφάλμα Auth Guard",
+      "disk_full": "Δεν υπάρχει αρκετός ελεύθερος χώρος στον δίσκο",
+      "game_session_required": "Η πρόσβαση είναι κλειστή — ολοκληρώστε την εργασία στο bot του Telegram"
+    }
+  },
+  "gameDetail": {
+    "back": "Πίσω",
+    "loading": "Φόρτωση…",
+    "unavailable": "Οι πληροφορίες παιχνιδιού δεν είναι διαθέσιμες",
+    "developer": "Προγραμματιστής",
+    "publisher": "Εκδότης",
+    "released": "Ημερομηνία κυκλοφορίας",
+    "trailers": "Τρέιλερ",
+    "screenshots": "Στιγμιότυπα οθόνης",
+    "about": "Περιγραφή",
+    "system_requirements": "Απαιτήσεις συστήματος",
+    "download": "Λήψη",
+    "cancel": "Ακύρωση",
+    "prev_screenshot": "Προηγούμενη εικόνα",
+    "next_screenshot": "Επόμενη εικόνα",
+    "close_lightbox": "Κλείσιμο",
+    "req_minimum": "Ελάχιστες",
+    "req_recommended": "Προτεινόμενες",
+    "screenshot_n": "Στιγμιότυπο {{n}}",
+    "news": "Τι νέο υπάρχει",
+    "browse_genre": "Προβολή παιχνιδιών {{genre}}"
+  },
+  "settings": {
+    "title": "Ρυθμίσεις",
+    "back": "Πίσω",
+    "language": {
+      "title": "Γλώσσα",
+      "description": "Γλώσσα εμφάνισης της εφαρμογής."
+    },
+    "install_dir": {
+      "title": "Τοποθεσία βιβλιοθήκης παιχνιδιών",
+      "description": "Πού θα αποθηκεύονται τα κατεβασμένα παιχνίδια.",
+      "change": "Αλλαγή",
+      "default": "(προεπιλεγμένη τοποθεσία)"
+    },
+    "auto_update": {
+      "title": "Ενημερώσεις",
+      "description": "Αυτόματη εγκατάσταση ενημερώσεων κατά την έξοδο.",
+      "label": "Αυτόματη εγκατάσταση ενημερώσεων"
+    },
+    "about_section_label": "Σχετικά",
+    "app_version_label": "Έκδοση",
+    "platform_label": "Πλατφόρμα",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "το λειτουργικό σας"
+  },
+  "tray": {
+    "show": "Άνοιγμα",
+    "quit": "Έξοδος"
+  },
+  "updater": {
+    "checking": "Έλεγχος ενημερώσεων",
+    "available": "Διαθέσιμη έκδοση {{version}}",
+    "downloading": "Λήψη {{version}}",
+    "downloaded": "Η ενημέρωση {{version}} είναι έτοιμη",
+    "error": "Σφάλμα ενημέρωσης",
+    "restart": "Εγκατάσταση και επανεκκίνηση",
+    "later": "Αργότερα",
+    "eta": "Απομένουν",
+    "speed": "Ταχύτητα"
+  },
+  "game": {
+    "checking_updates": "Έλεγχος για ενημερώσεις…",
+    "downloading_update": "Λήψη ενημέρωσης",
+    "launching": "Εκκίνηση…",
+    "launch_without_check_confirm": "Ο έλεγχος ενημερώσεων απέτυχε. Εκκίνηση παρ’ όλα αυτά;",
+    "uninstall": "Απεγκατάσταση",
+    "uninstall_confirm": "Απεγκατάσταση του παιχνιδιού και διαγραφή όλων των τοπικών αρχείων;",
+    "uninstall_success": "Το παιχνίδι απεγκαταστάθηκε",
+    "uninstall_blocked_running": "Κλείστε πρώτα το παιχνίδι",
+    "uninstall_failed": "Η απεγκατάσταση απέτυχε: {{reason}}",
+    "patching_drm": "Αφαίρεση Steam DRM…",
+    "update_available": "Υπάρχει διαθέσιμη ενημέρωση. Λήψη πριν την εκκίνηση;",
+    "update_install": "Λήψη και παιχνίδι",
+    "update_skip": "Παίξε χωρίς ενημέρωση",
+    "already_running": "Αυτό το παιχνίδι εκτελείται ήδη"
+  },
+  "gameSession": {
+    "title": "Η πρόσβαση στα παιχνίδια είναι κλειστή",
+    "description": "Ολοκληρώστε την εργασία στο bot του Telegram — η πρόσβαση ανοίγει αμέσως μετά και η λήψη συνεχίζεται από εκεί που σταμάτησε.",
+    "later": "Αργότερα",
+    "open_bot": "Άνοιγμα bot και εκτέλεση εργασίας",
+    "done": "Η εργασία ολοκληρώθηκε",
+    "checking": "Έλεγχος…",
+    "still_locked": "Η πρόσβαση δεν έχει ανοίξει ακόμη. Ολοκληρώστε την εργασία στο bot και δοκιμάστε ξανά."
+  },
+  "sidebar": {
+    "favorites": "Αγαπημένα",
+    "add": "Προσθήκη από τον κατάλογο",
+    "empty": "Καρφιτσώστε ένα παιχνίδι με το αστέρι στον κατάλογο",
+    "about": "Σχετικά",
+    "unpin": "Ξεκαρφίτσωμα",
+    "size": "Μέγεθος",
+    "played": "Παίχτηκε",
+    "status": "Κατάσταση"
+  },
+  "drmBoot": {
+    "collapse": "Σύμπτυξη",
+    "expand": "Ανάπτυξη",
+    "patching": "Εφαρμογή ενημερώσεων σε {{count}} παιχνίδια…",
+    "patching_other": "Εφαρμογή ενημερώσεων σε {{count}} παιχνίδια…",
+    "done": "Έτοιμο",
+    "warning_title": "Ημιτελής ενημέρωση DRM",
+    "warning_detail": "Το παιχνίδι μπορεί να απαιτεί το Steam σε λειτουργία."
+  },
+  "errors": {
+    "server_unreachable": "Δεν ήταν δυνατή η σύνδεση με τον διακομιστή"
+  }
+}

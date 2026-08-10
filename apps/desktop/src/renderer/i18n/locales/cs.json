@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "Ve frontě…",
+    "connecting": "Připojování…",
+    "authenticating": "Přihlašování ke Steamu…",
+    "fetching_manifest": "Načítání seznamu souborů…",
+    "downloading_with_label": "Stahování: {{label}}",
+    "downloading_no_label": "Stahování obsahu",
+    "validating_with_label": "Ověřování: {{label}}",
+    "validating_no_label": "Ověřování souborů",
+    "finalizing": "Dokončování…",
+    "installing_redist_with_label": "Instalace komponenty: {{label}}",
+    "installing_redist_no_label": "Instalace komponent",
+    "counter": " ({{current}} z {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} h {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Sekce",
+    "catalog": "Katalog",
+    "library": "Knihovna",
+    "stats": "Statistiky",
+    "downloads": "Stahování",
+    "settings": "Nastavení",
+    "game": "Hra"
+  },
+  "titlebar": {
+    "trust": "Důvěra",
+    "trust_aria": "Úroveň důvěry {{level}}",
+    "logout": "Odhlásit se",
+    "language_aria": "Jazyk",
+    "close": "Zavřít",
+    "settings": "Nastavení",
+    "minimize": "Minimalizovat",
+    "session_aria": "Zbývající čas relace",
+    "session_label": "Relace",
+    "session_expired": "Je potřeba úkol",
+    "session_task_due": "Vyžadováno"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Kód nebyl nalezen. Zkontrolujte, že jste vložili celý kód ze stránky.",
+      "expired": "Kód byl již použit nebo vypršel. Vygenerujte nový na webu.",
+      "service_unavailable": "Služba je dočasně nedostupná. Zkuste to znovu za minutu.",
+      "network": "Žádné připojení k serveru.",
+      "unknown": "Neznámá chyba přihlášení."
+    },
+    "title": "Získejte přístup k launcheru",
+    "description": "Získejte přístupový kód v našem Telegram botu a poté jej vložte níže pro odemknutí launcheru.",
+    "code_label": "Přístupový kód",
+    "submit": "Odemknout launcher",
+    "submitting": "Odemýkání…",
+    "open_site": "Přejít k botovi pro získání klíče",
+    "step_open_bot": "Otevřete Telegram bota",
+    "step_paste_code": "Zkopírujte a vložte přístupový kód",
+    "code_placeholder": "Sem vložte kód",
+    "no_account_note": "Není potřeba žádný účet ani heslo k launcheru."
+  },
+  "library": {
+    "loading": "Načítání knihovny…",
+    "error_title": "Knihovnu se nepodařilo načíst",
+    "error_hint": "Služba není dostupná nebo není internet.",
+    "retry": "Zkusit znovu",
+    "empty_title": "Knihovna je prázdná",
+    "empty_hint": "Na vaší úrovni důvěry zatím nejsou dostupné žádné účty. Plňte úkoly, abyste zvýšili svůj trust level a odemkli více her.",
+    "locked_hint": "Odemkne se na trust level {{level}}",
+    "play": "Hrát",
+    "cancel_aria": "Zrušit stahování",
+    "install": "Nainstalovat",
+    "search_placeholder": "Hledat hry",
+    "search_no_results": "Žádné hry pro „{{query}}\"",
+    "installed_empty_title": "Žádné nainstalované hry",
+    "installed_empty_hint": "Nainstalované hry se zobrazí zde. Hru vyberete v Katalogu.",
+    "genre_all": "Vše",
+    "genre_filter_aria": "Filtrovat podle žánru",
+    "pin": "Přidat k oblíbeným",
+    "unpin": "Odebrat z oblíbených",
+    "genre_more": "Dalších {{count}}",
+    "genre_search": "Najít kategorii",
+    "genre_none": "Nic nenalezeno",
+    "genre_selected": "Vybráno: {{count}}",
+    "genre_reset": "Vymazat",
+    "genre_done": "Hotovo",
+    "state_installed": "Nainstalováno",
+    "state_downloading": "Stahování",
+    "state_error": "Chyba",
+    "state_not_installed": "Nenainstalováno",
+    "state_locked": "Uzamčeno",
+    "more_actions": "Další akce",
+    "genre_loading": "Kategorie: {{known}} z {{total}}",
+    "sort_aria": "Řadit hry",
+    "sort_name": "Podle názvu",
+    "sort_installed": "Nejdřív nainstalované",
+    "sort_played": "Nejvíce hrané",
+    "open_folder": "Složka instalace",
+    "catalog_kicker": "Katalog · dostupné: {{count}}",
+    "catalog_heading": "Všechny hry",
+    "installed_kicker": "Knihovna · nainstalováno: {{count}}",
+    "installed_heading": "Na disku",
+    "genre_no_results": "V této kategorii nejsou žádné hry",
+    "starting": "Připravuje se…"
+  },
+  "tasks": {
+    "loading": "Načítání úkolů…",
+    "error_title": "Úkoly se nepodařilo načíst",
+    "error_hint": "Služba je dočasně nedostupná.",
+    "active_section": "Aktivní",
+    "active_empty": "Žádné aktivní úkoly. Vraťte se později.",
+    "open": "Otevřít",
+    "completing": "…",
+    "complete": "Hotovo",
+    "completed_section": "Dokončené",
+    "kicker": "Úkoly",
+    "heading": "Přístup ke hrám"
+  },
+  "stats": {
+    "loading": "Načítání statistik…",
+    "error_title": "Statistiky se nepodařilo načíst",
+    "empty_title": "Zatím nic nezahráno",
+    "empty_hint": "Jakmile spustíte hru, zobrazí se zde herní čas u každého titulu.",
+    "total_played": "Celkem odehráno",
+    "kicker": "Statistiky",
+    "heading": "Odehraný čas"
+  },
+  "downloads": {
+    "empty_title": "Žádná aktivní stahování",
+    "empty_hint": "Zahaj instalaci v sekci Knihovna — průběh se objeví zde.",
+    "failed_label": "Stahování selhalo",
+    "kicker": "Stahování · aktivní: {{count}}",
+    "heading": "Fronta",
+    "stop_all": "Zastavit vše"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Čekání na kód Steam Guard z e-mailu…",
+      "received": "Kód Steam Guard přijat"
+    },
+    "error": {
+      "account_unconfigured": "Účet není nakonfigurován pro záložní Guard přes e-mail (na serveru chybí e-mailové přihlašovací údaje)",
+      "account_missing_license": "Účet tuto hru nevlastní",
+      "empty_download": "Stahování skončilo bez souborů",
+      "unsupported_platform": "Hra nepodporuje vaši platformu ({{current}}). Dostupné pro: {{list}}",
+      "account_missing_license_other_platform": "Hra byla zakoupena pro jinou platformu. Tato verze je dostupná pro: {{list}}",
+      "authorization": "Chyba autorizace",
+      "auth_guard": "Chyba Auth Guard",
+      "disk_full": "Nedostatek volného místa na disku",
+      "game_session_required": "Přístup uzavřen — splňte úkol v Telegram botu"
+    }
+  },
+  "gameDetail": {
+    "back": "Zpět",
+    "loading": "Načítání…",
+    "unavailable": "Informace o hře nejsou k dispozici",
+    "developer": "Vývojář",
+    "publisher": "Vydavatel",
+    "released": "Datum vydání",
+    "trailers": "Trailery",
+    "screenshots": "Snímky obrazovky",
+    "about": "Popis",
+    "system_requirements": "Systémové požadavky",
+    "download": "Stáhnout",
+    "cancel": "Zrušit",
+    "prev_screenshot": "Předchozí snímek obrazovky",
+    "next_screenshot": "Další snímek obrazovky",
+    "close_lightbox": "Zavřít",
+    "req_minimum": "Minimální",
+    "req_recommended": "Doporučené",
+    "screenshot_n": "Snímek {{n}}",
+    "news": "Novinky",
+    "browse_genre": "Zobrazit hry v kategorii {{genre}}"
+  },
+  "settings": {
+    "title": "Nastavení",
+    "back": "Zpět",
+    "language": {
+      "title": "Jazyk",
+      "description": "Jazyk uživatelského rozhraní aplikace."
+    },
+    "install_dir": {
+      "title": "Umístění knihovny her",
+      "description": "Kam se budou ukládat stažené hry.",
+      "change": "Změnit",
+      "default": "(výchozí umístění)"
+    },
+    "auto_update": {
+      "title": "Aktualizace",
+      "description": "Automaticky instalovat aktualizace při ukončení aplikace.",
+      "label": "Automaticky instalovat aktualizace"
+    },
+    "about_section_label": "O aplikaci",
+    "app_version_label": "Verze",
+    "platform_label": "Platforma",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "váš OS"
+  },
+  "tray": {
+    "show": "Otevřít",
+    "quit": "Ukončit"
+  },
+  "updater": {
+    "checking": "Kontrola aktualizací",
+    "available": "Je k dispozici verze {{version}}",
+    "downloading": "Stahování {{version}}",
+    "downloaded": "Aktualizace {{version}} připravena",
+    "error": "Chyba aktualizace",
+    "restart": "Nainstalovat a restartovat",
+    "later": "Později",
+    "eta": "Zbývá",
+    "speed": "Rychlost"
+  },
+  "game": {
+    "checking_updates": "Kontrola aktualizací…",
+    "downloading_update": "Stahování aktualizace",
+    "launching": "Spouštění…",
+    "launch_without_check_confirm": "Kontrola aktualizací selhala. Spustit přesto?",
+    "uninstall": "Odinstalovat",
+    "uninstall_confirm": "Odinstalovat hru a smazat všechny místní soubory?",
+    "uninstall_success": "Hra odinstalována",
+    "uninstall_blocked_running": "Nejprve zavřete hru",
+    "uninstall_failed": "Odinstalace selhala: {{reason}}",
+    "patching_drm": "Odstraňování Steam DRM…",
+    "update_available": "Je dostupná aktualizace. Stáhnout před spuštěním?",
+    "update_install": "Stáhnout a hrát",
+    "update_skip": "Hrát bez aktualizace",
+    "already_running": "Tato hra už běží"
+  },
+  "gameSession": {
+    "title": "Přístup ke hrám je uzavřen",
+    "description": "Splňte úkol v Telegram botu — přístup se hned poté otevře a stahování bude pokračovat od stejného místa.",
+    "later": "Později",
+    "open_bot": "Otevřít bota a splnit úkol",
+    "done": "Úkol splněn",
+    "checking": "Ověřujeme…",
+    "still_locked": "Přístup zatím není otevřen. Dokončete úkol v botu a zkuste to znovu."
+  },
+  "sidebar": {
+    "favorites": "Oblíbené",
+    "add": "Přidat z katalogu",
+    "empty": "Připněte hru hvězdičkou v katalogu",
+    "about": "O hře",
+    "unpin": "Odepnout",
+    "size": "Velikost",
+    "played": "Odehráno",
+    "status": "Stav"
+  },
+  "drmBoot": {
+    "collapse": "Sbalit",
+    "expand": "Rozbalit",
+    "patching": "Aplikování záplat na {{count}} her…",
+    "patching_other": "Aplikování záplat na {{count}} her…",
+    "done": "Hotovo",
+    "warning_title": "Záplata DRM nedokončena",
+    "warning_detail": "Hra může vyžadovat spuštěný Steam."
+  },
+  "errors": {
+    "server_unreachable": "Nepodařilo se připojit k serveru"
+  }
+}

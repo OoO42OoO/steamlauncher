@@ -1,0 +1,73 @@
+node_modules/
+dist/
+out/
+.env
+.env.local
+.env.*.local
+*.log
+logs/
+.DS_Store
+.wxt/
+.output/
+apps/extension/releases/
+.turbo/
+.vite/
+.playwright-mcp/
+vendor/
+# generated: openapi -> zod schemas
+packages/shared/src/api.generated.ts
+
+
+# stray bundler output that lands in the repo root
+/index.js
+# per-machine Claude Code config (launch.json is shared, settings.local.json isn't)
+.claude/settings.local.json
+# generated at setup time; contains absolute paths for this machine only
+apps/desktop/native-messaging-host/host.bat
+
+# ── Binaries ──────────────────────────────────────────────────────────
+# Nothing compiled, packed or downloaded belongs in the history: it bloats
+# every clone forever and git can't diff it. vendor/ (DepotDownloader) and
+# dist/ are already covered above.
+*.exe
+*.dll
+*.so
+*.dylib
+*.node
+*.msi
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.asar
+*.wasm
+*.pdb
+*.jar
+# Design mockups and their source artwork — internal working material, kept
+# on disk, out of the repository.
+design/
+# The app's own icons are the one exception: electron-builder reads them from
+# here at package time, so the build does not work without them in the tree.
+!apps/desktop/build/icon.ico
+!apps/desktop/build/icon.png
+!apps/desktop/build/icon-32.png
+
+# ── Credentials ───────────────────────────────────────────────────────
+# Belt and braces — no key material or real env file, ever.
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+*.jks
+*.keystore
+.npmrc
+.netrc
+
+# ── Specifications and internal docs ──────────────────────────────────
+# Product/protocol specs are not published with the source.
+SPEC.md
+docs/
+*.spec.md
+openapi.*

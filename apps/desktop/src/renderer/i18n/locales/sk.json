@@ -1,0 +1,265 @@
+{
+  "stage": {
+    "queued": "V poradí…",
+    "connecting": "Pripájanie…",
+    "authenticating": "Prihlasovanie do Steamu…",
+    "fetching_manifest": "Načítava sa zoznam súborov…",
+    "downloading_with_label": "Sťahovanie: {{label}}",
+    "downloading_no_label": "Sťahovanie obsahu",
+    "validating_with_label": "Overovanie: {{label}}",
+    "validating_no_label": "Overovanie súborov",
+    "finalizing": "Dokončovanie…",
+    "installing_redist_with_label": "Inštalácia komponentu: {{label}}",
+    "installing_redist_no_label": "Inštalácia komponentov",
+    "counter": " ({{current}} z {{total}})"
+  },
+  "time": {
+    "minutes_short": "{{count}} min",
+    "hours_minutes_short": "{{hours}} h {{minutes}} min"
+  },
+  "nav": {
+    "sections": "Sekcie",
+    "catalog": "Katalóg",
+    "library": "Knižnica",
+    "stats": "Štatistiky",
+    "downloads": "Sťahovanie",
+    "settings": "Nastavenia",
+    "game": "Hra"
+  },
+  "titlebar": {
+    "trust": "Dôvera",
+    "trust_aria": "Úroveň dôvery {{level}}",
+    "logout": "Odhlásiť sa",
+    "language_aria": "Jazyk",
+    "close": "Zavrieť",
+    "settings": "Nastavenia",
+    "minimize": "Minimalizovať",
+    "session_aria": "Zostávajúci čas relácie",
+    "session_label": "Relácia",
+    "session_expired": "Je potrebná úloha",
+    "session_task_due": "Vyžaduje sa"
+  },
+  "redeem": {
+    "errors": {
+      "not_found": "Kód sa nenašiel. Skontrolujte, či ste vložili celý kód zo stránky.",
+      "expired": "Kód už bol použitý alebo vypršal. Vygenerujte nový na stránke.",
+      "service_unavailable": "Služba je dočasne nedostupná. Skúste to znova o chvíľu.",
+      "network": "Žiadne pripojenie k serveru.",
+      "unknown": "Neznáma chyba prihlásenia."
+    },
+    "title": "Získajte prístup k launcheru",
+    "description": "Získajte prístupový kód v našom Telegram botovi a potom ho vložte nižšie na odomknutie launchera.",
+    "code_label": "Prístupový kód",
+    "submit": "Odomknúť launcher",
+    "submitting": "Odomýkanie…",
+    "open_site": "Prejsť k botovi pre získanie kľúča",
+    "step_open_bot": "Otvorte Telegram bota",
+    "step_paste_code": "Skopírujte a vložte prístupový kód",
+    "code_placeholder": "Sem vložte kód",
+    "no_account_note": "Nie je potrebný účet ani heslo k launcheru."
+  },
+  "library": {
+    "loading": "Načítava sa knižnica…",
+    "error_title": "Knižnicu sa nepodarilo načítať",
+    "error_hint": "Služba nie je dostupná alebo nie je internet.",
+    "retry": "Skúsiť znova",
+    "empty_title": "Knižnica je prázdna",
+    "empty_hint": "Na vašej úrovni dôvery zatiaľ nie sú dostupné žiadne účty. Plňte úlohy, aby ste zvýšili svoj trust level a odomkli viac hier.",
+    "locked_hint": "Odomkne sa na trust level {{level}}",
+    "play": "Hrať",
+    "cancel_aria": "Zrušiť sťahovanie",
+    "install": "Nainštalovať",
+    "search_placeholder": "Hľadať hry",
+    "search_no_results": "Žiadne hry pre „{{query}}\"",
+    "installed_empty_title": "Žiadne nainštalované hry",
+    "installed_empty_hint": "Nainštalované hry sa zobrazia tu. Hru vyberiete v Katalógu.",
+    "genre_all": "Všetko",
+    "genre_filter_aria": "Filtrovať podľa žánru",
+    "pin": "Pridať k obľúbeným",
+    "unpin": "Odobrať z obľúbených",
+    "genre_more": "Ďalších {{count}}",
+    "genre_search": "Nájsť kategóriu",
+    "genre_none": "Nič sa nenašlo",
+    "genre_selected": "Vybraté: {{count}}",
+    "genre_reset": "Vymazať",
+    "genre_done": "Hotovo",
+    "state_installed": "Nainštalované",
+    "state_downloading": "Sťahovanie",
+    "state_error": "Chyba",
+    "state_not_installed": "Nenainštalované",
+    "state_locked": "Uzamknuté",
+    "more_actions": "Ďalšie akcie",
+    "genre_loading": "Kategórie: {{known}} z {{total}}",
+    "sort_aria": "Zoradiť hry",
+    "sort_name": "Podľa názvu",
+    "sort_installed": "Najprv nainštalované",
+    "sort_played": "Najviac hrané",
+    "open_folder": "Priečinok inštalácie",
+    "catalog_kicker": "Katalóg · dostupné: {{count}}",
+    "catalog_heading": "Všetky hry",
+    "installed_kicker": "Knižnica · nainštalované: {{count}}",
+    "installed_heading": "Na disku",
+    "genre_no_results": "V tejto kategórii nie sú žiadne hry",
+    "starting": "Pripravuje sa…"
+  },
+  "tasks": {
+    "loading": "Načítavajú sa úlohy…",
+    "error_title": "Úlohy sa nepodarilo načítať",
+    "error_hint": "Služba je dočasne nedostupná.",
+    "active_section": "Aktívne",
+    "active_empty": "Momentálne žiadne aktívne úlohy. Pozrite sa neskôr.",
+    "open": "Otvoriť",
+    "completing": "…",
+    "complete": "Hotovo",
+    "completed_section": "Dokončené",
+    "kicker": "Úlohy",
+    "heading": "Prístup k hrám"
+  },
+  "stats": {
+    "loading": "Načítavajú sa štatistiky…",
+    "error_title": "Štatistiky sa nepodarilo načítať",
+    "empty_title": "Zatiaľ nič neodohrané",
+    "empty_hint": "Hneď ako spustíte hru, zobrazí sa tu čas hrania pre každý titul.",
+    "total_played": "Celkom odohrané",
+    "kicker": "Štatistiky",
+    "heading": "Odohraný čas"
+  },
+  "downloads": {
+    "empty_title": "Žiadne aktívne sťahovania",
+    "empty_hint": "Spusti inštaláciu v Knižnici — priebeh sa zobrazí tu.",
+    "failed_label": "Sťahovanie zlyhalo",
+    "kicker": "Sťahovania · aktívne: {{count}}",
+    "heading": "Fronta",
+    "stop_all": "Zastaviť všetko"
+  },
+  "download": {
+    "guard": {
+      "waiting_for_email": "Čakanie na kód Steam Guard z e-mailu…",
+      "received": "Kód Steam Guard prijatý"
+    },
+    "error": {
+      "account_unconfigured": "Účet nie je nakonfigurovaný pre záložný Guard cez e-mail (na serveri chýbajú e-mailové prihlasovacie údaje)",
+      "account_missing_license": "Účet túto hru nevlastní",
+      "empty_download": "Sťahovanie sa skončilo bez súborov",
+      "unsupported_platform": "Hra nepodporuje vašu platformu ({{current}}). Dostupné pre: {{list}}",
+      "account_missing_license_other_platform": "Hra bola zakúpená pre inú platformu. Táto verzia je dostupná pre: {{list}}",
+      "authorization": "Chyba autorizácie",
+      "auth_guard": "Chyba Auth Guard",
+      "disk_full": "Nedostatok voľného miesta na disku",
+      "game_session_required": "Prístup zatvorený — splňte úlohu v Telegram botovi"
+    }
+  },
+  "gameDetail": {
+    "back": "Späť",
+    "loading": "Načítava sa…",
+    "unavailable": "Informácie o hre nie sú dostupné",
+    "developer": "Vývojár",
+    "publisher": "Vydavateľ",
+    "released": "Dátum vydania",
+    "trailers": "Trailery",
+    "screenshots": "Snímky obrazovky",
+    "about": "Popis",
+    "system_requirements": "Systémové požiadavky",
+    "download": "Stiahnuť",
+    "cancel": "Zrušiť",
+    "prev_screenshot": "Predchádzajúca snímka obrazovky",
+    "next_screenshot": "Ďalšia snímka obrazovky",
+    "close_lightbox": "Zavrieť",
+    "req_minimum": "Minimálne",
+    "req_recommended": "Odporúčané",
+    "screenshot_n": "Snímka {{n}}",
+    "news": "Novinky",
+    "browse_genre": "Zobraziť hry v kategórii {{genre}}"
+  },
+  "settings": {
+    "title": "Nastavenia",
+    "back": "Späť",
+    "language": {
+      "title": "Jazyk",
+      "description": "Jazyk používateľského rozhrania aplikácie."
+    },
+    "install_dir": {
+      "title": "Umiestnenie knižnice hier",
+      "description": "Kam sa budú ukladať stiahnuté hry.",
+      "change": "Zmeniť",
+      "default": "(predvolené umiestnenie)"
+    },
+    "auto_update": {
+      "title": "Aktualizácie",
+      "description": "Automaticky inštalovať aktualizácie pri ukončení aplikácie.",
+      "label": "Automaticky inštalovať aktualizácie"
+    },
+    "about_section_label": "O aplikácii",
+    "app_version_label": "Verzia",
+    "platform_label": "Platforma",
+    "electron_version_label": "Electron"
+  },
+  "platform": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "unknown": "váš OS"
+  },
+  "tray": {
+    "show": "Otvoriť",
+    "quit": "Ukončiť"
+  },
+  "updater": {
+    "checking": "Kontrolujú sa aktualizácie",
+    "available": "K dispozícii je verzia {{version}}",
+    "downloading": "Sťahuje sa {{version}}",
+    "downloaded": "Aktualizácia {{version}} je pripravená",
+    "error": "Chyba aktualizácie",
+    "restart": "Nainštalovať a reštartovať",
+    "later": "Neskôr",
+    "eta": "Zostáva",
+    "speed": "Rýchlosť"
+  },
+  "game": {
+    "checking_updates": "Kontrola aktualizácií…",
+    "downloading_update": "Sťahovanie aktualizácie",
+    "launching": "Spúšťa sa…",
+    "launch_without_check_confirm": "Kontrola aktualizácií zlyhala. Spustiť aj tak?",
+    "uninstall": "Odinštalovať",
+    "uninstall_confirm": "Odinštalovať hru a odstrániť všetky lokálne súbory?",
+    "uninstall_success": "Hra odinštalovaná",
+    "uninstall_blocked_running": "Najprv zavrite hru",
+    "uninstall_failed": "Odinštalovanie zlyhalo: {{reason}}",
+    "patching_drm": "Odstraňovanie Steam DRM…",
+    "update_available": "Je dostupná aktualizácia. Stiahnuť pred spustením?",
+    "update_install": "Stiahnuť a hrať",
+    "update_skip": "Hrať bez aktualizácie",
+    "already_running": "Táto hra už beží"
+  },
+  "gameSession": {
+    "title": "Prístup k hrám je zatvorený",
+    "description": "Splňte úlohu v Telegram botovi — prístup sa hneď potom otvorí a sťahovanie bude pokračovať od rovnakého miesta.",
+    "later": "Neskôr",
+    "open_bot": "Otvoriť bota a splniť úlohu",
+    "done": "Úloha splnená",
+    "checking": "Overujeme…",
+    "still_locked": "Prístup zatiaľ nie je otvorený. Dokončite úlohu v botovi a skúste to znova."
+  },
+  "sidebar": {
+    "favorites": "Obľúbené",
+    "add": "Pridať z katalógu",
+    "empty": "Pripnite hru hviezdičkou v katalógu",
+    "about": "O hre",
+    "unpin": "Odopnúť",
+    "size": "Veľkosť",
+    "played": "Odohrané",
+    "status": "Stav"
+  },
+  "drmBoot": {
+    "collapse": "Zbaliť",
+    "expand": "Rozbaliť",
+    "patching": "Aplikovanie záplat na {{count}} hier…",
+    "patching_other": "Aplikovanie záplat na {{count}} hier…",
+    "done": "Hotovo",
+    "warning_title": "Záplata DRM nedokončená",
+    "warning_detail": "Hra môže vyžadovať spustený Steam."
+  },
+  "errors": {
+    "server_unreachable": "Nepodarilo sa pripojiť k serveru"
+  }
+}
